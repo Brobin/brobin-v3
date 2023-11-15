@@ -16,7 +16,14 @@ export default function YearBarChart({ year }: Props) {
   return (
     <BarChart
       dataset={year.days}
-      xAxis={[{ scaleType: "band", dataKey: "day", label: "Day" }]}
+      xAxis={[
+        {
+          scaleType: "band",
+          dataKey: "day",
+          label: "Day",
+          valueFormatter: (value) => value.substring(0, 3),
+        },
+      ]}
       yAxis={[{ label: "Fish" }]}
       series={[
         speciesData(Species.Bass),
