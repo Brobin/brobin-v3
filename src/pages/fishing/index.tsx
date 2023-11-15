@@ -43,14 +43,6 @@ export default function Fishing({ years, fish }: Props) {
           <Grid sm={12} md={6}>
             <Card variant="plain">
               <Typography level="h3" textAlign="center">
-                Species Trend
-              </Typography>
-              <SpeciesTrendLineChart years={years} />
-            </Card>
-          </Grid>
-          <Grid sm={12} md={6}>
-            <Card variant="plain">
-              <Typography level="h3" textAlign="center">
                 Cumulative fish caught
               </Typography>
               <CumulativeFishLineChart years={years} />
@@ -59,7 +51,15 @@ export default function Fishing({ years, fish }: Props) {
           <Grid sm={12} md={6}>
             <Card variant="plain">
               <Typography level="h3" textAlign="center">
-                Fish Size
+                Species trend
+              </Typography>
+              <SpeciesTrendLineChart years={years} />
+            </Card>
+          </Grid>
+          <Grid sm={12} md={6}>
+            <Card variant="plain">
+              <Typography level="h3" textAlign="center">
+                Fish size
               </Typography>
               <FishScatterChart fish={fish} />
             </Card>
