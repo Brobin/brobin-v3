@@ -4,7 +4,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 
-const ARTICLE_PATH = path.join("articles");
+const ARTICLE_PATH = path.join("data/articles");
 
 const files = fs.readdirSync(ARTICLE_PATH);
 
