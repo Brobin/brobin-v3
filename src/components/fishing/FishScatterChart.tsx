@@ -45,7 +45,7 @@ export default function FishScatterChart({ fish, year }: Props) {
   const trend = (species: Species): LineSeriesType => {
     const points = dataPoints(species);
     const x = points.map(([x, _]) => x);
-    const result = regression.linear(points);
+    const result = regression.exponential(points);
     const minX = Math.min(...x) - 2;
     const maxX = Math.max(...x) + 2;
 
