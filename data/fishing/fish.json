@@ -48,6 +48,7 @@
   { "length": 15.0, "species": "bass", "year": 2015, "weight": 1.6 },
   { "length": 17.25, "species": "bass", "year": 2015, "weight": 2.42 },
   { "length": 22.0, "species": "walleye", "year": 2015, "weight": 2.8437 },
+
   { "length": 25.0, "species": "northern", "year": 2016, "weight": 2.7 },
   { "length": 18.0, "species": "bass", "year": 2016, "weight": 3.15 },
   { "length": 21.0, "species": "walleye", "year": 2016, "weight": 3.15 },
@@ -73,6 +74,7 @@
   { "length": 24.0, "species": "northern", "year": 2016, "weight": 2.8 },
   { "length": 16.0, "species": "bass", "year": 2016, "weight": 2.3 },
   { "length": 24.0, "species": "walleye", "year": 2016, "weight": 5.0 },
+
   { "length": 23.5, "species": "walleye", "year": 2017, "weight": 3.5 },
   { "length": 26.0, "species": "northern", "year": 2017, "weight": 3.39 },
   { "length": 24.0, "species": "northern", "year": 2017, "weight": 2.9 },
@@ -104,6 +106,7 @@
   { "length": 19.0, "species": "bass", "year": 2017, "weight": 2.05 },
   { "length": 18.0, "species": "walleye", "year": 2017, "weight": 1.75 },
   { "length": 16.0, "species": "bass", "year": 2017, "weight": 2.2 },
+
   { "length": 15.5, "species": "bass", "year": 2019, "weight": 2.05 },
   { "length": 21.875, "species": "northern", "year": 2019, "weight": 2.13 },
   { "length": 16.5, "species": "bass", "year": 2019, "weight": 2.5 },
@@ -123,5 +126,26 @@
   { "length": 17.25, "species": "bass", "year": 2019, "weight": 2.35 },
   { "length": 21.0, "species": "northern", "year": 2019, "weight": 1.65 },
   { "length": 18.25, "species": "bass", "year": 2019, "weight": 2.65 },
-  { "length": 22.0, "species": "walleye", "year": 2019, "weight": 3.25 }
+  { "length": 22.0, "species": "walleye", "year": 2019, "weight": 3.25 },
+
+  { "year": 2021, "length": 17.5, "weight": 2.6, "species": "bass" },
+  { "year": 2021, "length": 17.5, "weight": 2.65, "species": "bass" },
+  { "year": 2021, "length": 29.5, "weight": 5.45, "species": "northern" },
+  { "year": 2021, "length": 21.5, "weight": 2.8, "species": "walleye" },
+  { "year": 2021, "length": 17, "weight": 2.45, "species": "bass" },
+  { "year": 2021, "length": 19, "weight": 3.25, "species": "walleye" },
+  { "year": 2021, "length": 21.75, "weight": 2.5, "species": "northern" },
+  { "year": 2021, "length": 21, "weight": 2.8, "species": "walleye" },
+  { "year": 2021, "length": 26.5, "weight": 4.07, "species": "northern" },
+  { "year": 2021, "length": 29, "weight": 4.96, "species": "northern" },
+  { "year": 2021, "length": 21, "weight": 3.02, "species": "walleye" },
+  { "year": 2021, "length": 20, "weight": 2.35, "species": "walleye" },
+  { "year": 2021, "length": 16, "weight": 1.35, "species": "walleye" },
+
+  { "year": 2023, "length": 18, "weight": 2.75, "species": "bass" },
+  { "year": 2023, "length": 18.5, "weight": 2.69, "species": "bass" },
+  { "year": 2023, "length": 18, "weight": 2.6, "species": "bass" },
+  { "year": 2023, "length": 21, "weight": 2.625, "species": "walleye" },
+  { "year": 2023, "length": 18.5, "weight": 1.94, "species": "walleye" },
+  { "year": 2023, "length": 20, "weight": 1.5, "species": "northern" }
 ]

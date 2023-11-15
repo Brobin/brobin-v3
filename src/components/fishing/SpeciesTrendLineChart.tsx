@@ -26,7 +26,6 @@ export default function SpeciesTrendLineChart({ years }: Props) {
       },
       {
         data: trendline,
-        label: `${titleCase(species)} Trend`,
         showMark: () => false,
       },
     ];
@@ -37,7 +36,7 @@ export default function SpeciesTrendLineChart({ years }: Props) {
       sx={{
         "& .MuiLineElement-series-auto-generated-id-1, .MuiLineElement-series-auto-generated-id-3, .MuiLineElement-series-auto-generated-id-5":
           {
-            strokeDasharray: "10 5",
+            strokeDasharray: "10 3",
             strokeWidth: 2,
           },
       }}

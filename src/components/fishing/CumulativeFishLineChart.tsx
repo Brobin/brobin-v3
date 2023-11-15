@@ -27,15 +27,7 @@ export default function CumulativeFishLineChart({ years }: Props) {
           label: "Day",
           scaleType: "point",
           valueFormatter: (index: number) =>
-            [
-              "Saturday",
-              "Sunday",
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-            ][index],
+            ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"][index],
         },
       ]}
       yAxis={[{ label: "Fish" }]}
