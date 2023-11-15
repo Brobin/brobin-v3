@@ -21,7 +21,7 @@ export default function Fishing({ years, fish }: Props) {
             <Button
               key={year.year}
               variant="soft"
-              color="neutral"
+              color="primary"
               component="a"
               href={`/fishing/${year.year}`}
             >

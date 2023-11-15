@@ -10,7 +10,7 @@ interface IconLinkProps {
 
 function IconLink({ link, icon }: IconLinkProps) {
   return (
-    <Link href={link} target="_blank" padding={1} color="neutral" level="h3">
+    <Link href={link} target="_blank" color="neutral" level="h3">
       {icon}
     </Link>
   );
@@ -19,11 +19,13 @@ function IconLink({ link, icon }: IconLinkProps) {
 export default function Footer() {
   return (
     <footer>
-      <Box textAlign="center" paddingY={3}>
-        <Typography level="body-sm" paddingBottom={1}>
-          &copy; Tobin Brown 2013-{dayjs().year()}
-        </Typography>
-
+      <Box
+        gap={1}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        paddingTop={3}
+      >
         <IconLink
           link="https://www.instagram.com/tobins.camera/"
           icon={<Instagram fontSize="large" />}
@@ -61,6 +63,9 @@ export default function Footer() {
           }
         />
       </Box>
+      <Typography level="body-sm" paddingY={2} textAlign="center">
+        &copy; Tobin Brown 2013-{dayjs().year()}
+      </Typography>
     </footer>
   );
 }
