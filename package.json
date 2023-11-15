@@ -1,0 +1,38 @@
+{
+  "name": "brobin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.16",
+    "@mui/joy": "^5.0.0-beta.14",
+    "@mui/x-charts": "^6.18.1",
+    "@types/react-syntax-highlighter": "^15.5.10",
+    "@types/regression": "^2.0.5",
+    "dayjs": "^1.11.10",
+    "gray-matter": "^4.0.3",
+    "marked": "^10.0.0",
+    "next": "14.0.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-markdown": "^9.0.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "regression": "^2.0.1",
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.2",
+    "typescript": "^5"
+  }
+}

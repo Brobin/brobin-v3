@@ -1,0 +1,47 @@
+{
+  "year": 2018,
+  "days": [
+    {
+      "bass": 2,
+      "northern": 0,
+      "walleye": 0,
+      "day": "Saturday"
+    },
+    {
+      "bass": 13,
+      "northern": 5,
+      "walleye": 3,
+      "day": "Sunday"
+    },
+    {
+      "bass": 19,
+      "northern": 3,
+      "walleye": 5,
+      "day": "Monday"
+    },
+    {
+      "bass": 19,
+      "northern": 3,
+      "walleye": 3,
+      "day": "Tuesday"
+    },
+    {
+      "bass": 16,
+      "northern": 2,
+      "walleye": 1,
+      "day": "Wednesday"
+    },
+    {
+      "bass": 28,
+      "northern": 2,
+      "walleye": 1,
+      "day": "Thursday"
+    },
+    {
+      "bass": 10,
+      "northern": 2,
+      "walleye": 9,
+      "day": "Friday"
+    }
+  ]
+}
