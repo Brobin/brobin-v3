@@ -8,22 +8,19 @@ interface Props {
 }
 
 export default function YearPieChart({ year }: Props) {
-  const speciesData = React.useCallback(
-    (species: Species) => ({
-      value: totalFish(year, species),
-      label: titleCase(species),
-    }),
-    [year]
-  );
+  const series = (species: Species) => ({
+    value: totalFish(year, species),
+    label: titleCase(species),
+  });
 
   return (
     <PieChart
       series={[
         {
           data: [
-            speciesData(Species.Bass),
-            speciesData(Species.Northern),
-            speciesData(Species.Walleye),
+            series(Species.Bass),
+            series(Species.Northern),
+            series(Species.Walleye),
           ],
         },
       ]}

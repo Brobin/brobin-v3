@@ -1,7 +1,6 @@
 import { Species, Year } from "@brobin/types/fishing";
 import { titleCase } from "@brobin/utils";
-import { AxisConfig, LineChart } from "@mui/x-charts";
-import React from "react";
+import { LineChart } from "@mui/x-charts";
 import regression, { DataPoint } from "regression";
 
 interface Props {
@@ -9,41 +8,29 @@ interface Props {
 }
 
 export default function SpeciesTrendLineChart({ years }: Props) {
-  const series = React.useCallback(
-    (species: Species) => {
-      const totals = years.map((year) =>
-        year.days.reduce((sum, data) => sum + data[species], 0)
-      );
+  const series = (species: Species) => {
+    const totals = years.map((year) =>
+      year.days.reduce((sum, data) => sum + data[species], 0)
+    );
 
-      const result = regression.linear(
-        totals.map((point, index): DataPoint => [index, point])
-      );
-      const trendline = totals.map((_, index) => result.predict(index)[1]);
+    const result = regression.linear(
+      totals.map((point, index): DataPoint => [index, point])
+    );
+    const trendline = totals.map((_, index) => result.predict(index)[1]);
 
-      return [
-        {
-          data: totals,
-          label: titleCase(species),
-          showMark: () => false,
-        },
-        {
-          data: trendline,
-          label: `${titleCase(species)} Trend`,
-          showMark: () => false,
-        },
-      ];
-    },
-    [years]
-  );
-
-  const xAxis: Omit<AxisConfig, "id"> = React.useMemo(() => {
-    return {
-      scaleType: "point",
-      data: years.map((y) => y.year),
-      valueFormatter: (v: number) => v.toString(),
-      label: "Year",
-    };
-  }, [years]);
+    return [
+      {
+        data: totals,
+        label: titleCase(species),
+        showMark: () => false,
+      },
+      {
+        data: trendline,
+        label: `${titleCase(species)} Trend`,
+        showMark: () => false,
+      },
+    ];
+  };
 
   return (
     <LineChart
@@ -54,7 +41,14 @@ export default function SpeciesTrendLineChart({ years }: Props) {
             strokeWidth: 2,
           },
       }}
-      xAxis={[xAxis]}
+      xAxis={[
+        {
+          data: years.map((y) => y.year),
+          label: "Year",
+          scaleType: "point",
+          valueFormatter: (v: number) => v.toString(),
+        },
+      ]}
       yAxis={[{ label: "Fish" }]}
       series={[
         ...series(Species.Bass),

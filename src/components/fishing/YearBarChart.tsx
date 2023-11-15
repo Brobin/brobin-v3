@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default function YearBarChart({ year }: Props) {
-  const speciesData = (species: Species) => ({
+  const series = (species: Species) => ({
     dataKey: species,
     label: titleCase(species),
     stack: "0",
@@ -18,17 +18,17 @@ export default function YearBarChart({ year }: Props) {
       dataset={year.days}
       xAxis={[
         {
-          scaleType: "band",
           dataKey: "day",
           label: "Day",
+          scaleType: "band",
           valueFormatter: (value) => value.substring(0, 3),
         },
       ]}
       yAxis={[{ label: "Fish" }]}
       series={[
-        speciesData(Species.Bass),
-        speciesData(Species.Northern),
-        speciesData(Species.Walleye),
+        series(Species.Bass),
+        series(Species.Northern),
+        series(Species.Walleye),
       ]}
       height={400}
     />
