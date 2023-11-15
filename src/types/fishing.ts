@@ -6,6 +6,13 @@ export enum Species {
   Walleye = "walleye",
 }
 
+export type Fish = {
+  year: number;
+  species: Species;
+  length: number;
+  weight: number;
+};
+
 export type Day = {
   bass: number;
   northern: number;
@@ -16,13 +23,7 @@ export type Day = {
 export type Year = {
   year: number;
   days: Day[];
-};
-
-export type Fish = {
-  year: number;
-  species: Species;
-  length: number;
-  weight: number;
+  fish: Fish[];
 };
 
 export function totalFish(year: Year, species?: Species) {

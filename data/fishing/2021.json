@@ -1,0 +1,62 @@
+{
+  "year": 2021,
+  "days": [
+    {
+      "bass": 1,
+      "northern": 0,
+      "walleye": 0,
+      "day": "Saturday"
+    },
+    {
+      "bass": 12,
+      "northern": 1,
+      "walleye": 0,
+      "day": "Sunday"
+    },
+    {
+      "bass": 17,
+      "northern": 3,
+      "walleye": 0,
+      "day": "Monday"
+    },
+    {
+      "bass": 31,
+      "northern": 4,
+      "walleye": 4,
+      "day": "Tuesday"
+    },
+    {
+      "bass": 10,
+      "northern": 2,
+      "walleye": 0,
+      "day": "Wednesday"
+    },
+    {
+      "bass": 18,
+      "northern": 16,
+      "walleye": 1,
+      "day": "Thursday"
+    },
+    {
+      "bass": 0,
+      "northern": 0,
+      "walleye": 0,
+      "day": "Friday"
+    }
+  ],
+  "fish": [
+    { "year": 2021, "length": 17.5, "weight": 2.6, "species": "bass" },
+    { "year": 2021, "length": 17.5, "weight": 2.65, "species": "bass" },
+    { "year": 2021, "length": 29.5, "weight": 5.45, "species": "northern" },
+    { "year": 2021, "length": 21.5, "weight": 2.8, "species": "walleye" },
+    { "year": 2021, "length": 17, "weight": 2.45, "species": "bass" },
+    { "year": 2021, "length": 19, "weight": 3.25, "species": "walleye" },
+    { "year": 2021, "length": 21.75, "weight": 2.5, "species": "northern" },
+    { "year": 2021, "length": 21, "weight": 2.8, "species": "walleye" },
+    { "year": 2021, "length": 26.5, "weight": 4.07, "species": "northern" },
+    { "year": 2021, "length": 29, "weight": 4.96, "species": "northern" },
+    { "year": 2021, "length": 21, "weight": 3.02, "species": "walleye" },
+    { "year": 2021, "length": 20, "weight": 2.35, "species": "walleye" },
+    { "year": 2021, "length": 16, "weight": 1.35, "species": "walleye" }
+  ]
+}

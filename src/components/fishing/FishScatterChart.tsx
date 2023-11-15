@@ -58,17 +58,21 @@ export default function FishScatterChart({ fish, year }: Props) {
 
   return (
     <ResponsiveChartContainer
+      height={400}
       xAxis={[{ label: "Length (in)", data: xAxisData }]}
       yAxis={[{ label: "Weight (lb)" }]}
-      series={[
-        { ...scatter(Species.Bass), id: "0" },
-        { ...trend(Species.Bass), id: "1" },
-        { ...scatter(Species.Northern), id: "2" },
-        { ...trend(Species.Northern), id: "3" },
-        { ...scatter(Species.Walleye), id: "4" },
-        { ...trend(Species.Walleye), id: "5" },
-      ]}
-      height={400}
+      series={
+        fish.length
+          ? [
+              { ...scatter(Species.Bass), id: "0" },
+              { ...trend(Species.Bass), id: "1" },
+              { ...scatter(Species.Northern), id: "2" },
+              { ...trend(Species.Northern), id: "3" },
+              { ...scatter(Species.Walleye), id: "4" },
+              { ...trend(Species.Walleye), id: "5" },
+            ]
+          : []
+      }
       sx={{
         "& .MuiLineElement-root": {
           strokeDasharray: "10 3",

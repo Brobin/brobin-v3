@@ -5,7 +5,6 @@ import TotalFishBarChart from "@brobin/components/fishing/TotalFishBarChart";
 import { Fish, Year } from "@brobin/types/fishing";
 import { getFishData, getYearsData } from "@brobin/utils/fishing";
 import { Box, Button, ButtonGroup, Card, Grid, Typography } from "@mui/joy";
-import Link from "next/link";
 
 interface Props {
   years: Year[];
@@ -19,11 +18,15 @@ export default function Fishing({ years, fish }: Props) {
       <Box paddingY={2}>
         <ButtonGroup>
           {years.map((year) => (
-            <Link key={year.year} href={`/fishing/${year.year}`}>
-              <Button variant="soft" color="neutral">
-                {year.year}
-              </Button>
-            </Link>
+            <Button
+              key={year.year}
+              variant="soft"
+              color="neutral"
+              component="a"
+              href={`/fishing/${year.year}`}
+            >
+              {year.year}
+            </Button>
           ))}
         </ButtonGroup>
       </Box>

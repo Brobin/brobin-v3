@@ -1,0 +1,80 @@
+{
+  "year": 2017,
+  "days": [
+    {
+      "bass": 0,
+      "northern": 0,
+      "walleye": 0,
+      "day": "Saturday"
+    },
+    {
+      "bass": 25,
+      "northern": 22,
+      "walleye": 1,
+      "day": "Sunday"
+    },
+    {
+      "bass": 21,
+      "northern": 20,
+      "walleye": 1,
+      "day": "Monday"
+    },
+    {
+      "bass": 29,
+      "northern": 17,
+      "walleye": 0,
+      "day": "Tuesday"
+    },
+    {
+      "bass": 1,
+      "northern": 5,
+      "walleye": 1,
+      "day": "Wednesday"
+    },
+    {
+      "bass": 15,
+      "northern": 4,
+      "walleye": 3,
+      "day": "Thursday"
+    },
+    {
+      "bass": 3,
+      "northern": 0,
+      "walleye": 1,
+      "day": "Friday"
+    }
+  ],
+  "fish": [
+    { "length": 23.5, "species": "walleye", "year": 2017, "weight": 3.5 },
+    { "length": 26.0, "species": "northern", "year": 2017, "weight": 3.39 },
+    { "length": 24.0, "species": "northern", "year": 2017, "weight": 2.9 },
+    { "length": 24.0, "species": "northern", "year": 2017, "weight": 3.2 },
+    { "length": 25.0, "species": "northern", "year": 2017, "weight": 2.75 },
+    { "length": 17.0, "species": "bass", "year": 2017, "weight": 2.07 },
+    { "length": 25.0, "species": "northern", "year": 2017, "weight": 2.95 },
+    { "length": 24.5, "species": "northern", "year": 2017, "weight": 2.66 },
+    { "length": 26.5, "species": "northern", "year": 2017, "weight": 3.26 },
+    { "length": 27.5, "species": "northern", "year": 2017, "weight": 3.76 },
+    { "length": 25.0, "species": "northern", "year": 2017, "weight": 2.88 },
+    { "length": 17.0, "species": "bass", "year": 2017, "weight": 1.94 },
+    { "length": 26.0, "species": "northern", "year": 2017, "weight": 3.75 },
+    { "length": 25.5, "species": "northern", "year": 2017, "weight": 3.5 },
+    { "length": 25.0, "species": "northern", "year": 2017, "weight": 3.25 },
+    { "length": 24.5, "species": "northern", "year": 2017, "weight": 2.75 },
+    { "length": 25.0, "species": "northern", "year": 2017, "weight": 3.3 },
+    { "length": 25.5, "species": "northern", "year": 2017, "weight": 3.3 },
+    { "length": 17.5, "species": "bass", "year": 2017, "weight": 2.8 },
+    { "length": 25.5, "species": "northern", "year": 2017, "weight": 3.15 },
+    { "length": 25.0, "species": "northern", "year": 2017, "weight": 3.21 },
+    { "length": 24.0, "species": "northern", "year": 2017, "weight": 2.51 },
+    { "length": 24.5, "species": "northern", "year": 2017, "weight": 2.75 },
+    { "length": 31.0, "species": "northern", "year": 2017, "weight": 6.19 },
+    { "length": 26.0, "species": "northern", "year": 2017, "weight": 3.19 },
+    { "length": 28.0, "species": "northern", "year": 2017, "weight": 3.7 },
+    { "length": 20.0, "species": "walleye", "year": 2017, "weight": 2.29 },
+    { "length": 12.0, "species": "bass", "year": 2017, "weight": 1.23 },
+    { "length": 19.0, "species": "bass", "year": 2017, "weight": 2.05 },
+    { "length": 18.0, "species": "walleye", "year": 2017, "weight": 1.75 },
+    { "length": 16.0, "species": "bass", "year": 2017, "weight": 2.2 }
+  ]
+}
