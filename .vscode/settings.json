@@ -8,7 +8,7 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    // ".next": true,
+    ".next": true,
     "**/node_modules": true
   },
   "editor.formatOnSave": true,

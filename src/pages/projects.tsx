@@ -37,6 +37,11 @@ export default function Projects() {
         description="Yearly fishing stats from the family fishing trip. See how the distribution of fish in Marion Lake has changed over the years."
       />
       <Project
+        title="Cookbook"
+        link="/cookbook"
+        description="Just some of my favorite recipes."
+      />
+      <Project
         title="Django Seed"
         link="https://github.com/brobin/django-seed"
         description="Django-seed uses the faker library to generate test data for your Django models. This has been forked from django_faker in order to support newer versions of Python and Django Django-seed allows you to write code to generate models, and seed your database with one simple manage.py command!"

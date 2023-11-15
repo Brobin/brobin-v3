@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function Layout({ Component, pageProps }: AppProps) {
   return (
     <Experimental_CssVarsProvider
-      defaultMode="system"
+      defaultMode="dark"
       theme={{ [MATERIAL_THEME_ID]: materialTheme }}
     >
       <CssVarsProvider defaultMode="dark">
