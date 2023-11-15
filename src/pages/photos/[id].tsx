@@ -22,7 +22,7 @@ export default function PhotoDetail({ photo, exifData }: Props) {
         <Grid xs={12} md={8}>
           <Typography level="h3">{photo.title}</Typography>
           <Typography level="body-sm">
-            {dayjs(photo.datetaken).format("MMMM DD, YYYY HH:MM A")}
+            {dayjs(photo.datetaken).format("MMMM DD, YYYY h:MM A")}
           </Typography>
           <Typography level="body-md">{photo.description._content}</Typography>
         </Grid>
