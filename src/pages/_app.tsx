@@ -1,42 +1,17 @@
 import Footer from "@brobin/components/Footer";
 import Header from "@brobin/components/Header";
-import { Container, CssBaseline, CssVarsProvider } from "@mui/joy";
-import { extendTheme } from "@mui/joy/styles";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { Container } from "@mui/joy";
+import { CssVarsProvider } from "@mui/joy/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import {
+  Experimental_CssVarsProvider,
+  THEME_ID as MATERIAL_THEME_ID,
+  experimental_extendTheme,
+} from "@mui/material/styles";
 import { Metadata } from "next";
 import { AppProps } from "next/app";
 
-const joyTheme = extendTheme({
-  colorSchemes: {
-    dark: {
-      palette: {
-        background: {
-          body: "var(--joy-palette-neutral-900)",
-          surface: "var(--joy-palette-neutral-800)",
-        },
-      },
-    },
-  },
-});
-
-const muiTheme = createTheme({
-  palette: {
-    mode: "dark",
-    background: {
-      default: "var(--joy-palette-neutral-900)",
-      paper: "var(--joy-palette-neutral-800)",
-    },
-  },
-  components: {
-    MuiTooltip: {
-      styleOverrides: {
-        popper: {
-          background: "var(--joy-palette-neutral-900)",
-        },
-      },
-    },
-  },
-});
+const materialTheme = experimental_extendTheme();
 
 export const metadata: Metadata = {
   title: {
@@ -47,8 +22,11 @@ export const metadata: Metadata = {
 
 export default function Layout({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={muiTheme}>
-      <CssVarsProvider theme={joyTheme} defaultMode="dark">
+    <Experimental_CssVarsProvider
+      defaultMode="system"
+      theme={{ [MATERIAL_THEME_ID]: materialTheme }}
+    >
+      <CssVarsProvider defaultMode="dark">
         <CssBaseline />
         <Header />
         <Container>
@@ -56,6 +34,6 @@ export default function Layout({ Component, pageProps }: AppProps) {
         </Container>
         <Footer />
       </CssVarsProvider>
-    </ThemeProvider>
+    </Experimental_CssVarsProvider>
   );
 }
