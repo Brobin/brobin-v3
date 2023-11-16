@@ -1,5 +1,3 @@
-import Footer from "@brobin/components/Footer";
-import Header from "@brobin/components/Header";
 import { CssVarsProvider } from "@mui/joy/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import {
@@ -9,7 +7,17 @@ import {
 } from "@mui/material/styles";
 import { AppProps } from "next/app";
 
-const materialTheme = experimental_extendTheme();
+const materialTheme = experimental_extendTheme({
+  colorSchemes: {
+    dark: {
+      palette: {
+        background: {
+          default: "#181818",
+        },
+      },
+    },
+  },
+});
 
 export default function Layout({ Component, pageProps }: AppProps) {
   return (
@@ -19,9 +27,7 @@ export default function Layout({ Component, pageProps }: AppProps) {
     >
       <CssVarsProvider defaultMode="dark">
         <CssBaseline />
-        <Header />
         <Component {...pageProps} />
-        <Footer />
       </CssVarsProvider>
     </Experimental_CssVarsProvider>
   );
