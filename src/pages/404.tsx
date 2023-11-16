@@ -1,6 +1,5 @@
 import Page from "@brobin/components/Page";
 import { Box, Typography } from "@mui/joy";
-import { Metadata } from "next";
 
 export default function NotFound() {
   return (

@@ -32,9 +32,3 @@ export default function Layout({ Component, pageProps }: AppProps) {
     </Experimental_CssVarsProvider>
   );
 }
-
-export async function generateMetadata() {
-  return {
-    title: "Tobin Brown | Brobin",
-  };
-}

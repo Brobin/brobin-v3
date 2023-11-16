@@ -1,11 +1,6 @@
 import Page from "@brobin/components/Page";
-import { Box, Button, Card, Grid, Typography } from "@mui/joy";
-import { Metadata } from "next";
+import { Button, Card, Grid, Typography } from "@mui/joy";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: "Projects",
-};
 
 interface ProjectProps {
   title: string;

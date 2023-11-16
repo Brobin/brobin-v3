@@ -6,11 +6,6 @@ import PhotoMetadata from "@brobin/components/photos/PhotoMetadata";
 import { Photo, PhotoExifData, PhotoParams } from "@brobin/types/flickr";
 import { getPhoto, getPhotoExifData } from "@brobin/utils/flickr";
 import { Grid } from "@mui/joy";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Photos",
-};
 
 interface Props {
   photo: Photo;
