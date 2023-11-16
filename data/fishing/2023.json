@@ -45,11 +45,11 @@
     }
   ],
   "fish": [
-    { "year": 2023, "length": 18, "weight": 2.75, "species": "bass" },
-    { "year": 2023, "length": 18.5, "weight": 2.69, "species": "bass" },
-    { "year": 2023, "length": 18, "weight": 2.6, "species": "bass" },
-    { "year": 2023, "length": 21, "weight": 2.625, "species": "walleye" },
-    { "year": 2023, "length": 18.5, "weight": 1.94, "species": "walleye" },
-    { "year": 2023, "length": 20, "weight": 1.5, "species": "northern" }
+    { "length": 18, "weight": 2.75, "species": "bass" },
+    { "length": 18.5, "weight": 2.69, "species": "bass" },
+    { "length": 18, "weight": 2.6, "species": "bass" },
+    { "length": 21, "weight": 2.625, "species": "walleye" },
+    { "length": 18.5, "weight": 1.94, "species": "walleye" },
+    { "length": 20, "weight": 1.5, "species": "northern" }
   ]
 }

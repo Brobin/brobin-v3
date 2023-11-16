@@ -45,18 +45,18 @@
     }
   ],
   "fish": [
-    { "year": 2021, "length": 17.5, "weight": 2.6, "species": "bass" },
-    { "year": 2021, "length": 17.5, "weight": 2.65, "species": "bass" },
-    { "year": 2021, "length": 29.5, "weight": 5.45, "species": "northern" },
-    { "year": 2021, "length": 21.5, "weight": 2.8, "species": "walleye" },
-    { "year": 2021, "length": 17, "weight": 2.45, "species": "bass" },
-    { "year": 2021, "length": 19, "weight": 3.25, "species": "walleye" },
-    { "year": 2021, "length": 21.75, "weight": 2.5, "species": "northern" },
-    { "year": 2021, "length": 21, "weight": 2.8, "species": "walleye" },
-    { "year": 2021, "length": 26.5, "weight": 4.07, "species": "northern" },
-    { "year": 2021, "length": 29, "weight": 4.96, "species": "northern" },
-    { "year": 2021, "length": 21, "weight": 3.02, "species": "walleye" },
-    { "year": 2021, "length": 20, "weight": 2.35, "species": "walleye" },
-    { "year": 2021, "length": 16, "weight": 1.35, "species": "walleye" }
+    { "length": 17.5, "weight": 2.6, "species": "bass" },
+    { "length": 17.5, "weight": 2.65, "species": "bass" },
+    { "length": 29.5, "weight": 5.45, "species": "northern" },
+    { "length": 21.5, "weight": 2.8, "species": "walleye" },
+    { "length": 17, "weight": 2.45, "species": "bass" },
+    { "length": 19, "weight": 3.25, "species": "walleye" },
+    { "length": 21.75, "weight": 2.5, "species": "northern" },
+    { "length": 21, "weight": 2.8, "species": "walleye" },
+    { "length": 26.5, "weight": 4.07, "species": "northern" },
+    { "length": 29, "weight": 4.96, "species": "northern" },
+    { "length": 21, "weight": 3.02, "species": "walleye" },
+    { "length": 20, "weight": 2.35, "species": "walleye" },
+    { "length": 16, "weight": 1.35, "species": "walleye" }
   ]
 }

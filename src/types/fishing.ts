@@ -23,7 +23,7 @@ export type Day = {
 export type Year = {
   year: number;
   days: Day[];
-  fish: Fish[];
+  fish: Omit<Fish, "year">[];
 };
 
 export function totalFish(year: Year, species?: Species) {
