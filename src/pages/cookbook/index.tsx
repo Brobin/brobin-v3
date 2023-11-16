@@ -1,4 +1,4 @@
-import RecipeTags from "@brobin/components/cookbook/RecipeTags";
+import Tags from "@brobin/components/Tags";
 import { Recipe } from "@brobin/types/cookbook";
 import { getRecipes } from "@brobin/utils/cookbook";
 import { Box, Card, Divider, Grid, Typography } from "@mui/joy";
@@ -26,7 +26,7 @@ export default function Cookbook({ recipes }: Props) {
               >
                 {recipe.title}
               </Typography>
-              <RecipeTags tags={recipe.tags} />
+              <Tags tags={recipe.tags} />
               <Typography level="body-md">{recipe.description}</Typography>
             </Card>
           </Grid>

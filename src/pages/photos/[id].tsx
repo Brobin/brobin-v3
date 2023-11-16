@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Tags from "@brobin/components/Tags";
 import { Photo, PhotoExifData, PhotoParams } from "@brobin/types/flickr";
 import { getPhoto, getPhotoExifData } from "@brobin/utils/flickr";
 import { Grid, Typography } from "@mui/joy";
@@ -25,6 +26,7 @@ export default function PhotoDetail({ photo, exifData }: Props) {
             {dayjs(photo.datetaken).format("MMMM DD, YYYY h:MM A")}
           </Typography>
           <Typography level="body-md">{photo.description._content}</Typography>
+          <Tags tags={photo.tags.split(" ")} padding />
         </Grid>
         <Grid xs={12} md={4} textAlign={"right"}>
           <Typography level="body-md">{exifData.camera}</Typography>

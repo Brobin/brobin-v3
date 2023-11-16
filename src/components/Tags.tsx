@@ -5,9 +5,9 @@ interface Props {
   padding?: boolean;
 }
 
-export default function RecipeTags({ tags, padding }: Props) {
+export default function Tags({ tags, padding }: Props) {
   return (
-    <Box display="flex" gap={1} paddingY={padding ? 2 : 0}>
+    <Box display="flex" gap={1} paddingY={padding ? 1 : 0}>
       {tags.map((tag) => {
         return (
           <Chip variant="solid" key={tag}>

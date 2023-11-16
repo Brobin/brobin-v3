@@ -1,15 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { Photo } from "@brobin/types/flickr";
 import { getPhotos } from "@brobin/utils/flickr";
-import { Info } from "@mui/icons-material";
-import {
-  IconButton,
-  ImageList,
-  ImageListItem,
-  ImageListItemBar,
-} from "@mui/material";
+import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
 import { Metadata } from "next";
-import React from "react";
 
 export const metadata: Metadata = {
   title: "Photos",
@@ -39,6 +32,8 @@ export default function Photos({ photos }: Props) {
 }
 
 export async function getServerSideProps() {
-  const photos = await getPhotos();
+  const photos = (await getPhotos()).sort((a, b) =>
+    new Date(b.datetaken) > new Date(a.datetaken) ? 1 : -1
+  );
   return { props: { photos } };
 }
