@@ -38,7 +38,7 @@ export default function FishingYear({ year }: Props) {
               <Typography level="h3" textAlign="center">
                 Fish size
               </Typography>
-              <FishScatterChart fish={year.fish} year={year.year} />
+              <FishScatterChart fish={year.fish} />
             </Card>
           </Grid>
           <Grid xs={12} md={6}>

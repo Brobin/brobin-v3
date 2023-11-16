@@ -1,39 +1,41 @@
 /* eslint-disable @next/next/no-img-element */
+import Loading from "@brobin/components/Loading";
 import Page from "@brobin/components/Page";
 import PhotoContainer from "@brobin/components/photos/PhotoContainer";
 import { Photo } from "@brobin/types/flickr";
-import { getPhotos } from "@brobin/utils/flickr";
 import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
+import React from "react";
 
-interface Props {
-  photos: Photo[];
-}
+export default function Photos() {
+  const [photos, setPhotos] = React.useState<Photo[] | undefined>();
 
-export default function Photos({ photos }: Props) {
+  React.useEffect(() => {
+    fetch("/api/photos")
+      .then((res) => res.json())
+      .then(setPhotos);
+  }, []);
+
   return (
     <Page title="Photos">
-      <ImageList gap={10} cols={3} variant="masonry">
-        {photos.map((photo) => (
-          <ImageListItem
-            key={photo.id}
-            component="a"
-            href={`/photos/${photo.id}`}
-          >
-            <PhotoContainer photo={photo} />
-            <ImageListItemBar
-              title={photo.title}
-              sx={{ display: { xs: "none", md: "block" } }}
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
+      {photos ? (
+        <ImageList gap={10} cols={3} variant="masonry">
+          {photos.map((photo) => (
+            <ImageListItem
+              key={photo.id}
+              component="a"
+              href={`/photos/${photo.id}`}
+            >
+              <PhotoContainer photo={photo} />
+              <ImageListItemBar
+                title={photo.title}
+                sx={{ display: { xs: "none", md: "block" } }}
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      ) : (
+        <Loading />
+      )}
     </Page>
   );
-}
-
-export async function getServerSideProps() {
-  const photos = (await getPhotos()).sort((a, b) =>
-    new Date(b.datetaken) > new Date(a.datetaken) ? 1 : -1
-  );
-  return { props: { photos } };
 }

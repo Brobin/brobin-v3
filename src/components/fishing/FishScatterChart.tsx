@@ -15,11 +15,10 @@ import { ChartsLegend } from "@mui/x-charts/ChartsLegend";
 import regression, { DataPoint } from "regression";
 
 interface Props {
-  fish: Fish[];
-  year?: number;
+  fish: Omit<Fish, "year">[];
 }
 
-export default function FishScatterChart({ fish, year }: Props) {
+export default function FishScatterChart({ fish }: Props) {
   const xValues = fish.map(({ length }) => length);
   const minX = Math.min(...xValues);
   const maxX = Math.max(...xValues);
@@ -27,10 +26,7 @@ export default function FishScatterChart({ fish, year }: Props) {
   const xAxisData = Array.from({ length: maxX - minX }, (v, k) => k + 1 + minX);
 
   const dataPoints = (species: Species): DataPoint[] =>
-    fish
-      .filter((f) => f.species === species)
-      .filter((f) => !year || f.year === year)
-      .map((f) => [f.length, f.weight]);
+    fish.filter((f) => f.species === species).map((f) => [f.length, f.weight]);
 
   const scatter = (species: Species): ScatterSeriesType => {
     return {

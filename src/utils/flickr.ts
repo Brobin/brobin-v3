@@ -1,10 +1,14 @@
 import { Photo, PhotoExifData } from "@brobin/types/flickr";
+import dayjs from "dayjs";
 import { createFlickr } from "flickr-sdk";
 
 const apiKey = process.env.FLICKR_API_KEY as string;
 const userId = process.env.FLICKR_USER_ID as string;
 
 const { flickr } = createFlickr(apiKey);
+
+const byDateTaken = (a: Photo, b: Photo) =>
+  dayjs(b.datetaken) > dayjs(a.datetaken) ? 1 : -1;
 
 export async function getPhotos(): Promise<Photo[]> {
   return flickr("flickr.people.getPhotos", {
@@ -13,6 +17,7 @@ export async function getPhotos(): Promise<Photo[]> {
     per_page: "50",
   })
     .then((data) => data.photos.photo)
+    .then((photos) => photos.sort(byDateTaken))
     .catch(() => []);
 }
 
