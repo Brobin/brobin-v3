@@ -1,28 +1,22 @@
-import { Photo, PhotoExifData } from "@brobin/types/flickr";
+import { PhotoDetail } from "@brobin/types/flickr";
 import { Typography } from "@mui/joy";
 
 interface Props {
-  photo: Photo;
-  exifData: PhotoExifData;
+  photo: PhotoDetail;
 }
 
-export default function PhotoMetadata({ photo, exifData }: Props) {
+export default function PhotoMetadata({ photo }: Props) {
   return (
     <>
-      <Typography level="body-md">{exifData.camera}</Typography>
-      <Typography level="body-md">{exifData.lens}</Typography>
+      <Typography level="body-md">{photo.exif.camera}</Typography>
+      <Typography level="body-md">{photo.exif.lens}</Typography>
       <Typography level="body-md">
-        {exifData.exposure}s, <i>f</i>
-        {exifData.aperture}, ISO {exifData.iso}, {exifData.focalLength}
+        {photo.exif.exposure}s, <i>f</i>
+        {photo.exif.aperture}, ISO {photo.exif.iso}, {photo.exif.focalLength}
       </Typography>
       <Typography>
-        {photo.width_o} x {photo.height_o} px
+        {photo.original.width} x {photo.original.height} px
       </Typography>
-      {photo.geo_is_public && (
-        <Typography>
-          {photo.latitude} {photo.longitude}
-        </Typography>
-      )}
     </>
   );
 }

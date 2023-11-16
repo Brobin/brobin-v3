@@ -25,7 +25,7 @@ export default function Photos() {
               component="a"
               href={`/photos/${photo.id}`}
             >
-              <PhotoContainer photo={photo} />
+              <PhotoContainer photo={photo} size={photo.medium} />
               <ImageListItemBar
                 title={photo.title}
                 sx={{ display: { xs: "none", md: "block" } }}

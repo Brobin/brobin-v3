@@ -1,4 +1,4 @@
-import { Photo, PhotoExifData } from "@brobin/types/flickr";
+import { Photo, PhotoDetail } from "@brobin/types/flickr";
 import dayjs from "dayjs";
 import { createFlickr } from "flickr-sdk";
 
@@ -13,32 +13,81 @@ const byDateTaken = (a: Photo, b: Photo) =>
 export async function getPhotos(): Promise<Photo[]> {
   return flickr("flickr.people.getPhotos", {
     user_id: userId,
-    extras: "description,date_taken,url_m,url_l,url_o,tags,geo",
+    extras: "date_taken,url_m",
     per_page: "50",
   })
     .then((data) => data.photos.photo)
-    .then((photos) => photos.sort(byDateTaken))
+    .then((photos) =>
+      photos.map((photo: any) => ({
+        ...photo,
+        medium: {
+          source: photo.url_m,
+          height: photo.height_m,
+          width: photo.width_m,
+        },
+        large: {
+          source: photo.url_l,
+          height: photo.height_l,
+          width: photo.width_l,
+        },
+        original: {
+          source: photo.url_l,
+          height: photo.height_l,
+          width: photo.width_l,
+        },
+      }))
+    )
+    .then((photos: Photo[]) => photos.sort(byDateTaken))
     .catch(() => []);
 }
 
-export async function getPhoto(photo_id: string) {
-  return getPhotos().then((photos) => photos.find(({ id }) => id === photo_id));
-}
+export async function getPhotoDetail(photo_id: string): Promise<PhotoDetail> {
+  const info = await flickr("flickr.photos.getInfo", { photo_id }).then(
+    (data) => data.photo
+  );
 
-export async function getPhotoExifData(
-  photo_id: string
-): Promise<PhotoExifData> {
-  return flickr("flickr.photos.getExif", { photo_id }).then((data) => {
-    const tag = (tag: string) =>
-      data.photo.exif.find((e: any) => e.tag === tag)?.raw._content || null;
+  const exifData = await flickr("flickr.photos.getExif", { photo_id }).then(
+    (data) => data.photo
+  );
 
-    return {
-      camera: data.photo.camera || null,
+  const sizes = await flickr("flickr.photos.getSizes", { photo_id }).then(
+    (res) => res.sizes.size
+  );
+
+  const medium = sizes.find((size: any) => size.label === "Medium");
+  const large = sizes.find((size: any) => size.label === "Large 1600");
+  const original = sizes.find((size: any) => size.label === "Original");
+
+  const tag = (tag: string) =>
+    exifData.exif.find((e: any) => e.tag === tag)?.raw._content || null;
+
+  return {
+    id: info.id,
+    title: info.title._content,
+    description: info.description._content,
+    tags: info.tags.tag.map((t: any) => t._content),
+    datetaken: info.dates.taken,
+
+    medium,
+    large,
+    original,
+
+    exif: {
+      camera: exifData.camera || null,
       lens: tag("LensModel") || tag("Lens"),
       exposure: tag("ExposureTime"),
       iso: tag("ISO"),
       focalLength: tag("FocalLength"),
       aperture: tag("FNumber"),
-    };
-  });
+    },
+    geo: info.geoperms?.ispublic
+      ? {
+          latitude: info.location.latitude,
+          longitude: info.location.longitude,
+          county: info.location.county._content,
+          region: info.location.region._content,
+          country: info.location.country._content,
+        }
+      : null,
+  };
 }
