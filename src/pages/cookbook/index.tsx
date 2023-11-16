@@ -1,3 +1,4 @@
+import Page from "@brobin/components/Page";
 import Tags from "@brobin/components/Tags";
 import { Recipe } from "@brobin/types/cookbook";
 import { getRecipes } from "@brobin/utils/cookbook";
@@ -9,7 +10,7 @@ interface Props {
 
 export default function Cookbook({ recipes }: Props) {
   return (
-    <>
+    <Page title="Cookbook">
       <Typography level="h1">Tobin&apos;s Cookbook</Typography>
       <Typography level="body-md">Just some of my favorite recipes.</Typography>
       <Box paddingY={2}>
@@ -32,7 +33,7 @@ export default function Cookbook({ recipes }: Props) {
           </Grid>
         ))}
       </Grid>
-    </>
+    </Page>
   );
 }
 

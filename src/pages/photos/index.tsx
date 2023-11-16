@@ -1,12 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
+import Page from "@brobin/components/Page";
 import { Photo } from "@brobin/types/flickr";
 import { getPhotos } from "@brobin/utils/flickr";
 import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
 import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Photos",
-};
 
 interface Props {
   photos: Photo[];
@@ -14,7 +11,7 @@ interface Props {
 
 export default function Photos({ photos }: Props) {
   return (
-    <>
+    <Page title="Photos">
       <ImageList gap={10} cols={3} variant="masonry">
         {photos.map((photo) => (
           <ImageListItem
@@ -27,7 +24,7 @@ export default function Photos({ photos }: Props) {
           </ImageListItem>
         ))}
       </ImageList>
-    </>
+    </Page>
   );
 }
 

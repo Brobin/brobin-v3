@@ -1,3 +1,4 @@
+import Page from "@brobin/components/Page";
 import FishScatterChart from "@brobin/components/fishing/FishScatterChart";
 import YearBarChart from "@brobin/components/fishing/YearBarChart";
 import YearPieChart from "@brobin/components/fishing/YearPieChart";
@@ -12,7 +13,7 @@ interface Props {
 
 export default function FishingYear({ year }: Props) {
   return (
-    <>
+    <Page title={`${year.year} Fishing`}>
       <Typography level="h1">{year.year} Family Fishing Trip</Typography>
       <Box paddingY={2}>
         <Grid container spacing={2}>
@@ -63,7 +64,7 @@ export default function FishingYear({ year }: Props) {
           </Grid>
         </Grid>
       </Box>
-    </>
+    </Page>
   );
 }
 

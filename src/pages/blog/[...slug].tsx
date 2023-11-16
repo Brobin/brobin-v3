@@ -1,3 +1,4 @@
+import Page from "@brobin/components/Page";
 import ArticleMarkdown from "@brobin/components/blog/ArticleMarkdown";
 import BlogSidebar from "@brobin/components/blog/Sidebar";
 import { Article, ArticleParams, BlogSidebarProps } from "@brobin/types/blog";
@@ -15,21 +16,23 @@ type ArticleProps = {
 
 export default function ArticlePage({ article, ...props }: ArticleProps) {
   return (
-    <Grid container spacing={2}>
-      <Grid xs={12} md={8}>
-        <Card variant="plain">
-          <Typography level="h1">{article.title}</Typography>
-          <Typography level="title-sm" paddingBottom={2}>
-            {dayjs(article.date).format("MMMM DD, YYYY")}
-          </Typography>
-          <Divider />
-          <ArticleMarkdown content={article.content} />
-        </Card>
+    <Page title={article.title}>
+      <Grid container spacing={2}>
+        <Grid xs={12} md={8}>
+          <Card variant="plain">
+            <Typography level="h1">{article.title}</Typography>
+            <Typography level="title-sm" paddingBottom={2}>
+              {dayjs(article.date).format("MMMM DD, YYYY")}
+            </Typography>
+            <Divider />
+            <ArticleMarkdown content={article.content} />
+          </Card>
+        </Grid>
+        <Grid xs={12} md={4}>
+          <BlogSidebar {...props} />
+        </Grid>
       </Grid>
-      <Grid xs={12} md={4}>
-        <BlogSidebar {...props} />
-      </Grid>
-    </Grid>
+    </Page>
   );
 }
 
