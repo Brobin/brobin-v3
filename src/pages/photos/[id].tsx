@@ -1,6 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import Page from "@brobin/components/Page";
 import Tags from "@brobin/components/Tags";
+import PhotoContainer from "@brobin/components/photos/PhotoContainer";
+import PhotoDescription from "@brobin/components/photos/PhotoDescription";
+import PhotoMetadata from "@brobin/components/photos/PhotoMetadata";
 import { Photo, PhotoExifData, PhotoParams } from "@brobin/types/flickr";
 import { getPhoto, getPhotoExifData } from "@brobin/utils/flickr";
 import { Grid, Typography } from "@mui/joy";
@@ -19,30 +22,13 @@ interface Props {
 export default function PhotoDetail({ photo, exifData }: Props) {
   return (
     <Page title={photo.title}>
-      <img
-        src={photo.url_o}
-        alt={photo.title}
-        style={{ maxWidth: "100%", borderRadius: "5px" }}
-      />
+      <PhotoContainer photo={photo} fullSize />
       <Grid container paddingTop={2} paddingBottom={6} spacing={2}>
         <Grid xs={12} md={8}>
-          <Typography level="h3">{photo.title}</Typography>
-          <Typography level="body-sm">
-            {dayjs(photo.datetaken).format("MMMM DD, YYYY h:MM A")}
-          </Typography>
-          <Typography level="body-md">{photo.description._content}</Typography>
-          <Tags tags={photo.tags.split(" ")} padding />
+          <PhotoDescription photo={photo} />
         </Grid>
         <Grid xs={12} md={4} textAlign={"right"}>
-          <Typography level="body-md">{exifData.camera}</Typography>
-          <Typography level="body-md">{exifData.lens}</Typography>
-          <Typography level="body-md">
-            {exifData.exposure}s, <i>f</i>
-            {exifData.aperture}, ISO {exifData.iso}, {exifData.focalLength}
-          </Typography>
-          <Typography>
-            {photo.width_o} x {photo.height_o} px
-          </Typography>
+          <PhotoMetadata photo={photo} exifData={exifData} />
         </Grid>
       </Grid>
     </Page>

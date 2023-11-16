@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import Page from "@brobin/components/Page";
+import PhotoContainer from "@brobin/components/photos/PhotoContainer";
 import { Photo } from "@brobin/types/flickr";
 import { getPhotos } from "@brobin/utils/flickr";
 import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
-import { Metadata } from "next";
 
 interface Props {
   photos: Photo[];
@@ -19,11 +19,7 @@ export default function Photos({ photos }: Props) {
             component="a"
             href={`/photos/${photo.id}`}
           >
-            <img
-              src={photo.url_l}
-              alt={photo.title}
-              style={{ borderRadius: "5px" }}
-            />
+            <PhotoContainer photo={photo} />
             <ImageListItemBar title={photo.title} />
           </ImageListItem>
         ))}
