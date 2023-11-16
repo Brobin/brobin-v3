@@ -20,7 +20,10 @@ export default function Photos({ photos }: Props) {
             href={`/photos/${photo.id}`}
           >
             <PhotoContainer photo={photo} />
-            <ImageListItemBar title={photo.title} />
+            <ImageListItemBar
+              title={photo.title}
+              sx={{ display: { xs: "none", md: "block" } }}
+            />
           </ImageListItem>
         ))}
       </ImageList>
