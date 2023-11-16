@@ -16,7 +16,7 @@ export default function FishingYear({ year }: Props) {
       <Typography level="h1">{year.year} Family Fishing Trip</Typography>
       <Box paddingY={2}>
         <Grid container spacing={2}>
-          <Grid sm={12} md={6}>
+          <Grid xs={12} md={6}>
             <Card variant="plain">
               <Typography level="h3" textAlign="center">
                 Total species caught
@@ -24,7 +24,7 @@ export default function FishingYear({ year }: Props) {
               <YearPieChart year={year} />
             </Card>
           </Grid>
-          <Grid sm={12} md={6}>
+          <Grid xs={12} md={6}>
             <Card variant="plain">
               <Typography level="h3" textAlign="center">
                 Species caught per day
@@ -32,7 +32,7 @@ export default function FishingYear({ year }: Props) {
               <YearBarChart year={year} />
             </Card>
           </Grid>
-          <Grid sm={12} md={6}>
+          <Grid xs={12} md={6}>
             <Card variant="plain">
               <Typography level="h3" textAlign="center">
                 Fish size
@@ -40,7 +40,7 @@ export default function FishingYear({ year }: Props) {
               <FishScatterChart fish={year.fish} year={year.year} />
             </Card>
           </Grid>
-          <Grid sm={12} md={6}>
+          <Grid xs={12} md={6}>
             <DataGrid
               rows={year.days.map((day, index) => ({ ...day, id: index }))}
               columns={[

@@ -15,7 +15,7 @@ interface ProjectProps {
 
 function Project({ title, description, link, buttonText }: ProjectProps) {
   return (
-    <Grid sm={12} md={6}>
+    <Grid xs={12} md={6}>
       <Card variant="plain" style={{ height: "100%" }}>
         <Typography level="h2" component="a" href={link}>
           {title}
