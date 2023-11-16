@@ -18,6 +18,11 @@ export default function PhotoMetadata({ photo, exifData }: Props) {
       <Typography>
         {photo.width_o} x {photo.height_o} px
       </Typography>
+      {photo.geo_is_public && (
+        <Typography>
+          {photo.latitude} {photo.longitude}
+        </Typography>
+      )}
     </>
   );
 }

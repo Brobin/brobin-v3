@@ -9,7 +9,7 @@ const { flickr } = createFlickr(apiKey);
 export async function getPhotos(): Promise<Photo[]> {
   return flickr("flickr.people.getPhotos", {
     user_id: userId,
-    extras: "description,date_taken,url_o,url_l,tags",
+    extras: "description,date_taken,url_m,url_l,url_o,tags,geo",
     per_page: "50",
   })
     .then((data) => data.photos.photo)

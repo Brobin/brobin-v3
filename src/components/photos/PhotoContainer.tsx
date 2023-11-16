@@ -17,7 +17,7 @@ export default function PhotoContainer({ photo, fullSize }: Props) {
     >
       <Fade in timeout={{ enter: 1000 }}>
         <img
-          src={fullSize ? photo.url_l : photo.url_o}
+          src={fullSize ? photo.url_l : photo.url_m}
           alt={photo.title}
           style={{ borderRadius: "5px", pointerEvents: "none" }}
         />

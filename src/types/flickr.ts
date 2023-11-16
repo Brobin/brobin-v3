@@ -7,13 +7,15 @@ export type Photo = {
     _content: string;
   };
   datetaken: string;
+  url_m: string;
+  url_l: string;
   url_o: string;
   height_o: number;
   width_o: number;
-  url_l: string;
-  height_l: number;
-  width_l: number;
   tags: string;
+  geo_is_public?: number;
+  latitude: string;
+  longitude: string;
 };
 
 export type PhotoExifData = {
