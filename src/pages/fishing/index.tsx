@@ -5,15 +5,7 @@ import SpeciesTrendLineChart from "@brobin/components/fishing/SpeciesTrendLineCh
 import TotalFishBarChart from "@brobin/components/fishing/TotalFishBarChart";
 import { Fish, Year } from "@brobin/types/fishing";
 import { getFishData, getYearsData } from "@brobin/utils/fishing";
-import {
-  Box,
-  Card,
-  Grid,
-  List,
-  ListItem,
-  ListItemButton,
-  Typography,
-} from "@mui/joy";
+import { Box, Button, Card, Grid, Typography } from "@mui/joy";
 
 interface Props {
   years: Year[];
@@ -25,20 +17,18 @@ export default function Fishing({ years, fish }: Props) {
     <Page title="Fishing">
       <Typography level="h1">Family Fishing Trip</Typography>
       <Box paddingY={2}>
-        <List orientation="horizontal">
-          {years.map((year) => (
-            <ListItem key={year.year}>
-              <ListItemButton
-                variant="soft"
-                color="primary"
-                component="a"
-                href={`/fishing/${year.year}`}
-              >
-                {year.year}
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+        {years.map((year, index) => (
+          <Button
+            key={year.year}
+            variant="plain"
+            color="primary"
+            component="a"
+            href={`/fishing/${year.year}`}
+            sx={{ textDecoration: "underline" }}
+          >
+            {year.year}
+          </Button>
+        ))}
       </Box>
       <Box paddingY={2}>
         <Grid container spacing={2}>

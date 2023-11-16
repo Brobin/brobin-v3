@@ -19,7 +19,11 @@ interface Props {
 export default function PhotoDetail({ photo, exifData }: Props) {
   return (
     <Page title={photo.title}>
-      <img src={photo.url_o} alt={photo.title} style={{ maxWidth: "100%" }} />
+      <img
+        src={photo.url_o}
+        alt={photo.title}
+        style={{ maxWidth: "100%", borderRadius: "5px" }}
+      />
       <Grid container paddingTop={2} paddingBottom={6} spacing={2}>
         <Grid xs={12} md={8}>
           <Typography level="h3">{photo.title}</Typography>

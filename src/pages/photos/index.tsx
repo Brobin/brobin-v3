@@ -19,7 +19,11 @@ export default function Photos({ photos }: Props) {
             component="a"
             href={`/photos/${photo.id}`}
           >
-            <img src={photo.url_l} alt={photo.title} />
+            <img
+              src={photo.url_l}
+              alt={photo.title}
+              style={{ borderRadius: "5px" }}
+            />
             <ImageListItemBar title={photo.title} />
           </ImageListItem>
         ))}
