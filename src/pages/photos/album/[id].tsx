@@ -1,30 +1,25 @@
 import Page from "@brobin/components/Page";
 import PhotoContainer from "@brobin/components/photos/PhotoContainer";
+import useBreakpoints from "@brobin/hooks/useBreakpoints";
+import { getStaticPaths } from "@brobin/pages/blog/[...slug]";
 import { AlbumDetail } from "@brobin/types/flickr";
 import { getAlbumDetail } from "@brobin/utils/flickr";
 import { Divider, Typography } from "@mui/joy";
-import {
-  ImageList,
-  ImageListItem,
-  ImageListItemBar,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
+import dayjs from "dayjs";
 
 interface Props {
   album: AlbumDetail;
 }
 
 export default function Album({ album }: Props) {
-  const theme = useTheme();
-  const md = useMediaQuery(theme.breakpoints.down("md"));
-  const sm = useMediaQuery(theme.breakpoints.down("sm"));
+  const { xs, sm } = useBreakpoints();
 
   return (
     <Page title={`${album.title} | Photos`}>
       <Typography level="h1">{album.title}</Typography>
       <Divider sx={{ marginY: 2 }} />
-      <ImageList gap={10} cols={sm ? 1 : md ? 2 : 3} variant="masonry">
+      <ImageList gap={10} cols={xs ? 1 : sm ? 2 : 3}>
         {album.photos.map((photo) => (
           <ImageListItem
             key={photo.id}
@@ -32,7 +27,10 @@ export default function Album({ album }: Props) {
             href={`/photos/photo/${photo.id}`}
           >
             <PhotoContainer title={photo.title} size={photo.medium} />
-            <ImageListItemBar title={photo.title} />
+            <ImageListItemBar
+              title={photo.title}
+              subtitle={dayjs(photo.datetaken).format("MMMM DD, YYYY")}
+            />
           </ImageListItem>
         ))}
       </ImageList>

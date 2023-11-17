@@ -14,7 +14,7 @@ interface Props {
 export default function Photo({ photo }: Props) {
   return (
     <Page title={`${photo.title} | Photos`}>
-      <PhotoContainer title={photo.title} size={photo.large} />
+      <PhotoContainer title={photo.title} size={photo.large} fullSize />
       <Grid container paddingTop={2} paddingBottom={6} spacing={2}>
         <Grid xs={12} md={8}>
           <PhotoDescription photo={photo} />

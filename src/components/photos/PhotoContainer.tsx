@@ -6,15 +6,14 @@ import { Fade } from "@mui/material";
 interface Props {
   title: string;
   size: PhotoSize;
+  fullSize?: boolean;
 }
 
-export default function PhotoContainer({ title, size }: Props) {
+export default function PhotoContainer({ title, size, fullSize }: Props) {
+  const ratio = fullSize ? `${size.width}/${size.height}` : "10/8";
+
   return (
-    <AspectRatio
-      variant="soft"
-      ratio={`${size.width}/${size.height}`}
-      sx={{ borderRadius: "5px" }}
-    >
+    <AspectRatio variant="soft" ratio={ratio} sx={{ borderRadius: "5px" }}>
       <Fade in timeout={{ enter: 1000 }}>
         <img
           src={size.source}
