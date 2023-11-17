@@ -31,9 +31,9 @@ export async function getPhotos(): Promise<Photo[]> {
           width: photo.width_l,
         },
         original: {
-          source: photo.url_l,
-          height: photo.height_l,
-          width: photo.width_l,
+          source: photo.url_o,
+          height: photo.height_o,
+          width: photo.width_o,
         },
       }))
     )
@@ -82,8 +82,8 @@ export async function getPhotoDetail(photo_id: string): Promise<PhotoDetail> {
     },
     geo: info.geoperms?.ispublic
       ? {
-          latitude: info.location.latitude,
-          longitude: info.location.longitude,
+          latitude: Number(info.location.latitude),
+          longitude: Number(info.location.longitude),
           county: info.location.county._content,
           region: info.location.region._content,
           country: info.location.country._content,

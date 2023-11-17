@@ -25,8 +25,8 @@ export type PhotoExifData = {
 };
 
 export type PhotoGeoData = {
-  latitude: string;
-  longitude: string;
+  latitude: number;
+  longitude: number;
   county: string;
   region: string;
   country: string;
