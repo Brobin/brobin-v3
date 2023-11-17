@@ -5,6 +5,7 @@ import {
   THEME_ID as MATERIAL_THEME_ID,
   experimental_extendTheme,
 } from "@mui/material/styles";
+import { Analytics } from "@vercel/analytics/react";
 import { AppProps } from "next/app";
 
 const materialTheme = experimental_extendTheme({
@@ -28,6 +29,7 @@ export default function Layout({ Component, pageProps }: AppProps) {
       <CssVarsProvider defaultMode="dark">
         <CssBaseline />
         <Component {...pageProps} />
+        <Analytics />
       </CssVarsProvider>
     </Experimental_CssVarsProvider>
   );

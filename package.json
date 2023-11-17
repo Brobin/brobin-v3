@@ -20,6 +20,7 @@
     "@types/leaflet": "^1.9.8",
     "@types/react-syntax-highlighter": "^15.5.10",
     "@types/regression": "^2.0.5",
+    "@vercel/analytics": "^1.1.1",
     "dayjs": "^1.11.10",
     "flickr-sdk": "^7.0.0-beta.6",
     "gray-matter": "^4.0.3",
