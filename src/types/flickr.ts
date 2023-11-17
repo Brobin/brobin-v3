@@ -1,4 +1,6 @@
-export type PhotoParams = { params: { id: string } };
+/**
+ * Attempting to make any semblance of sense out of the flickr API types
+ */
 
 export type PhotoSize = {
   source: string;
@@ -37,4 +39,15 @@ export type PhotoDetail = Photo & {
   tags: string[];
   exif: PhotoExifData;
   geo: PhotoGeoData | null;
+};
+
+export type Album = {
+  id: string;
+  title: string;
+  total: number;
+  primary: PhotoSize;
+};
+
+export type AlbumDetail = Omit<Album, "primary"> & {
+  photos: PhotoDetail[];
 };

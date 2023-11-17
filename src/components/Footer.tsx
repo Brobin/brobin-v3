@@ -24,7 +24,7 @@ export default function Footer() {
         display="flex"
         alignItems="center"
         justifyContent="center"
-        paddingTop={3}
+        paddingTop={6}
       >
         <IconLink
           link="https://www.instagram.com/tobins.camera/"

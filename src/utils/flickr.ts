@@ -1,24 +1,57 @@
-import { Photo, PhotoDetail } from "@brobin/types/flickr";
+import { Album, AlbumDetail, Photo, PhotoDetail } from "@brobin/types/flickr";
 import dayjs from "dayjs";
 import { createFlickr } from "flickr-sdk";
 
 const apiKey = process.env.FLICKR_API_KEY as string;
-const userId = process.env.FLICKR_USER_ID as string;
+const user_id = process.env.FLICKR_USER_ID as string;
+
+// My GOODNESS, I wish the flickr typescript sdk had _REAL_ types
+// instead of `any` spam, smdh
 
 const { flickr } = createFlickr(apiKey);
 
 const byDateTaken = (a: Photo, b: Photo) =>
   dayjs(b.datetaken) > dayjs(a.datetaken) ? 1 : -1;
 
-export async function getPhotos(): Promise<Photo[]> {
-  return flickr("flickr.people.getPhotos", {
-    user_id: userId,
-    extras: "date_taken,url_m",
-    per_page: "50",
+const byTitle = (a: { title: string }, b: { title: string }) =>
+  a.title > b.title ? 1 : -1;
+
+export async function getAlbums(): Promise<Album[]> {
+  return flickr("flickr.photosets.getList", {
+    user_id,
+    primary_photo_extras: "url_m",
   })
-    .then((data) => data.photos.photo)
-    .then((photos) =>
-      photos.map((photo: any) => ({
+    .then((res) => res.photosets.photoset)
+    .then((albums) =>
+      albums
+        .map((album: any) => ({
+          id: album.id,
+          title: album.title._content,
+          total: album.photos,
+          primary: {
+            source: album.primary_photo_extras.url_m,
+            height: album.primary_photo_extras.height_m,
+            width: album.primary_photo_extras.width_m,
+          },
+        }))
+        .sort(byTitle)
+    );
+}
+
+export async function getAlbumDetail(
+  photoset_id: string
+): Promise<AlbumDetail> {
+  return flickr("flickr.photosets.getPhotos", {
+    user_id,
+    photoset_id,
+    extras: "date_taken,url_m,url_l,url_o",
+    per_page: "50",
+  }).then((data) => ({
+    id: data.photoset.id,
+    title: data.photoset.title,
+    total: data.photoset.total,
+    photos: data.photoset.photo
+      .map((photo: any) => ({
         ...photo,
         medium: {
           source: photo.url_m,
@@ -36,9 +69,8 @@ export async function getPhotos(): Promise<Photo[]> {
           width: photo.width_o,
         },
       }))
-    )
-    .then((photos: Photo[]) => photos.sort(byDateTaken))
-    .catch(() => []);
+      .sort(byDateTaken),
+  }));
 }
 
 export async function getPhotoDetail(photo_id: string): Promise<PhotoDetail> {

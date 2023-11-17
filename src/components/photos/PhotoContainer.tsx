@@ -4,11 +4,11 @@ import { AspectRatio } from "@mui/joy";
 import { Fade } from "@mui/material";
 
 interface Props {
-  photo: Photo;
+  title: string;
   size: PhotoSize;
 }
 
-export default function PhotoContainer({ photo, size }: Props) {
+export default function PhotoContainer({ title, size }: Props) {
   return (
     <AspectRatio
       variant="soft"
@@ -18,7 +18,7 @@ export default function PhotoContainer({ photo, size }: Props) {
       <Fade in timeout={{ enter: 1000 }}>
         <img
           src={size.source}
-          alt={photo.title}
+          alt={title}
           style={{ borderRadius: "5px", pointerEvents: "none" }}
         />
       </Fade>
