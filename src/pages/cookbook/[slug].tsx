@@ -2,6 +2,7 @@ import Page from "@brobin/components/Page";
 import Tags from "@brobin/components/Tags";
 import { Recipe, RecipeParams } from "@brobin/types/cookbook";
 import { getRecipe, getRecipeSlugs } from "@brobin/utils/cookbook";
+import { ReduceCapacitySharp } from "@mui/icons-material";
 import { Box, Card, Divider, Grid, List, ListItem, Typography } from "@mui/joy";
 
 interface Props {
@@ -10,7 +11,7 @@ interface Props {
 
 export default function CookbookRecipe({ recipe }: Props) {
   return (
-    <Page title={`${recipe.title} | Cookbook`}>
+    <Page title={`${recipe.title} | Cookbook`} description={recipe.description}>
       <Typography level="h1">{recipe.title}</Typography>
       <Tags tags={recipe.tags} padding />
       <Typography level="body-md">{recipe.description}</Typography>

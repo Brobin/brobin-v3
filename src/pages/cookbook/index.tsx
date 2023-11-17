@@ -9,10 +9,11 @@ interface Props {
 }
 
 export default function Cookbook({ recipes }: Props) {
+  const description = "Just some of my favorite recipes.";
   return (
-    <Page title="Cookbook">
+    <Page title="Cookbook" description={description}>
       <Typography level="h1">Tobin&apos;s Cookbook</Typography>
-      <Typography level="body-md">Just some of my favorite recipes.</Typography>
+      <Typography level="body-md">{description}</Typography>
       <Box paddingY={2}>
         <Divider />
       </Box>

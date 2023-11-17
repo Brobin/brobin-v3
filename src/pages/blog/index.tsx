@@ -12,7 +12,10 @@ type BlogProps = {
 
 export default function Blog({ articles, tag, ...props }: BlogProps) {
   return (
-    <Page title={tag ? `${tag} | Blog` : "Blog"}>
+    <Page
+      title={tag ? `${tag} | Blog` : "Blog"}
+      description={tag ? `Blog posts tagged "${tag}"` : "Blog"}
+    >
       <Grid container spacing={2}>
         <Grid xs={12} md={8}>
           {tag && (

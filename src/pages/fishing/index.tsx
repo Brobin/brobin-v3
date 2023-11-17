@@ -14,7 +14,10 @@ interface Props {
 
 export default function Fishing({ years, fish }: Props) {
   return (
-    <Page title="Fishing">
+    <Page
+      title="Fishing"
+      description="Stats from the yearly family fishing trip."
+    >
       <Typography level="h1">Family Fishing Trip</Typography>
       <Box paddingY={2}>
         {years.map((year, index) => (

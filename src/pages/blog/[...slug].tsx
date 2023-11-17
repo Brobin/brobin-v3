@@ -16,7 +16,7 @@ type ArticleProps = {
 
 export default function ArticlePage({ article, ...props }: ArticleProps) {
   return (
-    <Page title={article.title}>
+    <Page title={article.title} description={article.preview}>
       <Grid container spacing={2}>
         <Grid xs={12} md={8}>
           <Card variant="plain">

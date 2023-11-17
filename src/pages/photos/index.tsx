@@ -14,7 +14,10 @@ export default function Albums({ albums }: Props) {
   const { xs, sm } = useBreakpoints();
 
   return (
-    <Page title="Photos">
+    <Page
+      title="Photos"
+      description="I take photos of birds and wildlife. Sometimes they are good."
+    >
       <Typography level="h1">Photos</Typography>
       <Divider sx={{ marginY: 2 }} />
       <ImageList gap={10} cols={xs ? 1 : sm ? 2 : 3}>

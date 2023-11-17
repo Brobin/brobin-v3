@@ -13,7 +13,10 @@ interface Props {
 
 export default function FishingYear({ year }: Props) {
   return (
-    <Page title={`${year.year} Fishing`}>
+    <Page
+      title={`${year.year} Fishing`}
+      description={`Stats from the ${year.year} family fishing trip.`}
+    >
       <Typography level="h1">{year.year} Family Fishing Trip</Typography>
       <Box paddingY={2}>
         <Grid container spacing={2}>

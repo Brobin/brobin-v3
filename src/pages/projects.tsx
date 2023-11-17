@@ -27,7 +27,10 @@ function Project({ title, description, link, buttonText }: ProjectProps) {
 
 export default function Projects() {
   return (
-    <Page title="Projects">
+    <Page
+      title="Projects"
+      description="Some development projects taht I've been working on"
+    >
       <Grid container spacing={2}>
         <Project
           title="Fishing Stats"

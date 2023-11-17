@@ -3,7 +3,10 @@ import { Box, Card, Typography } from "@mui/joy";
 
 export default function Index() {
   return (
-    <Page title="Tobin Brown">
+    <Page
+      title="Tobin Brown"
+      description="Full-stack web developer and amateur wildlife photographer"
+    >
       <Box maxWidth={800} margin="auto">
         <Box textAlign="center" py={15}>
           <Typography level="h1" fontSize={50}>

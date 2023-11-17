@@ -8,6 +8,7 @@ import useBreakpoints from "@brobin/hooks/useBreakpoints";
 import { PhotoDetail } from "@brobin/types/flickr";
 import { getPhotoDetail } from "@brobin/utils/flickr";
 import { Divider, Grid } from "@mui/joy";
+import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 
 interface Props {
@@ -21,7 +22,12 @@ const PhotoMap = dynamic(() => import("@brobin/components/photos/PhotoMap"), {
 export default function Photo({ photo }: Props) {
   const { xs, sm } = useBreakpoints();
   return (
-    <Page title={`${photo.title} | Photos`}>
+    <Page
+      title={`${photo.title} | Photos`}
+      description={`${photo.title}, ${dayjs(photo.datetaken).format(
+        "MMMM DD, YYYY"
+      )}`}
+    >
       <PhotoContainer title={photo.title} size={photo.large} fullSize />
       <Grid container paddingTop={2} paddingBottom={6} spacing={2}>
         <Grid xs={12} md={8}>
