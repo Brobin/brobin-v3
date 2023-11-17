@@ -40,7 +40,7 @@ export default function PhotoMap({ data }: Props) {
           backgroundColor: "transparent",
         }}
       >
-        <TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" />
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <Marker position={position} icon={icon}>
           <Popup>
             {data.county}, {data.region}, {data.country}
