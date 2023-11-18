@@ -19,6 +19,7 @@ export default function Album({ album }: Props) {
     <Page
       title={`${album.title} | Photos`}
       description={`Photos of ${album.title}`}
+      image={album.photos[0].medium}
     >
       <Typography level="h1">{album.title}</Typography>
       <Divider sx={{ marginY: 2 }} />

@@ -17,6 +17,7 @@ export default function Albums({ albums }: Props) {
     <Page
       title="Photos"
       description="I take photos of birds and wildlife. Sometimes they are good."
+      image={albums[0].primary}
     >
       <Typography level="h1">Photos</Typography>
       <Divider sx={{ marginY: 2 }} />

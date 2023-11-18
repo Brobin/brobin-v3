@@ -27,6 +27,7 @@ export default function Photo({ photo }: Props) {
       description={`${photo.title}, ${dayjs(photo.datetaken).format(
         "MMMM DD, YYYY"
       )}`}
+      image={photo.medium}
     >
       <PhotoContainer title={photo.title} size={photo.large} fullSize />
       <Grid container paddingTop={2} paddingBottom={6} spacing={2}>
