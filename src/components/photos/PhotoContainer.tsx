@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { Photo, PhotoSize } from "@brobin/types/flickr";
-import { AspectRatio } from "@mui/joy";
+import { PhotoSize } from "@brobin/types/flickr";
+import { AspectRatio, Skeleton } from "@mui/joy";
 import { Fade } from "@mui/material";
+import React from "react";
 
 interface Props {
   title: string;
@@ -14,11 +15,15 @@ export default function PhotoContainer({ title, size, fullSize }: Props) {
 
   return (
     <AspectRatio variant="soft" ratio={ratio} sx={{ borderRadius: "5px" }}>
-      <Fade in timeout={{ enter: 1000 }}>
+      <Fade in timeout={500}>
         <img
+          loading="lazy"
           src={size.source}
           alt={title}
-          style={{ borderRadius: "5px", pointerEvents: "none" }}
+          style={{
+            borderRadius: "5px",
+            pointerEvents: "none",
+          }}
         />
       </Fade>
     </AspectRatio>
