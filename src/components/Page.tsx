@@ -22,7 +22,7 @@ export default function Page({ title, description, image, children }: Props) {
         {image?.source && (
           <>
             <meta property="og:image" content={image.source} />
-            <meta property="og:image:type" content="image/jpg" />
+            <meta property="og:image:type" content="image/jpeg" />
           </>
         )}
         {image?.height && (
