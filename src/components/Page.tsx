@@ -25,6 +25,8 @@ export default function Page({ title, description, image, children }: Props) {
           <>
             <meta property="og:image" content={image.source} />
             <meta property="og:image:type" content="image/jpeg" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:image:src" content={image.source} />
           </>
         )}
         {image?.height && (
