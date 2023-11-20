@@ -4,13 +4,11 @@ import {
   Camera,
   CameraAlt,
   Iso,
-  Lens,
   Photo,
   ShutterSpeed,
   Visibility,
 } from "@mui/icons-material";
 import { Box, Typography } from "@mui/joy";
-import React from "react";
 
 interface Props {
   photo: PhotoDetail;
@@ -44,20 +42,15 @@ export default function PhotoMetadata({ photo }: Props) {
       <Metadata icon={<CameraAlt />}>
         {photo.exif.camera}, {photo.exif.lens?.split(" F")[0]}
       </Metadata>
-
       <Metadata icon={<ShutterSpeed />}>{photo.exif.exposure}s</Metadata>
-
       <Metadata icon={<Camera />}>
         <i>f</i>
         {photo.exif.aperture}
       </Metadata>
-
       <Metadata icon={<Iso />}>
         <>ISO {photo.exif.iso}</>
       </Metadata>
-
       <Metadata icon={<Visibility />}>{photo.exif.focalLength}</Metadata>
-
       <Metadata icon={<Photo />}>
         {photo.original.width} x {photo.original.height} px
       </Metadata>

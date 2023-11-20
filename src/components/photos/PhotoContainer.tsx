@@ -2,7 +2,6 @@
 import { PhotoSize } from "@brobin/types/flickr";
 import { AspectRatio, Skeleton } from "@mui/joy";
 import { Fade } from "@mui/material";
-import React from "react";
 
 interface Props {
   title: string;
