@@ -24,14 +24,18 @@ export default function Taxonomy({ taxonomy }: Props) {
                   <i>{titleCase(taxon.rank)}</i>
                 </Typography>
                 <Typography level="body-sm">
-                  <Link
-                    href={taxon.wikipedia_url}
-                    target="_blank"
-                    color="neutral"
-                    underline="always"
-                  >
-                    {taxon.name}
-                  </Link>
+                  {taxon.wikipedia_url ? (
+                    <Link
+                      href={taxon.wikipedia_url}
+                      target="_blank"
+                      color="neutral"
+                      underline="always"
+                    >
+                      {taxon.name}
+                    </Link>
+                  ) : (
+                    taxon.name
+                  )}
                 </Typography>
               </div>
             </Tooltip>

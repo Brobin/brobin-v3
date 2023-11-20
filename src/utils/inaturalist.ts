@@ -29,7 +29,7 @@ export async function searchTaxonomy(search: string): Promise<Taxon[]> {
           rank,
           name,
           wikipedia_url,
-          preferred_common_name,
+          preferred_common_name: preferred_common_name || null,
         }));
     }
     return [];
