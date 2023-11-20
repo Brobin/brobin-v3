@@ -17,7 +17,7 @@ export default function Album({ album }: Props) {
 
   return (
     <Page
-      title={`${album.title} | Photos`}
+      title={`${album.title} • Photos`}
       description={`Photos of ${album.title}`}
       image={album.photos[0].medium}
     >

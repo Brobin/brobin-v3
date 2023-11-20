@@ -26,16 +26,10 @@ export default function Photo({ photo, taxonomy }: Props) {
 
   return (
     <Page
-      title={`${photo.title} | Photos`}
-      description={`${photo.title}, ${dayjs(photo.datetaken).format(
-        "MMMM DD, YYYY"
-      )}`}
+      title={`${photo.title}${taxon && ` (${taxon.name})`} • Photos`}
+      description={photo.description}
       image={photo.medium}
     >
-      <Typography level="h1" sx={{ marginBottom: 2 }}>
-        {photo.title}
-      </Typography>
-
       <PhotoContainer title={photo.title} size={photo.large} fullSize />
 
       <Grid container paddingTop={2} paddingBottom={6} spacing={2}>

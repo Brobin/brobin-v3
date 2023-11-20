@@ -24,12 +24,12 @@ export async function searchTaxonomy(search: string): Promise<Taxon[]> {
         .sort((a, b) => b.rank_level - a.rank_level)
         .filter((t) => t.rank_level % 10 === 0)
         .concat([taxon])
-        .map((taxon) => ({
-          id: taxon.id,
-          rank: taxon.rank,
-          name: taxon.name,
-          wikipedia_url: taxon.wikipedia_url,
-          preferred_common_name: taxon.preferred_common_name || null,
+        .map(({ id, rank, name, wikipedia_url, preferred_common_name }) => ({
+          id,
+          rank,
+          name,
+          wikipedia_url,
+          preferred_common_name,
         }));
     }
     return [];
