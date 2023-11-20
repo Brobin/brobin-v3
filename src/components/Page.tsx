@@ -1,8 +1,8 @@
+import { PhotoSize } from "@brobin/types/flickr";
 import { Container } from "@mui/joy";
 import Head from "next/head";
 import Footer from "./Footer";
 import Header from "./Header";
-import { PhotoSize } from "@brobin/types/flickr";
 
 interface Props {
   title: string;
@@ -13,11 +13,13 @@ interface Props {
 
 export default function Page({ title, description, image, children }: Props) {
   const pageTitle = `${title} | Brobin`;
+
   return (
     <div>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={description || title} />
+        <meta name="og:description" content={description || title} />
         <meta name="og:title" content={title} />
         {image?.source && (
           <>
