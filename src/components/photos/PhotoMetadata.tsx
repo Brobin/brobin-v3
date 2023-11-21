@@ -8,18 +8,20 @@ import {
   ShutterSpeed,
   Visibility,
 } from "@mui/icons-material";
-import { Box, Typography } from "@mui/joy";
+import { Box, Skeleton, Typography } from "@mui/joy";
 
 interface Props {
-  photo: PhotoDetail;
+  loading: boolean;
+  photo?: PhotoDetail;
 }
 
 interface MetadataProps {
   icon: JSX.Element;
   children: any;
+  loading: boolean;
 }
 
-function Metadata({ icon, children }: MetadataProps) {
+function Metadata({ icon, children, loading }: MetadataProps) {
   const { xs, sm } = useBreakpoints();
   return (
     <Box
@@ -29,30 +31,38 @@ function Metadata({ icon, children }: MetadataProps) {
       flexDirection={xs || sm ? "row" : "row-reverse"}
     >
       {icon}
-      <Typography level="body-md">
-        <span>{children}</span>
-      </Typography>
+      {loading ? (
+        <Skeleton variant="text" level="body-md" width={200} />
+      ) : (
+        <Typography level="body-md">
+          <span>{children}</span>
+        </Typography>
+      )}
     </Box>
   );
 }
 
-export default function PhotoMetadata({ photo }: Props) {
+export default function PhotoMetadata({ photo, loading }: Props) {
   return (
     <>
-      <Metadata icon={<CameraAlt />}>
-        {photo.exif.camera}, {photo.exif.lens?.split(" F")[0]}
+      <Metadata icon={<CameraAlt />} loading={loading}>
+        {photo && photo.exif.camera}, {photo && photo.exif.lens?.split(" F")[0]}
       </Metadata>
-      <Metadata icon={<ShutterSpeed />}>{photo.exif.exposure}s</Metadata>
-      <Metadata icon={<Camera />}>
+      <Metadata icon={<ShutterSpeed />} loading={loading}>
+        {photo && photo.exif.exposure}s
+      </Metadata>
+      <Metadata icon={<Camera />} loading={loading}>
         <i>f</i>
-        {photo.exif.aperture}
+        {photo && photo.exif.aperture}
       </Metadata>
-      <Metadata icon={<Iso />}>
-        <>ISO {photo.exif.iso}</>
+      <Metadata icon={<Iso />} loading={loading}>
+        <>ISO {photo && photo.exif.iso}</>
       </Metadata>
-      <Metadata icon={<Visibility />}>{photo.exif.focalLength}</Metadata>
-      <Metadata icon={<Photo />}>
-        {photo.original.width} x {photo.original.height} px
+      <Metadata icon={<Visibility />} loading={loading}>
+        {photo && photo.exif.focalLength}
+      </Metadata>
+      <Metadata icon={<Photo />} loading={loading}>
+        {photo && photo.original.width} x {photo && photo.original.height} px
       </Metadata>
     </>
   );
