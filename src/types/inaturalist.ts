@@ -35,8 +35,9 @@ export enum RankLevel {
   Subphylum = 57,
   Superclass = 53,
   Class = 50,
-  SubClass = 47,
-  Superorder = 37,
+  Subclass = 47,
+  Infraclass = 45,
+  Superorder = 43,
   Order = 40,
   Suborder = 37,
   Infraorder = 35,
@@ -89,7 +90,7 @@ export type INaturalistTaxon = {
   complete_species_count: number;
   wikipedia_url: string;
   complete_rank: Rank;
-  inconic_taxon_name: string;
+  iconic_taxon_name: string;
   preferred_common_name?: string | null;
 };
 
@@ -101,3 +102,13 @@ export type Taxon = Pick<
   INaturalistTaxon,
   "id" | "rank" | "name" | "wikipedia_url" | "preferred_common_name"
 >;
+
+export type UserTaxon = Pick<
+  INaturalistTaxon,
+  "id" | "name" | "rank" | "rank_level" | "parent_id"
+> & {
+  descendant_obs_count: number;
+  species_count: number;
+  children?: UserTaxon[];
+  common_name?: string | null;
+};

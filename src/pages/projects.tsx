@@ -33,6 +33,12 @@ export default function Projects() {
     >
       <Grid container spacing={2}>
         <Project
+          title="Photos"
+          link="/photos"
+          buttonText="View Photos"
+          description="A showcase of some of my favorite photos! My goal is to have a good photograph of every bird species I've seen."
+        />
+        <Project
           title="Fishing Stats"
           link="/fishing"
           buttonText="View Stats"
@@ -43,18 +49,6 @@ export default function Projects() {
           link="/cookbook"
           buttonText="Get Cooking!"
           description="Just some of my favorite recipes. By no means a compllete cookbook, but these are recipes that I cook all the time."
-        />
-        <Project
-          title="Django Seed"
-          link="https://github.com/brobin/django-seed"
-          buttonText="View on Github"
-          description="Django-seed uses the faker library to generate test data for your Django models. This has been forked from django_faker in order to support newer versions of Python and Django Django-seed allows you to write code to generate models, and seed your database with one simple manage.py command!"
-        />
-        <Project
-          title="DRF Generators"
-          link="https://github.com/brobin/drf-generators"
-          buttonText="View on Github"
-          description="Writing APIs can be boring and repetitive work. Don't write another CRUDdy view in Django Rest Framework. With DRF Generators, one simple command will generate all of your Views, Serializers, and even Urls for your Django Rest Framework application!"
         />
       </Grid>
     </Page>
