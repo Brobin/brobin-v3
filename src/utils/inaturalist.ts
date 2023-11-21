@@ -8,6 +8,7 @@ import {
 } from "@brobin/types/inaturalist";
 import { TaxiAlert } from "@mui/icons-material";
 import { objectShallowCompare } from "@mui/x-data-grid/hooks/utils/useGridSelector";
+import { isNumber } from "@mui/x-data-grid/internals";
 
 function get<T>(url: string, array?: boolean): Promise<T | null> {
   return fetch(url)
@@ -88,31 +89,10 @@ export async function getUserTaxonomy(
           });
       }
 
-      speciesCount(RankLevel.Complex);
-      speciesCount(RankLevel.Section);
-      speciesCount(RankLevel.Subgenus);
-      speciesCount(RankLevel.Genus);
-      speciesCount(RankLevel.SubTribe);
-      speciesCount(RankLevel.Tribe);
-      speciesCount(RankLevel.Supertribe);
-      speciesCount(RankLevel.Subfamily);
-      speciesCount(RankLevel.Family);
-      speciesCount(RankLevel.Epifamily);
-      speciesCount(RankLevel.Superfamily);
-      speciesCount(RankLevel.ZooSubsection);
-      speciesCount(RankLevel.ZooSection);
-      speciesCount(RankLevel.Parvorder);
-      speciesCount(RankLevel.Infraorder);
-      speciesCount(RankLevel.Suborder);
-      speciesCount(RankLevel.Order);
-      speciesCount(RankLevel.Superorder);
-      speciesCount(RankLevel.Infraclass);
-      speciesCount(RankLevel.Subclass);
-      speciesCount(RankLevel.Class);
-      speciesCount(RankLevel.Superclass);
-      speciesCount(RankLevel.Subphylum);
-      speciesCount(RankLevel.Phylum);
-      speciesCount(RankLevel.Kingdom);
+      Object.keys(RankLevel)
+        .map((v) => Number(v))
+        .filter((v) => isNumber(v) && v > RankLevel.Species)
+        .forEach((rank) => speciesCount(rank));
 
       return taxa.filter(({ rank_level }) => rank_level === RankLevel.Kingdom);
     });

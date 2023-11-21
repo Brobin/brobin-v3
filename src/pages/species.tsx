@@ -10,10 +10,13 @@ interface Props {
   taxa: UserTaxon[];
 }
 
-function Taxon({ taxon, hide = false }: { taxon: UserTaxon; hide?: boolean }) {
-  const mainTaxon = taxon.rank_level % 10 === 0;
+function Taxon({ taxon, siblings }: { taxon: UserTaxon; siblings?: number }) {
+  const isSpecies = taxon.rank_level <= RankLevel.Species;
+  const mainTaxon = taxon.rank_level % 10 === 0 || isSpecies;
+  const oneSibling =
+    taxon.rank_level < RankLevel.Order && siblings === 1 && !isSpecies;
 
-  const show = mainTaxon || taxon.rank_level <= RankLevel.Species;
+  const show = mainTaxon && !oneSibling;
 
   const [collapsed, setCollapsed] = React.useState(
     taxon.rank_level < 60 && taxon.name !== "Aves"
@@ -26,6 +29,7 @@ function Taxon({ taxon, hide = false }: { taxon: UserTaxon; hide?: boolean }) {
         display="inline"
         className={styles.expand}
         onClick={() => setCollapsed(!collapsed)}
+        sx={{ fontWeight: isSpecies ? "bold" : "normal" }}
       >
         {taxon.common_name ? titleCase(taxon.common_name) : taxon.name}
       </Typography>{" "}
@@ -42,7 +46,11 @@ function Taxon({ taxon, hide = false }: { taxon: UserTaxon; hide?: boolean }) {
       {!collapsed && (
         <ul className={styles.nested}>
           {taxon.children?.map((child) => (
-            <Taxon key={child.id} taxon={child} />
+            <Taxon
+              key={child.id}
+              taxon={child}
+              siblings={taxon.children?.length}
+            />
           ))}
         </ul>
       )}
@@ -50,7 +58,7 @@ function Taxon({ taxon, hide = false }: { taxon: UserTaxon; hide?: boolean }) {
   ) : (
     <>
       {taxon.children?.map((child) => (
-        <Taxon key={child.id} taxon={child} />
+        <Taxon key={child.id} taxon={child} siblings={taxon.children?.length} />
       ))}
     </>
   );
@@ -59,10 +67,13 @@ function Taxon({ taxon, hide = false }: { taxon: UserTaxon; hide?: boolean }) {
 export default function Species({ taxa }: Props) {
   return (
     <Page title="species">
+      <Typography level="h1" paddingBottom={2}>
+        Observed Species
+      </Typography>
       <Card variant="plain" className={styles.tree}>
         <ul>
           {taxa.map((taxon) => (
-            <Taxon key={taxon.id} taxon={taxon} />
+            <Taxon key={taxon.id} taxon={taxon} siblings={taxa.length} />
           ))}
         </ul>
       </Card>
@@ -72,7 +83,7 @@ export default function Species({ taxa }: Props) {
 
 export async function getServerSideProps() {
   const taxa = await getUserTaxonomy(
-    process.env.INATURALISR_USER_ID as string,
+    process.env.INATURALIST_USER_ID as string,
     process.env.INATURALIST_USERNAME as string
   );
   return { props: { taxa } };
