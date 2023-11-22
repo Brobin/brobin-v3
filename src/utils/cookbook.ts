@@ -3,7 +3,7 @@ import fs from "fs";
 import yaml from "js-yaml";
 import path from "path";
 
-const COOKBOOK_PATH = path.join("data/recipes");
+const COOKBOOK_PATH = path.join(process.cwd(), "data/recipes");
 
 function getYaml(path: string) {
   return yaml.load(fs.readFileSync(path, "utf-8")) as Omit<Recipe, "slug">;

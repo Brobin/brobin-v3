@@ -46,6 +46,7 @@ export type Album = {
   title: string;
   total: number;
   primary: PhotoSize;
+  updated: string;
 };
 
 export type AlbumDetail = Omit<Album, "primary"> & {

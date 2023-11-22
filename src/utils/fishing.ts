@@ -2,7 +2,7 @@ import { Fish, Year } from "@brobin/types/fishing";
 import fs from "fs";
 import path from "path";
 
-const FISHING_PATH = path.join("data/fishing");
+const FISHING_PATH = path.join(process.cwd(), "data/fishing");
 
 function getJson(path: string) {
   return JSON.parse(fs.readFileSync(path, "utf-8"));

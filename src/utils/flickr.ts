@@ -28,6 +28,7 @@ export async function getAlbums(): Promise<Album[]> {
           id: album.id,
           title: album.title._content,
           total: album.photos,
+          updated: dayjs(Number(album.date_update) * 1000).format('YYYY-MM-DD'),
           primary: {
             source: album.primary_photo_extras.url_m,
             height: album.primary_photo_extras.height_m,
@@ -50,6 +51,7 @@ export async function getAlbumDetail(
     id: data.photoset.id,
     title: data.photoset.title,
     total: data.photoset.total,
+    updated: dayjs(Number(data.photoset.date_update) * 1000).format('YYYY-MM-DD'),
     photos: data.photoset.photo
       .map((photo: any) => ({
         ...photo,
