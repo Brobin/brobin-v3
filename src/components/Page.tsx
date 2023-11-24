@@ -13,20 +13,28 @@ interface Props {
 
 export default function Page({ title, description, image, children }: Props) {
   const pageTitle = `${title} • Brobin`;
+  const metaDescription = description || title;
 
   return (
     <div>
       <Head>
         <title>{pageTitle}</title>
-        <meta name="description" content={description || title} />
-        <meta name="og:description" content={description || title} />
-        <meta name="og:title" content={title} />
-        {image?.source && (
+        <meta name="title" content={title} />
+        <meta name="description" content={metaDescription} />
+
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:type" content="website" />
+
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={metaDescription} />
+
+        {image && (
           <>
             <meta property="og:image" content={image.source} />
             <meta property="og:image:type" content="image/jpeg" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:image:src" content={image.source} />
+            <meta property="twitter:image" content={image.source} />
+            <meta property="twitter:card" content="summary_large_image" />
           </>
         )}
         {image?.height && (
