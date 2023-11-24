@@ -1,30 +1,18 @@
-import { Article } from "@brobin/types/blog";
 import { getArticles } from "@brobin/utils/blog";
 import { getRecipeSlugs } from "@brobin/utils/cookbook";
 import { getYears } from "@brobin/utils/fishing";
 import { getAlbums } from "@brobin/utils/flickr";
-import dayjs from "dayjs";
 import { NextApiResponse } from "next";
 
 const BASE_URL = "https://brobin.me";
 
-type SitemapItem = {
-  url: string;
-  lastMod?: string;
-};
-
 export default function Sitemap() {}
 
-function generateSitemap(items: SitemapItem[]) {
-  const xmlItems = items.map(
-    (item) => `
+function generateSitemap(urls: string[]) {
+  const xmlItems = urls.map(
+    (url) => `
     <url>
-      <loc>${`${BASE_URL}${item.url}`}</loc>${
-      item.lastMod
-        ? `
-      <lastMod>${item.lastMod}</lastMod>`
-        : ""
-    }
+      <loc>${`${BASE_URL}${url}`}</loc>
     </url>`
   );
 
@@ -37,35 +25,25 @@ function generateSitemap(items: SitemapItem[]) {
 }
 
 export async function getServerSideProps({ res }: { res: NextApiResponse }) {
-  const articles = await getArticles().map(({ link, date }) => ({
-    url: link,
-    lastMod: dayjs(date).format("YYYY-MM-DD"),
-  }));
+  const articles = await getArticles().map(({ link }) => link);
 
-  const years = await getYears().map((year) => ({ url: `/fishing/${year}` }));
+  const years = await getYears().map((year) => `/fishing/${year}`);
 
-  const recipes = await getRecipeSlugs().map((slug) => ({
-    url: `/cookbook/${slug}`,
-  }));
+  const recipes = await getRecipeSlugs().map((slug) => `/cookbook/${slug}`);
 
-  const albums = (await getAlbums()).map((album) => ({
-    url: `/photos/album/${album.id}`,
-    lastMod: album.updated,
-  }));
-
-  const latestAlbumUpdate = albums.sort((a, b) =>
-    Date.parse(b.lastMod) > Date.parse(a.lastMod) ? 1 : -1
-  )[0].lastMod;
+  const albums = (await getAlbums()).map(
+    (album) => `/photos/album/${album.id}`
+  );
 
   const sitemap = generateSitemap([
-    { url: "", lastMod: "2023-11-22" },
-    { url: "/blog", lastMod: "2023-11-22" },
+    "",
+    "/blog",
     ...articles,
-    { url: "/fishing", lastMod: "2023-11-22" },
+    "/fishing",
     ...years,
-    { url: "/cookbook", lastMod: "2023-11-22" },
+    "/cookbook",
     ...recipes,
-    { url: "/photos", lastMod: latestAlbumUpdate },
+    "/photos",
     ...albums,
   ]);
 
