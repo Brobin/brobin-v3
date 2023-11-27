@@ -32,13 +32,15 @@ export default function Header() {
           </ListItem>
 
           {xs ? (
-            <ListItem sx={{ marginInlineStart: "auto" }}>
+            <ListItem sx={{ marginInlineStart: "auto", paddingRight: 0 }}>
               <Button
-                variant="outlined"
+                variant="plain"
                 color="neutral"
+                size="lg"
                 onClick={() => setOpen(true)}
+                sx={{ paddingY: 0, paddingX: 1 }}
               >
-                <MenuSharp />
+                <MenuSharp sx={{ fontSize: 40 }} />
               </Button>
             </ListItem>
           ) : (
