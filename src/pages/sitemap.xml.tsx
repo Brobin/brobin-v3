@@ -31,9 +31,7 @@ export async function getServerSideProps({ res }: { res: NextApiResponse }) {
 
   const recipes = await getRecipeSlugs().map((slug) => `/cookbook/${slug}`);
 
-  const albums = (await getAlbums()).map(
-    (album) => `/photos/album/${album.id}`
-  );
+  const albums = (await getAlbums()).map((album) => `/photos/${album.slug}`);
 
   const sitemap = generateSitemap([
     "",

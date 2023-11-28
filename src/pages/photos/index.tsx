@@ -1,8 +1,9 @@
 import Page from "@brobin/components/Page";
 import PhotoContainer from "@brobin/components/photos/PhotoContainer";
+import styles from "@brobin/components/photos/PhotoContainer.module.scss";
 import useBreakpoints from "@brobin/hooks/useBreakpoints";
 import { Album } from "@brobin/types/flickr";
-import { getAlbums } from "@brobin/utils/flickr";
+import { ALBUM_MAP, getAlbums } from "@brobin/utils/flickr";
 import { Divider, Typography } from "@mui/joy";
 import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
 
@@ -26,12 +27,13 @@ export default function Albums({ albums }: Props) {
           <ImageListItem
             key={album.id}
             component="a"
-            href={`/photos/album/${album.id}`}
+            href={`/photos/${album.slug}`}
+            className={styles.zoom}
           >
             <PhotoContainer title={album.title} size={album.primary} />
             <ImageListItemBar
               title={album.title}
-              subtitle={`${album.total} Photos`}
+              subtitle={`${album.total} Photos. ${album.description}`}
             />
           </ImageListItem>
         ))}
@@ -41,6 +43,9 @@ export default function Albums({ albums }: Props) {
 }
 
 export async function getServerSideProps() {
-  const albums = await getAlbums();
+  const slugs = Object.keys(ALBUM_MAP);
+  const albums = (await getAlbums()).filter((album) =>
+    slugs.includes(album.slug)
+  );
   return { props: { albums } };
 }

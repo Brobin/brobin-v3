@@ -44,11 +44,13 @@ export type PhotoDetail = Photo & {
 export type Album = {
   id: string;
   title: string;
+  slug: string;
   total: number;
   primary: PhotoSize;
   updated: string;
+  description: string;
 };
 
-export type AlbumDetail = Omit<Album, "primary"> & {
+export type AlbumDetail = Omit<Album, "primary" | "description"> & {
   photos: PhotoDetail[];
 };

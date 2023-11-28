@@ -2,6 +2,14 @@ import { Album, AlbumDetail, Photo, PhotoDetail } from "@brobin/types/flickr";
 import dayjs from "dayjs";
 import { createFlickr } from "flickr-sdk";
 
+export const ALBUM_MAP: { [key: string]: string } = {
+  birds: "72177720312752309",
+  herps: "72177720312742961",
+  invertebrates: "72177720312741263",
+  mammals: "72177720312752314",
+  plants: "72177720312788490",
+};
+
 const apiKey = process.env.FLICKR_API_KEY as string;
 const user_id = process.env.FLICKR_USER_ID as string;
 
@@ -27,8 +35,10 @@ export async function getAlbums(): Promise<Album[]> {
         .map((album: any) => ({
           id: album.id,
           title: album.title._content,
+          slug: album.title._content.toLowerCase(),
+          description: album.description._content,
           total: album.photos,
-          updated: dayjs(Number(album.date_update) * 1000).format('YYYY-MM-DD'),
+          updated: dayjs(Number(album.date_update) * 1000).format("YYYY-MM-DD"),
           primary: {
             source: album.primary_photo_extras.url_m,
             height: album.primary_photo_extras.height_m,
@@ -40,18 +50,21 @@ export async function getAlbums(): Promise<Album[]> {
 }
 
 export async function getAlbumDetail(
-  photoset_id: string
+  photoset_id: string | number
 ): Promise<AlbumDetail> {
   return flickr("flickr.photosets.getPhotos", {
     user_id,
-    photoset_id,
+    photoset_id: photoset_id.toString(),
     extras: "date_taken,url_m,url_l,url_o",
     per_page: "50",
   }).then((data) => ({
     id: data.photoset.id,
     title: data.photoset.title,
+    slug: data.photoset.title.toLowerCase(),
     total: data.photoset.total,
-    updated: dayjs(Number(data.photoset.date_update) * 1000).format('YYYY-MM-DD'),
+    updated: dayjs(Number(data.photoset.date_update) * 1000).format(
+      "YYYY-MM-DD"
+    ),
     photos: data.photoset.photo
       .map((photo: any) => ({
         ...photo,

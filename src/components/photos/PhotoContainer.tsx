@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { PhotoSize } from "@brobin/types/flickr";
-import { AspectRatio, Skeleton } from "@mui/joy";
+import { AspectRatio } from "@mui/joy";
 import { Fade } from "@mui/material";
 
 interface Props {

@@ -33,6 +33,12 @@ export default function Projects() {
     >
       <Grid container spacing={2}>
         <Project
+          title="Photography"
+          link="/photos"
+          buttonText="View Photos"
+          description="I have recently gotten into wildlife photography. Check out some of my favorite photos!"
+        />
+        <Project
           title="Fishing Stats"
           link="/fishing"
           buttonText="View Stats"

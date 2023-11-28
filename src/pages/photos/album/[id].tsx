@@ -1,7 +1,7 @@
 import Page from "@brobin/components/Page";
 import PhotoContainer from "@brobin/components/photos/PhotoContainer";
+import styles from "@brobin/components/photos/PhotoContainer.module.scss";
 import useBreakpoints from "@brobin/hooks/useBreakpoints";
-import { getStaticPaths } from "@brobin/pages/blog/[...slug]";
 import { AlbumDetail } from "@brobin/types/flickr";
 import { getAlbumDetail } from "@brobin/utils/flickr";
 import { Divider, Typography } from "@mui/joy";
@@ -29,6 +29,7 @@ export default function Album({ album }: Props) {
             key={photo.id}
             component="a"
             href={`/photos/photo/${photo.id}`}
+            className={styles.zoom}
           >
             <PhotoContainer title={photo.title} size={photo.medium} />
             <ImageListItemBar
