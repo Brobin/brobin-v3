@@ -36,7 +36,7 @@ export default function Projects() {
           title="Photography"
           link="/photos"
           buttonText="View Photos"
-          description="I have recently gotten into wildlife photography. Check out some of my favorite photos!"
+          description="I have recently gotten into wildlife photography and birding. Check out some of my favorite photos!"
         />
         <Project
           title="Fishing Stats"
