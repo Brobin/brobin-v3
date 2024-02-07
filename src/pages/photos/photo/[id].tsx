@@ -43,7 +43,8 @@ export default function Photo({ photo, taxonomy }: Props) {
           </Typography>
           {photo.geo && (
             <Typography level="body-sm">
-              {photo.geo.county} County, {photo.geo.region}, {photo.geo.country}
+              {photo.geo.county && <>{photo.geo.county}, </>}
+              {photo.geo.region}, {photo.geo.country}
             </Typography>
           )}
           <Typography level="body-lg" marginTop={2}>

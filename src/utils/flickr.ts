@@ -56,7 +56,7 @@ export async function getAlbumDetail(
     user_id,
     photoset_id: photoset_id.toString(),
     extras: "date_taken,url_m,url_l,url_o",
-    per_page: "50",
+    per_page: "500",
   }).then((data) => ({
     id: data.photoset.id,
     title: data.photoset.title,
@@ -131,7 +131,7 @@ export async function getPhotoDetail(photo_id: string): Promise<PhotoDetail> {
       ? {
           latitude: Number(info.location.latitude),
           longitude: Number(info.location.longitude),
-          county: info.location.county._content,
+          county: info.location.county?._content ?? null,
           region: info.location.region._content,
           country: info.location.country._content,
         }
