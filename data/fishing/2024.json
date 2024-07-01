@@ -1,0 +1,69 @@
+{
+  "year": 2024,
+  "days": [
+    {
+      "bass": 0,
+      "northern": 0,
+      "walleye": 0,
+      "day": "Saturday"
+    },
+    {
+      "bass": 15,
+      "northern": 3,
+      "walleye": 6,
+      "day": "Sunday"
+    },
+    {
+      "bass": 17,
+      "northern": 5,
+      "walleye": 5,
+      "day": "Monday"
+    },
+    {
+      "bass": 0,
+      "northern": 0,
+      "walleye": 0,
+      "day": "Tuesday"
+    },
+    {
+      "bass": 5,
+      "northern": 10,
+      "walleye": 5,
+      "day": "Wednesday"
+    },
+    {
+      "bass": 9,
+      "northern": 6,
+      "walleye": 4,
+      "day": "Thursday"
+    },
+    {
+      "bass": 2,
+      "northern": 1,
+      "walleye": 3,
+      "day": "Friday"
+    }
+  ],
+  "fish": [
+    { "length": 17.5, "weight": 1.6875, "species": "walleye" },
+    { "length": 24, "weight": 3, "species": "walleye" },
+    { "length": 19, "weight": 3.0625, "species": "bass" },
+    { "length": 21, "weight": 2.1875, "species": "northern" },
+    { "length": 21.25, "weight": 2.875, "species": "walleye" },
+    { "length": 10.75, "weight": 2.5, "species": "walleye" },
+    { "length": 13.75, "weight": 1.66, "species": "bass" },
+    { "length": 21, "weight": 2.0675, "species": "walleye" },
+    { "length": 18.51, "weight": 2.3125, "species": "bass" },
+    { "length": 22, "weight": 3, "species": "walleye" },
+    { "length": 26.25, "weight": 3.75, "species": "northern" },
+    { "length": 28, "weight": 7.1825, "species": "walleye" },
+    { "length": 20.5, "weight": 2.33, "species": "walleye" },
+    { "length": 28.5, "weight": 4.5625, "species": "northern" },
+    { "length": 26.125, "weight": 3.33, "species": "northern" },
+    { "length": 14, "weight": 1.5, "species": "bass" },
+    { "length": 26.125, "weight": 3.875, "species": "northern" },
+    { "length": 31.25, "weight": 6.5, "species": "northern" },
+    { "length": 25, "weight": 4, "species": "walleye" },
+    { "length": 24.75, "weight": 4.125, "species": "walleye" }
+  ]
+}
