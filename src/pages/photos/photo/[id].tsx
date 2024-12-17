@@ -77,6 +77,8 @@ interface Params {
 
 export async function getServerSideProps({ params: { id } }: Params) {
   const photo = await getPhotoDetail(id);
-  const taxonomy = await searchTaxonomy(photo.title);
+  const taxonomy = photo.tags.includes("wildlife")
+    ? await searchTaxonomy(photo.title)
+    : [];
   return { props: { photo, taxonomy } };
 }
