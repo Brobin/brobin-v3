@@ -1,12 +1,13 @@
 import { Album, AlbumDetail, Photo, PhotoDetail } from "@brobin/types/flickr";
-import dayjs from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 import { createFlickr } from "flickr-sdk";
 
 export const ALBUM_MAP: { [key: string]: string } = {
-  wildlife_2024: "72177720322623500",
-  wildlife_2023: "72177720322623476",
+  "wildlife-2024": "72177720322623500",
+  "wildlife-2023": "72177720322623476",
   astro: "72177720322644994",
   landscapes: "72177720322622630",
+  other: "72177720322623815",
 };
 
 const apiKey = process.env.FLICKR_API_KEY as string;
@@ -20,8 +21,9 @@ const { flickr } = createFlickr(apiKey);
 const byDateTaken = (a: Photo, b: Photo) =>
   dayjs(b.datetaken) > dayjs(a.datetaken) ? 1 : -1;
 
-const byTitle = (a: { title: string }, b: { title: string }) =>
-  a.title > b.title ? 1 : -1;
+const byMapOrder = (a: { slug: string }, b: { slug: string }) =>
+  Object.keys(ALBUM_MAP).indexOf(a.slug) -
+  Object.keys(ALBUM_MAP).indexOf(b.slug);
 
 export async function getAlbums(): Promise<Album[]> {
   return flickr("flickr.photosets.getList", {
@@ -34,7 +36,7 @@ export async function getAlbums(): Promise<Album[]> {
         .map((album: any) => ({
           id: album.id,
           title: album.title._content,
-          slug: album.title._content.toLowerCase(),
+          slug: album.title._content.toLowerCase().replaceAll(" ", ""),
           description: album.description._content,
           total: album.photos,
           updated: dayjs(Number(album.date_update) * 1000).format("YYYY-MM-DD"),
@@ -44,7 +46,7 @@ export async function getAlbums(): Promise<Album[]> {
             width: album.primary_photo_extras.width_m,
           },
         }))
-        .sort(byTitle)
+        .sort(byMapOrder)
     );
 }
 
