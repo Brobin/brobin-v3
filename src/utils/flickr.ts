@@ -3,11 +3,10 @@ import dayjs from "dayjs";
 import { createFlickr } from "flickr-sdk";
 
 export const ALBUM_MAP: { [key: string]: string } = {
-  birds: "72177720312752309",
-  herps: "72177720312742961",
-  invertebrates: "72177720312741263",
-  mammals: "72177720312752314",
-  plants: "72177720312788490",
+  wildlife_2024: "72177720322623500",
+  wildlife_2023: "72177720322623476",
+  astro: "72177720322644994",
+  landscapes: "72177720322622630",
 };
 
 const apiKey = process.env.FLICKR_API_KEY as string;
