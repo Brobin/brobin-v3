@@ -1,0 +1,180 @@
+import Page from "@brobin/components/Page";
+import { Bird } from "@brobin/types/big-year";
+import { getBirdList } from "@brobin/utils/big-year";
+import { Box, Button, Card, Grid, Link, Typography } from "@mui/joy";
+import { LineChart } from "@mui/x-charts";
+import { DataGrid } from "@mui/x-data-grid";
+import dayjs from "dayjs";
+
+interface Props {
+  birds: Bird[];
+  series: { date: string; total: number; new: number }[];
+}
+
+export default function BigYear({ birds, series }: Props) {
+  return (
+    <Page title="Nebraska Big Year 2025">
+      <Typography level="h1">
+        Nebraska Big Year 2025
+        <Button
+          component="a"
+          href="https://ebird.org/profile/NDA1ODIzNg/US-NE"
+          target="_blank"
+          style={{ float: "right" }}
+        >
+          eBird Profile
+        </Button>
+        <Button
+          component="a"
+          href="https://ebird.org/top100?region=Nebraska&locInfo.regionCode=US-NE&year=2025&rankedBy=spp"
+          target="_blank"
+          style={{ float: "right", marginRight: "10px" }}
+        >
+          Leaderbord
+        </Button>
+      </Typography>
+      <br />
+      <Box paddingY={2}>
+        <Grid container spacing={2}>
+          <Grid xs={12} md={4}>
+            <Card variant="plain">
+              <Typography level="h2" fontSize={75} textAlign="center">
+                <Link
+                  href={`https://ebird.org/top100?region=Nebraska&locInfo.regionCode=US-NE&year=2025&rankedBy=spp`}
+                  target="_blank"
+                  underline="always"
+                  color="success"
+                >
+                  {birds.length}
+                </Link>{" "}
+                <span style={{ color: "#9e9e9e" }}>/ 348</span>
+              </Typography>
+              <hr style={{ width: "100%" }} />
+              <Typography level="h4" textAlign="center" textColor={"#9e9e9e"}>
+                Latest Bird
+              </Typography>
+              <Typography level="h3" fontSize={30} textAlign="center">
+                <Link
+                  href={`https://ebird.org/checklist/${birds[0].checklistId}`}
+                  target="_blank"
+                  underline="always"
+                  color="primary"
+                >
+                  {birds[0].name}
+                </Link>
+              </Typography>
+              <span style={{ textAlign: "center" }}>{birds[0].date}</span>
+              <hr style={{ width: "100%" }} />
+              <Typography level="h4" textAlign="center" textColor={"#9e9e9e"}>
+                First Bird
+              </Typography>
+              <Typography level="h3" fontSize={30} textAlign="center">
+                <Link
+                  href={`https://ebird.org/checklist/${
+                    birds[birds.length - 1].checklistId
+                  }`}
+                  target="_blank"
+                  underline="always"
+                  color="primary"
+                >
+                  {birds[birds.length - 1].name}
+                </Link>
+              </Typography>
+              <span style={{ textAlign: "center" }}>
+                {birds[birds.length - 1].date}
+              </span>
+            </Card>
+            <br />
+          </Grid>
+          <Grid xs={12} md={8}>
+            <Card variant="plain">
+              <Typography level="h3" fontSize={30} textAlign="center">
+                Total Species
+              </Typography>
+              <LineChart
+                xAxis={[
+                  {
+                    data: series.map((s) => dayjs(s.date).toDate()),
+                    label: "Day",
+                    scaleType: "point",
+                    min: dayjs("01 Jan 2024").toDate(),
+                    max: dayjs().toDate(),
+                    valueFormatter: (date) => dayjs(date).format("MMM DD"),
+                  },
+                ]}
+                yAxis={[{ label: "Species", min: 0 }]}
+                series={[
+                  {
+                    data: series.map((s) => s.total),
+                    showMark: () => true,
+                  },
+                ]}
+                height={400}
+              />
+            </Card>
+          </Grid>
+        </Grid>
+      </Box>
+      <Box paddingY={2}>
+        <Grid container spacing={2}>
+          <Grid xs={12} md={4}>
+            <DataGrid
+              rows={series.map((s, id) => ({ ...s, id }))}
+              columns={[
+                {
+                  field: "date",
+                  headerName: "Date",
+                  width: 150,
+                  valueFormatter: ({ value }) => dayjs(value).format("MMM DD"),
+                },
+                {
+                  field: "new",
+                  headerName: "New",
+                  width: 75,
+                  valueFormatter: ({ value }) => `+${value}`,
+                },
+                { field: "total", headerName: "Total", width: 75 },
+              ]}
+              rowHeight={38}
+            />
+          </Grid>
+          <Grid xs={12} md={8}>
+            <DataGrid
+              rows={birds}
+              columns={[
+                { field: "id", headerName: "#", width: 75 },
+                { field: "name", headerName: "Species", width: 250 },
+                { field: "location", headerName: "Location", width: 300 },
+                {
+                  field: "date",
+                  headerName: "Date",
+                  valueFormatter: ({ value }) => dayjs(value).format("MMM DD"),
+                },
+              ]}
+              rowHeight={38}
+            />
+          </Grid>
+        </Grid>
+      </Box>
+    </Page>
+  );
+}
+
+export async function getStaticProps() {
+  const birds = await getBirdList();
+
+  const days = new Set(birds.map((b) => b.date));
+  const series: { date: string; total: number; new: number }[] = [];
+  days.forEach((day) => {
+    series.push({
+      date: day,
+      total: birds.filter((b) => b.date <= day).length,
+      new: birds.filter((b) => b.date === day).length,
+    });
+  });
+
+  console.log(days);
+  console.log(series);
+
+  return { props: { birds, series: series.reverse() } };
+}
