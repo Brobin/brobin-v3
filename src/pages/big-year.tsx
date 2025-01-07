@@ -14,29 +14,11 @@ interface Props {
 export default function BigYear({ birds, series }: Props) {
   return (
     <Page title="Nebraska Big Year 2025">
-      <Typography level="h1">
-        Nebraska Big Year 2025
-        <Button
-          component="a"
-          href="https://ebird.org/profile/NDA1ODIzNg/US-NE"
-          target="_blank"
-          style={{ float: "right" }}
-        >
-          eBird Profile
-        </Button>
-        <Button
-          component="a"
-          href="https://ebird.org/top100?region=Nebraska&locInfo.regionCode=US-NE&year=2025&rankedBy=spp"
-          target="_blank"
-          style={{ float: "right", marginRight: "10px" }}
-        >
-          Leaderbord
-        </Button>
-      </Typography>
+      <Typography level="h1">Nebraska Big Year 2025</Typography>
       <br />
       <Box paddingY={2}>
         <Grid container spacing={2}>
-          <Grid xs={12} md={4}>
+          <Grid xs={12} sm={12} md={4}>
             <Card variant="plain">
               <Typography level="h2" fontSize={75} textAlign="center">
                 <Link
@@ -63,7 +45,9 @@ export default function BigYear({ birds, series }: Props) {
                   {birds[0].name}
                 </Link>
               </Typography>
-              <span style={{ textAlign: "center" }}>{birds[0].date}</span>
+              <span style={{ textAlign: "center" }}>
+                {dayjs(birds[0].date).format("MMM DD")}
+              </span>
               <hr style={{ width: "100%" }} />
               <Typography level="h4" textAlign="center" textColor={"#9e9e9e"}>
                 First Bird
@@ -81,12 +65,12 @@ export default function BigYear({ birds, series }: Props) {
                 </Link>
               </Typography>
               <span style={{ textAlign: "center" }}>
-                {birds[birds.length - 1].date}
+                {dayjs(birds[birds.length - 1].date).format("MMM DD")}
               </span>
             </Card>
             <br />
           </Grid>
-          <Grid xs={12} md={8}>
+          <Grid xs={12} sm={12} md={8}>
             <Card variant="plain">
               <Typography level="h3" fontSize={30} textAlign="center">
                 Total Species
@@ -117,9 +101,9 @@ export default function BigYear({ birds, series }: Props) {
       </Box>
       <Box paddingY={2}>
         <Grid container spacing={2}>
-          <Grid xs={12} md={4}>
+          <Grid xs={12} sm={12} md={4}>
             <DataGrid
-              rows={series.map((s, id) => ({ ...s, id }))}
+              rows={series.reverse().map((s, id) => ({ ...s, id }))}
               columns={[
                 {
                   field: "date",
@@ -138,7 +122,7 @@ export default function BigYear({ birds, series }: Props) {
               rowHeight={38}
             />
           </Grid>
-          <Grid xs={12} md={8}>
+          <Grid xs={12} sm={12} md={8}>
             <DataGrid
               rows={birds}
               columns={[
