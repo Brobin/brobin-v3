@@ -29,9 +29,15 @@ export default function Projects() {
   return (
     <Page
       title="Projects"
-      description="Some development projects taht I've been working on"
+      description="Some projects that I've been working on"
     >
       <Grid container spacing={2}>
+        <Project
+          title="Nebraska Birding Big Year"
+          link="/big-year"
+          buttonText="View Progress"
+          description="I'm trying to see as many birds as I can in one year in the state of Nebraska. Check out my progress!"
+        />
         <Project
           title="Photography"
           link="/photos"

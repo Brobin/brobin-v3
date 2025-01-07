@@ -101,9 +101,25 @@ export default function BigYear({ birds, series }: Props) {
       </Box>
       <Box paddingY={2}>
         <Grid container spacing={2}>
+          <Grid xs={12} sm={12} md={8}>
+            <DataGrid
+              rows={birds}
+              columns={[
+                { field: "id", headerName: "#", width: 75 },
+                { field: "name", headerName: "Species", width: 250 },
+                { field: "location", headerName: "Location", width: 300 },
+                {
+                  field: "date",
+                  headerName: "Date",
+                  valueFormatter: ({ value }) => dayjs(value).format("MMM DD"),
+                },
+              ]}
+              rowHeight={38}
+            />
+          </Grid>
           <Grid xs={12} sm={12} md={4}>
             <DataGrid
-              rows={series.reverse().map((s, id) => ({ ...s, id }))}
+              rows={series.map((s, id) => ({ ...s, id })).reverse()}
               columns={[
                 {
                   field: "date",
@@ -118,22 +134,6 @@ export default function BigYear({ birds, series }: Props) {
                   valueFormatter: ({ value }) => `+${value}`,
                 },
                 { field: "total", headerName: "Total", width: 75 },
-              ]}
-              rowHeight={38}
-            />
-          </Grid>
-          <Grid xs={12} sm={12} md={8}>
-            <DataGrid
-              rows={birds}
-              columns={[
-                { field: "id", headerName: "#", width: 75 },
-                { field: "name", headerName: "Species", width: 250 },
-                { field: "location", headerName: "Location", width: 300 },
-                {
-                  field: "date",
-                  headerName: "Date",
-                  valueFormatter: ({ value }) => dayjs(value).format("MMM DD"),
-                },
               ]}
               rowHeight={38}
             />
