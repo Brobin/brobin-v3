@@ -157,8 +157,5 @@ export async function getStaticProps() {
     });
   });
 
-  console.log(days);
-  console.log(series);
-
   return { props: { birds, series: series.reverse() } };
 }
