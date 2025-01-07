@@ -73,7 +73,7 @@ export default function BigYear({ birds, series }: Props) {
           <Grid xs={12} sm={12} md={8}>
             <Card variant="plain">
               <Typography level="h3" fontSize={30} textAlign="center">
-                Total Species
+                Species
               </Typography>
               <LineChart
                 xAxis={[
@@ -90,6 +90,12 @@ export default function BigYear({ birds, series }: Props) {
                 series={[
                   {
                     data: series.map((s) => s.total),
+                    label: "Total",
+                    showMark: () => true,
+                  },
+                  {
+                    data: series.map((s) => s.new),
+                    label: "New",
                     showMark: () => true,
                   },
                 ]}
@@ -107,7 +113,12 @@ export default function BigYear({ birds, series }: Props) {
               columns={[
                 { field: "id", headerName: "#", width: 75 },
                 { field: "name", headerName: "Species", width: 250 },
-                { field: "location", headerName: "Location", width: 300 },
+                {
+                  field: "location",
+                  headerName: "Location",
+                  width: 300,
+                  sortable: false,
+                },
                 {
                   field: "date",
                   headerName: "Date",
@@ -119,7 +130,10 @@ export default function BigYear({ birds, series }: Props) {
           </Grid>
           <Grid xs={12} sm={12} md={4}>
             <DataGrid
-              rows={series.map((s, id) => ({ ...s, id })).reverse()}
+              rows={series
+                .map((s, id) => ({ ...s, id }))
+                .filter((s) => s.new > 0)
+                .reverse()}
               columns={[
                 {
                   field: "date",
@@ -131,7 +145,6 @@ export default function BigYear({ birds, series }: Props) {
                   field: "new",
                   headerName: "New",
                   width: 75,
-                  valueFormatter: ({ value }) => `+${value}`,
                 },
                 { field: "total", headerName: "Total", width: 75 },
               ]}
@@ -147,15 +160,20 @@ export default function BigYear({ birds, series }: Props) {
 export async function getStaticProps() {
   const birds = await getBirdList();
 
-  const days = new Set(birds.map((b) => b.date));
   const series: { date: string; total: number; new: number }[] = [];
-  days.forEach((day) => {
+
+  let currentDay = dayjs().set("month", 0).set("date", 1);
+  const today = dayjs();
+
+  while (currentDay <= today) {
+    let day = currentDay.format("DD MMM YYYY");
     series.push({
       date: day,
       total: birds.filter((b) => b.date <= day).length,
       new: birds.filter((b) => b.date === day).length,
     });
-  });
+    currentDay = currentDay.add(1, "day");
+  }
 
-  return { props: { birds, series: series.reverse() } };
+  return { props: { birds, series } };
 }
