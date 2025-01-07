@@ -175,5 +175,8 @@ export async function getStaticProps() {
     currentDay = currentDay.add(1, "day");
   }
 
-  return { props: { birds, series } };
+  return {
+    props: { birds, series },
+    revalidate: 1,
+  };
 }
