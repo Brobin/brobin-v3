@@ -166,11 +166,10 @@ export async function getStaticProps() {
   const today = dayjs();
 
   while (currentDay <= today) {
-    let day = currentDay.format("DD MMM YYYY");
     series.push({
-      date: day,
-      total: birds.filter((b) => b.date <= day).length,
-      new: birds.filter((b) => b.date === day).length,
+      date: currentDay.format("DD MMM YYYY"),
+      total: birds.filter((b) => dayjs(b.date) <= currentDay).length,
+      new: birds.filter((b) => dayjs(b.date) === currentDay).length,
     });
     currentDay = currentDay.add(1, "day");
   }
