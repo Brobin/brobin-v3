@@ -169,7 +169,8 @@ export async function getStaticProps() {
     series.push({
       date: currentDay.format("DD MMM YYYY"),
       total: birds.filter((b) => dayjs(b.date) <= currentDay).length,
-      new: birds.filter((b) => dayjs(b.date) === currentDay).length,
+      new: birds.filter((b) => b.date == currentDay.format("DD MMM YYYY"))
+        .length,
     });
     currentDay = currentDay.add(1, "day");
   }
