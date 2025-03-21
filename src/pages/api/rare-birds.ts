@@ -21,10 +21,10 @@ export default async function handler(_: NextApiRequest, res: NextApiResponse) {
   );
 
   const observations = await getRareBirds();
-  const sql = neon(`${process.env.POSTGRES_URL_NON_POOLING}`);
+  const sql = neon(`${process.env.DATABASE_URL}`);
 
   if (channel && channel.isSendable()) {
-    const result = await sql("SELECT obsId from rare_birds");
+    const result = await sql("SELECT obsId from rare_birds;");
 
     const alreadyInserted = result.map((result) => result["obsId"]);
 
@@ -46,7 +46,7 @@ export default async function handler(_: NextApiRequest, res: NextApiResponse) {
           .setFooter({ text: obs.userDisplayName });
 
         channel.send({ embeds: [message] });
-        await sql("INSERT INTO rare_birds (obsId) VALUES ($1)", [obs.obsId]);
+        await sql("INSERT INTO rare_birds (obsId) VALUES ($1);", [obs.obsId]);
       });
   }
 
