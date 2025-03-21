@@ -4,7 +4,7 @@ import { Client, EmbedBuilder, GatewayIntentBits } from "discord.js";
 import { NextApiRequest, NextApiResponse } from "next";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
-import { neon } from "@neondatabase/serverless";
+import { neon, NeonQueryPromise } from "@neondatabase/serverless";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -14,6 +14,12 @@ const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages],
 });
 
+async function getAlreadyInsertedObsIds() {
+  const sql = neon(`${process.env.DATABASE_URL}`);
+  const result = await sql("SELECT obsid from rare_birds;");
+  return result.map((result) => result["obsid"]);
+}
+
 export default async function handler(_: NextApiRequest, res: NextApiResponse) {
   await client.login(process.env.DISCORD_TOKEN);
   const channel = await client.channels.fetch(
@@ -21,12 +27,12 @@ export default async function handler(_: NextApiRequest, res: NextApiResponse) {
   );
 
   const observations = await getRareBirds();
-  const sql = neon(`${process.env.DATABASE_URL}`);
 
   if (channel && channel.isSendable()) {
-    const result = await sql("SELECT obsId from rare_birds;");
+    const alreadyInserted = await getAlreadyInsertedObsIds();
 
-    const alreadyInserted = result.map((result) => result["obsId"]);
+    const sql = neon(`${process.env.DATABASE_URL}`);
+    const queries: NeonQueryPromise<false, false, Record<string, any>[]>[] = [];
 
     observations
       .filter((obs) => !alreadyInserted.includes(obs.obsId))
@@ -46,8 +52,12 @@ export default async function handler(_: NextApiRequest, res: NextApiResponse) {
           .setFooter({ text: obs.userDisplayName });
 
         channel.send({ embeds: [message] });
-        await sql("INSERT INTO rare_birds (obsId) VALUES ($1);", [obs.obsId]);
+        queries.push(
+          sql`INSERT INTO rare_birds (obsid) VALUES (${obs.obsId});`
+        );
       });
+
+    await sql.transaction(queries);
   }
 
   res.status(200).json(observations);
