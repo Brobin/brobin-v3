@@ -31,6 +31,7 @@ function generateRssFeed(observations: Observation[]) {
       lat: obs.lat,
       long: obs.lng,
       guid: obs.obsId,
+      author: obs.userDisplayName,
     });
   });
 
