@@ -3,6 +3,8 @@ export type Observation = {
   sciName: string;
   locId: string;
   locName: string;
+  lat: number;
+  lng: number;
   obsDt: string;
   howMany?: number;
   obsValid: boolean;

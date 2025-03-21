@@ -28,6 +28,9 @@ function generateRssFeed(observations: Observation[]) {
       description: obs.locName,
       url: `https://ebird.org/checklist/${obs.subId}`,
       date: dayjs(obs.obsDt).tz("America/Chicago", true).toDate(),
+      lat: obs.lat,
+      long: obs.lng,
+      guid: obs.obsId,
     });
   });
 
