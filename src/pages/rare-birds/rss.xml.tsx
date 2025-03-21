@@ -19,6 +19,7 @@ function generateRssFeed(observations: Observation[]) {
     site_url: "https://brobin.me/rare-birds/rss.xml",
     feed_url: "https://brobin.me/rare-birds/rss.xml",
     pubDate: new Date(),
+    ttl: 15,
   });
 
   observations.forEach((obs) => {
