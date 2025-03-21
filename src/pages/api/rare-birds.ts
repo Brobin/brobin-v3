@@ -51,7 +51,7 @@ export default async function handler(_: NextApiRequest, res: NextApiResponse) {
           })
           .setFooter({ text: obs.userDisplayName });
 
-        channel.send({ embeds: [message] });
+        await channel.send({ embeds: [message] });
         queries.push(
           sql`INSERT INTO rare_birds (obsid) VALUES (${obs.obsId});`
         );
