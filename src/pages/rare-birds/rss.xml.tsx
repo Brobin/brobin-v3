@@ -38,7 +38,7 @@ export async function getServerSideProps({ res }: { res: NextApiResponse }) {
 
   const rss = generateRssFeed(observations);
 
-  res.setHeader("Content-Type", "text/xml");
+  res.setHeader("Content-Type", "application/rss+xml");
   res.write(rss);
   res.end();
 
