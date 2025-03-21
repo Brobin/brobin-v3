@@ -1,5 +1,4 @@
 import { Bird } from "@brobin/types/big-year";
-import path from "path";
 import { parse } from "papaparse";
 
 const DATA_URL =
