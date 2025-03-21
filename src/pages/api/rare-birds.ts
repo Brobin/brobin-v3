@@ -21,7 +21,7 @@ export default async function handler(_: NextApiRequest, res: NextApiResponse) {
   );
 
   const observations = await getRareBirds();
-  const sql = neon(`${process.env.DATABASE_URL}`);
+  const sql = neon(`${process.env.POSTGRES_URL_NON_POOLING}`);
 
   if (channel && channel.isSendable()) {
     const result = await sql("SELECT obsId from rare_birds");
