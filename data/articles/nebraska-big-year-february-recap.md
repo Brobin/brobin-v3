@@ -14,7 +14,7 @@ Life birds: +1 (**499**)
 
 Overall February was a bit of a slower month, but I still ran into some great birds!
 
-In early February I headed to Lake Ogallala specifically targeting Gulls. I spent the first night of the trip camping in North Platte, where Boni gave me some tips that led to a few years birds including **Short-eared Owl**. At Lake O, the trip continued to produce, netting mm 11 year birds, including 2 very good gull targets: **Glaucous Gull** and **Short-billed Gull**. The biggest target I had that I _missed_ was Great Black-backed Gull, but I'll have another shot at the one this fall.
+In early February I headed to Lake Ogallala specifically targeting Gulls. I spent the first night of the trip camping in North Platte, where Boni gave me some tips that led to a few years birds including **Short-eared Owl**. At Lake O, the trip continued to produce, netting me 11 year birds, including 2 very good gull targets: **Glaucous Gull** and **Short-billed Gull**. The biggest target I had that I _missed_ was Great Black-backed Gull, but I'll have another shot at the one this fall.
 
 ![Glaucous Gull](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/630537712/640)
 
