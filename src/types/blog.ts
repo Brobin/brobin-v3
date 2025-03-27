@@ -9,6 +9,7 @@ export type Article = {
   preview: string;
   content: string;
   tags: string[];
+  image: string | null;
 };
 
 export type BlogSidebarProps = {

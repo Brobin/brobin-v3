@@ -23,6 +23,7 @@ function getArticle(filename: string): Article {
     content,
     slug,
     tags: data.tags.split(", "),
+    image: data.image || null,
     link: getArticleLink(data.date, slug),
   } as Article;
 }

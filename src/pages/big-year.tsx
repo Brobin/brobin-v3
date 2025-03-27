@@ -34,7 +34,10 @@ export default function BigYear({ birds, series }: Props) {
         pass through or breed in the state.
       </p>
       <ButtonGroup variant="outlined">
-        <Button href="https://ebird.org/tripreport/325880" component="a">
+        <Button
+          href="/blog/2025/02/nebraska-big-year-january-recap"
+          component="a"
+        >
           Jan
         </Button>
         <Button href="https://ebird.org/tripreport/330554" component="a">

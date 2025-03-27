@@ -3,6 +3,7 @@ title: "Nebraska Big Year: January Recap"
 date: "2025-02-01"
 preview: January got off to a great start! I headed west to get some rarities and winter specialties, and finished the month back in the east picking off a few more of the easier ones.
 tags: birding, big-year
+image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/628571041/640
 ---
 
 As some of you may know, I'm giving a Nebraska state Big Year a crack this year. What does this mean you ask? It means I'm committing to driving thousands of miles, spending hundreds of hours, doing my absolute best to see as many species of birds in the state of Nebraska in one calendar year. It will be a long and tiring year, punctuated by exciting chases and bitter disappointements, but I am committed and ready to give it all I have. The current Big Year record is 347, set in 2013 by Paul Dunbar. This record is incredible, absolutely blowing the previous record of 331 out of the water. Nebraska on average gets about 370 species of birds either breeding or passing through each year, and in 2025 I'm setting out with a goal to see 350 of them. I'll be blogging as best I can on here, and at least doing monthly updates.
@@ -19,7 +20,7 @@ It was a cold winter morning in North Platte, and I woke up early at 5am to get 
 
 From there, I hit the road, aiming to be at Lake Ogallala by sunrise where a buffet of waterfowl was awaiting me. Shortly after arriving I found 4 of my key targets, all continuing birds: **Long-tailed Duck**, **White-winged Scoter**, **Black Scoter**, and **Surf Scoter**. All 4 of those birds are huge to get so early in the year, especially all at the same location, and will save me hours and hours of searching in the fall. After that, I settled in to find the big target. Boni and Colleen arrived shortly after and we began scoping. The rafts of waterfowl were huge, at least a few thousand, but after 15 minutes or so, we got onto it, my first lifer of the year: **Eurasian Wigeon**!
 
-Crazy enough as it seems, from there I headed BACK to North Platte for 2 more rarities. But Big Years are all about getting the rare birds, the common ones will trickle in naturally. The bird I had just gotten as a lifer a few weeks prior showed off it's brilliant yellow to me again in the new year: **Couch's Kingbird**, a continuing first state record! HUGE thanks to the Nelsons for being such gracious hosts. One last big target was waiting for me at the North Platte WTP, and moments after spotting the **Barrow's Goldeneye**, I headed west.
+Crazy enough as it seems, from there I headed BACK to North Platte for 2 more rarities because Big Years are all about getting the rarest birds first. The bird I had just gotten as a lifer a few weeks prior showed off it's brilliant yellow to me again in the new year: **Couch's Kingbird**, a continuing first state record! HUGE thanks to the Nelsons for being such gracious hosts. One last big target was waiting for me at the North Platte WTP, and moments after spotting the **Barrow's Goldeneye**, I headed west.
 
 I finished January 1st with 78 species, and 8 rare targets, and 1 lifer! I was off to the races.
 
