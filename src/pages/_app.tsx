@@ -7,6 +7,7 @@ import {
 } from "@mui/material/styles";
 import { Analytics } from "@vercel/analytics/react";
 import { AppProps } from "next/app";
+import "./app.css";
 
 const materialTheme = experimental_extendTheme({
   colorSchemes: {

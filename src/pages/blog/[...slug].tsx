@@ -1,6 +1,5 @@
 import Page from "@brobin/components/Page";
 import ArticleMarkdown from "@brobin/components/blog/ArticleMarkdown";
-import BlogSidebar from "@brobin/components/blog/Sidebar";
 import { Article, ArticleParams, BlogSidebarProps } from "@brobin/types/blog";
 import {
   getArticleBySlug,
@@ -18,6 +17,7 @@ export default function ArticlePage({ article, ...props }: ArticleProps) {
   return (
     <Page title={article.title} description={article.preview}>
       <Grid container spacing={2}>
+        <Grid xs={12} md={2}></Grid>
         <Grid xs={12} md={8}>
           <Card variant="plain">
             <Typography level="h1">{article.title}</Typography>
@@ -27,9 +27,6 @@ export default function ArticlePage({ article, ...props }: ArticleProps) {
             <Divider />
             <ArticleMarkdown content={article.content} />
           </Card>
-        </Grid>
-        <Grid xs={12} md={4}>
-          <BlogSidebar {...props} />
         </Grid>
       </Grid>
     </Page>
