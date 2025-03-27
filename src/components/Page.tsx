@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default function Page({ title, description, image, children }: Props) {
-  const pageTitle = `${title} • Brobin`;
+  const pageTitle = `${title} • Tobin`;
   const metaDescription = description || title;
 
   return (
