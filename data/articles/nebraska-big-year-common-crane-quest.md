@@ -1,18 +1,18 @@
 ---
 title: "Nebraska Big Year: Common Crane Quest"
 date: "2025-03-27"
-preview: March is crane season in Nebraska, and while the Platte River is covered with nearly a million Sandhill Cranes, we often get handfuls of Whooping Cranes. But the most sought after crane in the state might just be the Common Crane.
+preview: March is crane season in Nebraska, the Platte River is covered with nearly a million Sandhill Cranes, and we often get handfuls of Whooping Cranes. But the most sought after crane in the state might just be the Common Crane.
 tags: birding, big-year
 image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632650417/640
 ---
 
-March is crane season in Nebraska, and while the Platte River is covered with nearly a million Sandhill Cranes, we often get handfuls of Whooping Cranes. But the most sought after crane in the state (besides the ultra-mega Hooded) might just be the Common Crane. The Common Crane is a eurasian species that breeds in northern Euraisa, all the way from Northern Europe to Siberia. Sandhill Cranes also breed in far eastern Russia, and sometimes post-breeding dispersal can result in a student exchange program of sorts, leading Sandhill cranes to end up in Europe and Common Cranes to end up here in Nebraska.
+March is crane season in Nebraska, the Platte River is covered with nearly a million Sandhill Cranes, and we often get handfuls of Whooping Cranes. But the most sought after crane in the state (besides the ultra-mega Hooded) might just be the Common Crane. The Common Crane is a eurasian species that breeds in northern Euraisa, all the way from Northern Europe to Siberia. Sandhill Cranes also breed in far eastern Russia, and sometimes post-breeding dispersal can result in a student exchange program of sorts, leading Sandhill cranes to end up in Europe and Common Cranes to end up here in Nebraska.
 
 When setting out for a Big Year, the rarities are what matters. You can't get a very large number of birds with just the breeding birds, you need to go for the crazy rarities. So at the beginning of the year, Common Crane was in the back of my mind. Studying ebird data, I noticed that nearly every year there was a Common Crane spotted, sometimes near Grand Island, and sometimes near Lewellen way out by Lake Mac. I told myself if there was a Common Crane report, I would go for it.
 
 ### March 17, 2025
 
-On March 17th, one of those reports came in. I was out enjoying the unmseasonably warm weather, washing my mountain bike in preparation for a ride when I got a call from Keegan. "Did you see what I sent you?!?! Common Crane. Merrick County. Now." Sure enough, there it was. I couldn't bail on the bike ride with my friends, but Keegan and I quickly made plans and took the time off from work to head out the next day in search of the crane.
+On March 17th, one of those reports came in. I was out enjoying the unseasonably warm weather, washing my mountain bike in preparation for a ride when I got a call from Keegan. "Did you see what I sent you?!?! Common Crane. Merrick County. Now." Sure enough, there it was. I couldn't bail on the bike ride with my friends, but Keegan and I quickly made plans and took the time off from work to head out the next day in search of the crane.
 
 ### March 18, 2025
 
