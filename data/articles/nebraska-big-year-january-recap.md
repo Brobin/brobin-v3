@@ -14,6 +14,8 @@ Year birds: +118 (**118**),
 State birds: +3 (**328**),
 Life birds: +3 (**497**)
 
+---
+
 ### January 1
 
 It was a cold winter morning in North Platte, and I woke up early at 5am to get my first bird of the year. I hopped in the car, and drove from my hotel to some canyons 30 miles to the southeast. Shortly after arriving at the spot (which I had scoped out on Dec 31st), I heard my target bird, a **Northern Saw-whet Owl**! Right after hearing it, it buzzed right over my head, and I got just a glimpse of it as it passed through my car headlights and deep into the woods. A pretty good bird to start off the year!

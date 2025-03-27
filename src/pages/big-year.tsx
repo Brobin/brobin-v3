@@ -40,14 +40,11 @@ export default function BigYear({ birds, series }: Props) {
         >
           Jan
         </Button>
-        <Button href="https://ebird.org/tripreport/330554" component="a">
+        <Button
+          href="/blog/2025/03/nebraska-big-year-february-recap"
+          component="a"
+        >
           Feb
-        </Button>
-        <Button href="https://ebird.org/tripreport/337360" component="a">
-          Mar
-        </Button>
-        <Button href="https://ebird.org/tripreport/340906" component="a">
-          Apr
         </Button>
       </ButtonGroup>
       <br />
