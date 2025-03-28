@@ -28,10 +28,7 @@ export default function BigYear({ birds, series }: Props) {
       <Typography level="h1">Nebraska Big Year 2025</Typography>
       <p>
         I&apos;m spending 2025 finding as many birds as I can in the state of
-        Nebraska! The current record is 347, and my goal is 340. If things go
-        well, 350 will be my stretch goal, but I&apos;ll be happy with any
-        result, knowing that I&apos;m doing my best to find all the birds that
-        pass through or breed in the state.
+        Nebraska! The record is 347, and my goal is 350!
       </p>
       <ButtonGroup variant="outlined">
         <Button

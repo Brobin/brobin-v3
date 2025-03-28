@@ -3,6 +3,7 @@ import dayjs, { Dayjs } from "dayjs";
 import { createFlickr } from "flickr-sdk";
 
 export const ALBUM_MAP: { [key: string]: string } = {
+  "wildlife-2025": "72177720324716566",
   "wildlife-2024": "72177720322623500",
   "wildlife-2023": "72177720322623476",
   astro: "72177720322644994",

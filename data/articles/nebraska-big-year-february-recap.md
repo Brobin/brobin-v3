@@ -24,6 +24,8 @@ Perhaps more importantly for the overall effort, February was a HUGE planning mo
 
 ---
 
+[eBird Trip Report](https://ebird.org/tripreport/330554)
+
 119. **Mountain Bluebird**, Lincoln
 120. **Brown-headed Cowbird**, Lincoln
 121. **Greater Prairie-Chicken**, Lincoln

@@ -60,6 +60,8 @@ The rest of the month I spent in the east, knocking out a few more key targets. 
 
 ---
 
+[eBird Trip Report](https://ebird.org/tripreport/325880)
+
 1. **Northern Saw-whet Owl**, Lincoln
 2. **Northern Cardinal**, Keith
 3. **Song Sparrow**, Keith

@@ -4,6 +4,7 @@ import BlogSidebar from "@brobin/components/blog/Sidebar";
 import { Article, BlogSidebarProps } from "@brobin/types/blog";
 import { getArticles, getBlogSidebar } from "@brobin/utils/blog";
 import { Grid, Typography } from "@mui/joy";
+import { titleCase } from "title-case";
 
 type BlogProps = {
   articles: Article[];
@@ -13,14 +14,14 @@ type BlogProps = {
 export default function Blog({ articles, tag, ...props }: BlogProps) {
   return (
     <Page
-      title={tag ? `${tag} | Blog` : "Blog"}
-      description={tag ? `Blog posts tagged "${tag}"` : "Blog"}
+      title={tag ? `${titleCase(tag.replace("-", " "))} | Blog` : "Blog"}
+      description={tag ? titleCase(tag.replace("-", " ")) : "Blog"}
     >
       <Grid container spacing={2}>
         <Grid xs={12} md={8}>
           {tag && (
             <Typography level="h2" paddingBottom={2}>
-              Posts tagged &quot;{tag}&quot;
+              {titleCase(tag.replace("-", " "))}
             </Typography>
           )}
           {articles.map((article) => (
