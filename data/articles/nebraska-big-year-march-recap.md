@@ -38,7 +38,7 @@ The month of March also resulted in 2 other trips specifically to search for the
 
 [![Common Crane](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632650420/640)](https://macaulaylibrary.org/asset/632650420)
 
-### Praire Birds
+### Prairie Birds
 
 If I had a state nemesis bird going into the month, it would probably be Smith's Longspur. I went out to Spring Creek Prairie 5 times last fall searching and listening for the elusive prairie bird with no luck. So when Paul D texted me and gave me a few spots to checkout in the southeast portion of the state, I couldn't help but give it a shot.
 
