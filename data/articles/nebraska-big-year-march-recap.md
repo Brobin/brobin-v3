@@ -50,7 +50,7 @@ I started at Pawnee Prairie WMA where I racked up over 20 Pawnee county birds. I
 
 Shorebird season is starting up again, and I'm off to a pretty good start! A couple of last year's go-to spots like Pawnee Lake and Branched Oak Lake seem to have much higher water this year, leaving little to no mudflats to work with, so I'm needing to branch out a bit more. I've scouted out a few places in the southwest side of Lancaster county that should be good for this year, especially Yankee Hill WMA, where I snagged my last 3 year birds of the month: **Lesser Yellowlegs** (163), **Marbled Godwit** (164), and **American Avocet** (165). Migration will begin in earnest soon and I'm ready for the challenge of finding everything that comes through!
 
-Thank you so much to Caroline, Keegan, Paul, Dan, Colleen, and everythone else I birded with this month for all their help and encouragement!
+Thank you so much to Caroline, Keegan, Paul, Dan, Colleen, and everyone else I birded with this month for all their help and encouragement!
 
 ---
 
