@@ -9,5 +9,5 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { tag } }: TagParams) {
-  return { props: { articles: getArticles(tag), tag, ...getBlogSidebar() } };
+  return { props: { articles: getArticles(tag), tag, ...getBlogSidebar(tag) } };
 }

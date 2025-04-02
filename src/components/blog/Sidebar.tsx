@@ -1,5 +1,6 @@
 import { Article } from "@brobin/types/blog";
 import { Box, Card, Chip, Divider, Typography } from "@mui/joy";
+import dayjs from "dayjs";
 import Link from "next/link";
 
 type BlogSidebarProps = {
@@ -12,9 +13,15 @@ export default function BlogSidebar({ recent, tags }: BlogSidebarProps) {
     <Card variant="plain">
       <Typography level="title-lg">Recent Posts</Typography>
       {recent.map((article) => (
-        <Link href={article.link} key={article.slug}>
-          {article.title}
-        </Link>
+        <div key={article.slug}>
+          <Divider />
+          <Typography level="title-md" paddingBottom={0} paddingTop={2}>
+            <Link href={article.link}>{article.title}</Link>
+          </Typography>
+          <Typography level="body-sm" paddingBottom={2}>
+            {dayjs(article.date).format("MMMM DD, YYYY")}
+          </Typography>
+        </div>
       ))}
       <Divider />
       <Typography level="title-lg">Tags</Typography>

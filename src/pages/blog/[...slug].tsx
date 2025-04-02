@@ -1,13 +1,18 @@
 import Page from "@brobin/components/Page";
 import ArticleMarkdown from "@brobin/components/blog/ArticleMarkdown";
-import { Article, ArticleParams } from "@brobin/types/blog";
-import { getArticleBySlug, getArticlePaths } from "@brobin/utils/blog";
+import BlogSidebar from "@brobin/components/blog/Sidebar";
+import { Article, ArticleParams, BlogSidebarProps } from "@brobin/types/blog";
+import {
+  getArticleBySlug,
+  getArticlePaths,
+  getBlogSidebar,
+} from "@brobin/utils/blog";
 import { Card, Divider, Grid, Typography } from "@mui/joy";
 import dayjs from "dayjs";
 
 type ArticleProps = {
   article: Article;
-};
+} & BlogSidebarProps;
 
 export default function ArticlePage({ article, ...props }: ArticleProps) {
   return (
@@ -23,7 +28,6 @@ export default function ArticlePage({ article, ...props }: ArticleProps) {
       }
     >
       <Grid container spacing={2}>
-        <Grid xs={12} md={2}></Grid>
         <Grid xs={12} md={8}>
           <Card variant="plain">
             <Typography level="h1">{article.title}</Typography>
@@ -33,6 +37,9 @@ export default function ArticlePage({ article, ...props }: ArticleProps) {
             <Divider />
             <ArticleMarkdown content={article.content} />
           </Card>
+        </Grid>
+        <Grid xs={12} md={4}>
+          <BlogSidebar {...props} />
         </Grid>
       </Grid>
     </Page>
@@ -48,6 +55,7 @@ export async function getStaticProps({ params: { slug } }: ArticleParams) {
   return {
     props: {
       article: getArticleBySlug(slug[slug.length - 1]),
+      ...getBlogSidebar(),
     },
   };
 }

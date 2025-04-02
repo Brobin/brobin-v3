@@ -51,18 +51,18 @@ export function getArticlePaths(): ArticleParams[] {
   });
 }
 
-function getRecentArticles(): Article[] {
-  return getArticles().slice(0, 5);
+function getRecentArticles(tag?: string): Article[] {
+  return getArticles(tag).slice(0, 5);
 }
 
-export function getTags(): string[] {
-  const tags = getArticles().flatMap((article) => article.tags);
+export function getTags(tag?: string): string[] {
+  const tags = getArticles(tag).flatMap((article) => article.tags);
   return Array.from(new Set(tags)).sort();
 }
 
-export function getBlogSidebar() {
+export function getBlogSidebar(tag?: string) {
   return {
-    recent: getRecentArticles(),
-    tags: getTags(),
+    recent: getRecentArticles(tag),
+    tags: getTags(tag),
   };
 }
