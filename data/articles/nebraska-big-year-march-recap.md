@@ -34,7 +34,7 @@ Among the flock, I found a Glaucous Gull, multiple Lesser-black-backed Gulls, "T
 
 March is Crane season in Nebraska, and I made 4 trips out to see them! The first trip was a blind tour at Crane Trust. The tour was amazing as always (even though Snow Geese tried to steal the show), but didn't produce any Whooping Cranes, so Keegan and I came out the next week to find a **Whooping Crane** (142) to add to our year lists.
 
-The month of March also resulted in 2 other trips specifically to search for the Common Cranes. The first search was fruitless, but an extended second trip resulted in success! You can read more about the **Common Crane** (159) in it's own [blog post](/2025/03/nebraska-big-year-common-crane-quest).
+The month of March also resulted in 2 other trips specifically to search for the Common Cranes. The first search was fruitless, but an extended second trip resulted in success! You can read more about the **Common Crane** (159) in it's own [blog post](/blog/2025/03/nebraska-big-year-common-crane-quest).
 
 [![Common Crane](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632650420/640)](https://macaulaylibrary.org/asset/632650420)
 
