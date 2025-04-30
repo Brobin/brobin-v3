@@ -50,6 +50,12 @@ export default function BigYear({ birds, series }: Props) {
         >
           Mar
         </Button>
+        <Button
+          href="/blog/2025/04/nebraska-big-year-april-recap"
+          component="a"
+        >
+          Apr
+        </Button>
       </ButtonGroup>
       <br />
       <Box paddingY={2}>
