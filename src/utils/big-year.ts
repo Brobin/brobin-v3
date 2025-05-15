@@ -1,24 +1,25 @@
 import { Bird } from "@brobin/types/big-year";
-import path from "path";
 import { parse } from "papaparse";
 
 const DATA_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQV7GReU_p5r4vYS7jqJzjijqjC5BMKBaP-T1fjDs4OEsniHckux0KQLYGvChl3DBnarfdFy9HWW9Gs/pub?gid=805199429&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQV7GReU_p5r4vYS7jqJzjijqjC5BMKBaP-T1fjDs4OEsniHckux0KQLYGvChl3DBnarfdFy9HWW9Gs/pub?gid=1575599260&single=true&output=csv";
 
 export async function getBirdList(): Promise<Bird[]> {
-  const birds: Omit<Bird, "id">[] = [];
+  const birds: Bird[] = [];
 
   await fetch(DATA_URL)
     .then((response) => response.text())
     .then((v) => parse<string[]>(v))
     .then(({ data }) => {
-      data.forEach((value) => {
-        if (value[2] === "species") {
+      data.forEach((value, i) => {
+        if (value[0] !== "") {
           birds.push({
-            name: String(value[3]),
-            location: String(value[6]),
-            date: String(value[8]),
-            checklistId: String(value[10]),
+            id: Number(value[0]),
+            date: String(value[1]),
+            name: String(value[2]),
+            location: String(value[3]),
+            lat: Number(value[4]),
+            lng: Number(value[5]),
           });
         }
       });
@@ -26,8 +27,9 @@ export async function getBirdList(): Promise<Bird[]> {
     .then(() => {})
     .catch((err) => console.log(err));
 
-  return birds.map((bird, i) => ({
-    id: birds.length - i,
-    ...bird,
-  }));
+  return birds.sort((a, b) => {
+    if (a.id > b.id) return -1;
+    if (b.id > a.id) return 1;
+    return 0;
+  });
 }

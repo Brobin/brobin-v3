@@ -3,5 +3,6 @@ export type Bird = {
   name: string;
   location: string;
   date: string;
-  checklistId: string;
+  lat?: number;
+  lng?: number;
 };

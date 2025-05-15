@@ -31,32 +31,38 @@ export default function BigYear({ birds, series }: Props) {
         Nebraska! The record is 347, and my goal is 350!
       </p>
       <br />
-      <ButtonGroup variant="outlined">
-        <Button
-          href="/blog/2025/02/nebraska-big-year-january-recap"
-          component="a"
-        >
-          Jan
+      <Grid container spacing={2}>
+        <ButtonGroup variant="outlined">
+          <Button
+            href="/blog/2025/02/nebraska-big-year-january-recap"
+            component="a"
+          >
+            Jan
+          </Button>
+          <Button
+            href="/blog/2025/03/nebraska-big-year-february-recap"
+            component="a"
+          >
+            Feb
+          </Button>
+          <Button
+            href="/blog/2025/04/nebraska-big-year-march-recap"
+            component="a"
+          >
+            Mar
+          </Button>
+          <Button
+            href="/blog/2025/04/nebraska-big-year-april-recap"
+            component="a"
+          >
+            Apr
+          </Button>
+        </ButtonGroup>
+        <Button href="/big-year/map" component="a" style={{ marginLeft: 20 }}>
+          Map
         </Button>
-        <Button
-          href="/blog/2025/03/nebraska-big-year-february-recap"
-          component="a"
-        >
-          Feb
-        </Button>
-        <Button
-          href="/blog/2025/04/nebraska-big-year-march-recap"
-          component="a"
-        >
-          Mar
-        </Button>
-        <Button
-          href="/blog/2025/04/nebraska-big-year-april-recap"
-          component="a"
-        >
-          Apr
-        </Button>
-      </ButtonGroup>
+      </Grid>
+
       <br />
       <Box paddingY={2}>
         <Grid container spacing={2}>
@@ -78,14 +84,7 @@ export default function BigYear({ birds, series }: Props) {
                 Latest Bird
               </Typography>
               <Typography level="h3" fontSize={30} textAlign="center">
-                <Link
-                  href={`https://ebird.org/checklist/${birds[0].checklistId}`}
-                  target="_blank"
-                  underline="always"
-                  color="primary"
-                >
-                  {birds[0].name}
-                </Link>
+                {birds[0].name}
               </Typography>
               <span style={{ textAlign: "center" }}>
                 {dayjs(birds[0].date).format("MMM DD")}
@@ -95,16 +94,7 @@ export default function BigYear({ birds, series }: Props) {
                 First Bird
               </Typography>
               <Typography level="h3" fontSize={30} textAlign="center">
-                <Link
-                  href={`https://ebird.org/checklist/${
-                    birds[birds.length - 1].checklistId
-                  }`}
-                  target="_blank"
-                  underline="always"
-                  color="primary"
-                >
-                  {birds[birds.length - 1].name}
-                </Link>
+                {birds[birds.length - 1].name}
               </Typography>
               <span style={{ textAlign: "center" }}>
                 {dayjs(birds[birds.length - 1].date).format("MMM DD")}
