@@ -3,6 +3,6 @@ export type Bird = {
   name: string;
   location: string;
   date: string;
-  lat?: number;
-  lng?: number;
+  lat: number;
+  lng: number;
 };

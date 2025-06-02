@@ -12,7 +12,7 @@ export async function getBirdList(): Promise<Bird[]> {
     .then((v) => parse<string[]>(v))
     .then(({ data }) => {
       data.forEach((value, i) => {
-        if (value[0] !== "") {
+        if (value[0] !== "" && value[4] && value[5]) {
           birds.push({
             id: Number(value[0]),
             date: String(value[1]),

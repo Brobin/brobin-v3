@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-sync-scripts */
-import { Bird } from "@brobin/types/big-year";
-import { getBirdList } from "@brobin/utils/big-year";
+import { MapProvider } from "@brobin/components/big-year/MapContext";
+import MapDrawer from "@brobin/components/big-year/MapDrawer";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useMemo } from "react";
 
-export default function Map({ birds = [] }: { birds: Bird[] }) {
+export default function Map() {
   const Map = useMemo(
     () =>
       dynamic(() => import("../../components/big-year/Map"), {
@@ -18,10 +18,21 @@ export default function Map({ birds = [] }: { birds: Bird[] }) {
   return (
     <>
       <Head>
+        <title>Nebraska Big Year Map</title>
         <link
           rel="stylesheet"
           href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"
           crossOrigin="anonymous"
         />
         <script
@@ -29,23 +40,27 @@ export default function Map({ birds = [] }: { birds: Bird[] }) {
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
           crossOrigin="anonymous"
         ></script>
+        <script
+          src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
-      <Map birds={birds} />
-      <div
-        id="map"
-        style={{
-          position: "absolute",
-          top: 0,
-          bottom: 0,
-          width: "100%",
-        }}
-      ></div>
+      <MapProvider>
+        <Map />
+        <div
+          id="map"
+          style={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            width: "100%",
+          }}
+        ></div>
+      </MapProvider>
     </>
   );
 }
 
 export async function getStaticProps() {
-  const birds = await getBirdList();
-
-  return { props: { birds } };
+  return { props: {} };
 }
