@@ -57,6 +57,12 @@ export default function BigYear({ birds, series }: Props) {
           >
             Apr
           </Button>
+          <Button
+            href="/blog/2025/06/nebraska-big-year-may-recap"
+            component="a"
+          >
+            May
+          </Button>
         </ButtonGroup>
         <Button href="/big-year/map" component="a" style={{ marginLeft: 20 }}>
           Map
@@ -140,6 +146,14 @@ export default function BigYear({ birds, series }: Props) {
           <Grid xs={12} sm={12} md={8}>
             <DataGrid
               rows={birds}
+              initialState={{
+                pagination: {
+                  paginationModel: {
+                    pageSize: 25,
+                  },
+                },
+              }}
+              pageSizeOptions={[]}
               columns={[
                 { field: "id", headerName: "#", width: 75 },
                 { field: "name", headerName: "Species", width: 250 },
@@ -164,6 +178,14 @@ export default function BigYear({ birds, series }: Props) {
                 .map((s, id) => ({ ...s, id }))
                 .filter((s) => s.new > 0)
                 .reverse()}
+              initialState={{
+                pagination: {
+                  paginationModel: {
+                    pageSize: 52,
+                  },
+                },
+              }}
+              pageSizeOptions={[]}
               columns={[
                 {
                   field: "date",
