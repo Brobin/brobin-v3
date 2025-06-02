@@ -95,6 +95,8 @@ Having exhausted nearly all my targets, I went out on the afternoon of the 30th 
 
 I ended with a month total of 257 species, smashing my tally last year of 228, and with my year total at 322, I'm in a really good spot for the rest of the year!
 
+Shoutouts this month to Paul, Pro, Keegan, Stephen, Olivia, Rita, Tommy, Eugene, Cody, Lauren, Dan, Caleb, Mark, Judson, Eli, Kojo, Colleen, Shari & Jon, and everyone else that helped me out or birded with me this month!
+
 ---
 
 [eBird Trip Report](https://ebird.org/tripreport/359607)
