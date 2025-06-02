@@ -1,9 +1,9 @@
 ---
 title: "Nebraska Big Year: May Recap"
 date: "2025-06-02"
-preview: May was a marathon, I was prepared for Warbler madness, and it didn't disappoint!
+preview: WARBLER MANIA! May was a marathon, I was prepared for Warbler madness, and it didn't disappoint!
 tags: birding, big-year
-image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/634054651/640
+image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/635103111/640
 ---
 
 Year birds: +73 (**322**),
