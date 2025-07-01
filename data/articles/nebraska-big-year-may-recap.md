@@ -6,9 +6,10 @@ tags: birding, big-year
 image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/635103111/640
 ---
 
-Year birds: +73 (**322**),
-State birds: +10 (**344**),
-Life birds: +3 (**512**)
+Year birds: +73 (**322**)\
+State birds: +10 (**344**)
+Life birds: +3 (**511**)\
+[eBird Trip Report](https://ebird.org/tripreport/359607)
 
 ---
 
