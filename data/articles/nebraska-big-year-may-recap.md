@@ -7,7 +7,7 @@ image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/635103111/640
 ---
 
 Year birds: +73 (**322**)\
-State birds: +10 (**344**)
+State birds: +10 (**344**)\
 Life birds: +3 (**511**)\
 [eBird Trip Report](https://ebird.org/tripreport/359607)
 
@@ -42,7 +42,7 @@ Throughout the month, I organized a few birding meetups. We met twice at Fontene
 
 Early in May, when it seemed like migration was going to happen on schedule (instead of early like last year), I decided to take a trip out west to try to track down the sneaky **Green-tailed Towhee** (274).
 
-On my way out, I dipped down to Clay county in hopes of finding a Least Bittern, but instead found my first of year **Upland Sandpiper** (264) and **Buff-breasted Sandpiper** (265). On my way out through Hastings, I got a phone call from Mark Brogie, he told me they were looking at a Little Blue Heron. Naturally, I had to detour, so I rerouted from my western plans and headed up highway 2 to Halsey.
+On my way out, I dipped down to Clay county in hopes of finding a Least Bittern, but instead found my first of year **Upland Sandpiper** (264) and **Buff-breasted Sandpiper** (265). On my way out through Hastings (waiting for my food at Arby's), I got a phone call from Mark Brogie, he told me they were currently looking at a Little Blue Heron! Naturally, I had to detour, so I rerouted from my western plans and headed up highway 2 to Halsey.
 
 I got up at dawn and went to the little pond where the heron was seen. After about 20 minutes of waiting, I decided to check the river, and sure enough, the bird was roosting high in a tree above the river! As I watched, it flew over and landed in the small pond about 50 yards away. I spent nearly 40 minutes enjoying my new state bird, and year bird #266 before continuing west for the Towhee.
 

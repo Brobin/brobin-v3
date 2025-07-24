@@ -6,9 +6,10 @@ tags: birding, big-year
 image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/631530734/640
 ---
 
-Year birds: +34 (**165**),
-State birds: +3 (**332**),
-Life birds: +2 (**507**)
+Year birds: +34 (**165**)\
+State birds: +3 (**332**)\
+Life birds: +2 (**507**)\
+[eBird Trip Report](https://ebird.org/tripreport/337360)
 
 ---
 
@@ -16,9 +17,10 @@ March was a great month of birding. I'm ending the first quarter of the year wit
 
 ### Out West
 
-The month started out west. Keegan and I were camping at Lake Ogallala looking for gulls the last few days of January, and not finding much on the third day, we decided to go to Sutherland Reservoir to see if we could find one of the legendary massive flocks of Snow Geese. On the way in, by the cooling ponds, we saw a loon. Naturally, I snapped some photos, and we both wrote it off as a Common Loon, but something was still odd about it. It took until 2 hours later when we got back to camp for me to study the photos and realize that it was actually a **Pacific Loon** (132)! A really great bird to pick up early in the year, and a state bird for both of us. Later Boni E, Dave C, and others were able to relocate the bird and add it to their state lists!
+The month started out west. Keegan and I were camping at Lake Ogallala looking for gulls the last few days of February, and not finding much on the third day, we decided to go to Sutherland Reservoir to see if we could find one of the legendary massive flocks of Snow Geese. On the way in, by the cooling ponds, we saw a loon. Naturally, I snapped some photos, and we both wrote it off as a Common Loon, but something was still odd about it. It took until 2 hours later when we got back to camp for me to study the photos and realize that it was actually a **Pacific Loon** (132)! A really great bird to pick up early in the year, and a state bird for both of us. Later Boni E, Dave C, and others were able to relocate the bird and add it to their state lists!
 
-[![Pacific Loon](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/631530734/640)](https://macaulaylibrary.org/asset/631530734)
+[![Pacific Loon](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/631530734/1200)](https://macaulaylibrary.org/asset/631530734)
+_Pacific Loon, Lincoln County_
 
 Also at Sutherland we did manage to find a massive flock of geese. Atempting to estimate the size was difficult, but with a little studying of the maps we were able to estimate a [flock size of 560,000](https://ebird.org/checklist/S216074079)!
 
@@ -28,7 +30,8 @@ As new year birds were coming in a bit slowly in mid March, I decided to go bird
 
 Among the flock, I found a Glaucous Gull, multiple Lesser-black-backed Gulls, "Thayer's" and "Kumlien's" Iceland Gulls, 2 California Gulls (very rare for Lancaster county), and a [hybrid Herring x Lesser Black-backed Gull](https://ebird.org/checklist/S218690750)! The flock seemed to be resting there after foraging at the dump and showed up regularly for over a week! It was very cool to see many people come out and get life, state, and county birds from such a diverse and cooperative flock! Just goes to show that birding some spots in the "wrong" time of year can pay off!
 
-[![California Gull](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632158431/640)](https://macaulaylibrary.org/asset/632158431)
+[![California Gull](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632158431/1200)](https://macaulaylibrary.org/asset/632158431)
+_California Gull, Lancaster County_
 
 ### Cranes, Cranes, Cranes
 
@@ -36,7 +39,8 @@ March is Crane season in Nebraska, and I made 4 trips out to see them! The first
 
 The month of March also resulted in 2 other trips specifically to search for the Common Cranes. The first search was fruitless, but an extended second trip resulted in success! You can read more about the **Common Crane** (159) in it's own [blog post](/blog/2025/03/nebraska-big-year-common-crane-quest).
 
-[![Common Crane](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632650420/640)](https://macaulaylibrary.org/asset/632650420)
+[![Common Crane](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632650420/1200)](https://macaulaylibrary.org/asset/632650420)
+_Common Crane, Keith County_
 
 ### Prairie Birds
 
@@ -44,7 +48,8 @@ If I had a state nemesis bird going into the month, it would probably be Smith's
 
 I started at Pawnee Prairie WMA where I racked up over 20 Pawnee county birds. I _did_ have some Longspurs there, but I wasn't confident enough in the call notes to turn them into Smith's. I later visited Burchard WMA, but the strong winds made listening for the rattle calls nearly impossible. So finally I headed to Berg Tallgrass Prairie near Talmage, and not 5 minutes after stepping out of the car, a dozen **Smith's Longspurs** (157) flew over my head, rattling all the way and landed in the shortgrass. I was even able to snag a few photos before they flew off again and disappeared to the west.
 
-[![Smith's Longspur](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632498819/640)](https://macaulaylibrary.org/asset/632498819)
+[![Smith's Longspur](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632498819/1200)](https://macaulaylibrary.org/asset/632498819)
+_Smith's Longspur, Nemaha County_
 
 ### Shorebirds
 

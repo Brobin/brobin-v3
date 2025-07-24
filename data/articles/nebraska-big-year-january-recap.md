@@ -10,9 +10,10 @@ As some of you may know, I'm giving a Nebraska state Big Year a crack this year.
 
 ---
 
-Year birds: +118 (**118**),
-State birds: +3 (**328**),
-Life birds: +3 (**497**)
+Year birds: +118 (**118**)\
+State birds: +3 (**328**)\
+Life birds: +3 (**497**)\
+[eBird Trip Report](https://ebird.org/tripreport/325880)
 
 ---
 
@@ -26,7 +27,8 @@ Crazy enough as it seems, from there I headed BACK to North Platte for 2 more ra
 
 I finished January 1st with 78 species, and 8 rare targets, and 1 lifer! I was off to the races.
 
-![Couch's Kingbird](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/628571041/640)
+[![Couch's Kingbird](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/628571041/1200)](https://macaulaylibrary.org/asset/628571041)
+_Couch's Kingbird, Lincoln County_
 
 ### January 2
 
@@ -36,7 +38,7 @@ A few more excellent pickups for the day were **Common Raven**, **Sharp-tailed G
 
 ### January 3
 
-This was the day I planned to see Pinyon Jays, but it didn't start out as planned. A thin blanket of snow covered the ground in Gering as I set out for the day, but after a couple hundred yards of driving, I realized I had a flat tire (probably from driving 40 miles of gravelt the day before). I attempted to put the spare on, but my tiny wimpy car jack wouldn't do. Thanks to the Gering police department I was finally able to get the spare on and hit the road again. (Yes, I did buy a new jack immediately after getting home)
+This was the day I planned to see Pinyon Jays, but it didn't start out as planned. A thin blanket of snow covered the ground in Gering as I set out for the day, but after a couple hundred yards of driving, I realized I had a flat tire (probably from driving 40 miles of gravel the day before). I attempted to put the spare on, but my tiny wimpy car jack wouldn't do. Thanks to the Gering police department I was finally able to get the spare on and hit the road again. (Yes, I did buy a new jack immediately after getting home)
 
 60 miles later on a spare tire, I pulled up to the traditional Pinyon Jay feeders, and for nearly 90 minutes all I saw were the usual species. I was beginning to lose hope, when finally I noticed the undulating flight pattern of a group of birds coming in from the west. After inspecting the feeders for a minute or so, my year's first **Pinyon Jays** overwhelmed the feeders! 3 days in and 3 life birds.
 
@@ -45,6 +47,7 @@ I spent the next 2 hours killing time in a coffee shop while my tire was repaire
 I was able to salvage the rest of the day at Lake Minitaire, Buffalo Creek WMA and Wildcat Hills, notching another 3 western specialty year birds: **Rock Wren** (early or overwintering), **Townsend's Solitaire**, and **Pygmy Nuthatch**.
 
 ![Buffalo Creek WMA](https://live.staticflickr.com/65535/54249191699_21a566b628_z.jpg)
+_Buffalo Creek WMA_
 
 ### January 4
 
@@ -53,6 +56,7 @@ Like the evening before, I camped out at the feeders at Wildcat Hills, hoping to
 I stopped off in Kearney to look for the Brant that was seen a few days before, but had no luck. I continued home in the freezing rain with a repsectable 93 species in 4 days.
 
 ![Wildcat Hills](https://live.staticflickr.com/65535/54249372910_5680027928_z.jpg)
+_Wildcat Hills_
 
 ### January 5-31
 

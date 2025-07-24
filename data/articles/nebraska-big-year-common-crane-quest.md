@@ -32,6 +32,6 @@ Clear Creek WMA is a wonderful spot, with a few newly built ponds and wetland ar
 
 159. **Common Crane**, Keith
 
-![Common Crane](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632650417/640)
+![Common Crane](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632650417/1200)
 
 Special thanks to Matt (for finding the bird), Paul and Colleen (for searching with us), Boni (for texting me about the bird), Julie (for being on it when we got there), and Dan (for coming along for the ride).

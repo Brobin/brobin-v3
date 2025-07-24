@@ -6,9 +6,10 @@ tags: birding, big-year
 image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/634054651/640
 ---
 
-Year birds: +82 (**247**),
-State birds: +2 (**334**),
-Life birds: +2 (**509**)
+Year birds: +82 (**247**)\
+State birds: +2 (**334**)\
+Life birds: +2 (**509**)\
+[eBird Trip Report](https://ebird.org/tripreport/340906)
 
 ---
 
@@ -22,17 +23,20 @@ The 2 big targets for this month were 2 life birds, Glossy Ibis, and Gray Partri
 
 Also on that trip we stopped at Lake North/Babcock. There were literally hundreds of shorebirds, perhaps thousands. The only year bird we could pick out of the bunch were **American Golden-Plover** (178). Later in the month, I visited Lake North again to see the **Snowy Plover** (208) that Lynette found! A great bird, and one I wasn't expecting to see 2 years in a row.
 
-[![Snowy Plover](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/634263173/640)](https://macaulaylibrary.org/asset/634263173)
+[![Snowy Plover](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/634263173/1200)](https://macaulaylibrary.org/asset/634263173)
+_Snowy Plover, Platte County_
 
 ### Lange WPA
 
 The next lifer target was Glossy Ibis. Paul Dunbar graciously scouted out some locations in Clay county, and the next weekend, we headed out, starting at Lange WPA. It was a gorgeous crisp spring morning day and the small pond at Lange WPA was loaded with shorebirds. There weren't any Ibis visible, but we decided to take a short hike through the meadow to get a better look. Just after we had begun scoping the shorebirds, 3 huge white birds flew in nearly straight at us, a family group of Whooping Cranes! They landed less than 50 feet away from us, completely unbothered by our presence, before moseying along through the meadow to the north. It was an incredible experience with these amazing birds that I don't think will be matched for a long time.
 
-[![Whooping Cranes](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/634054651/640)](https://macaulaylibrary.org/asset/634054651)
+[![Whooping Cranes](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/634054651/1200)](https://macaulaylibrary.org/asset/634054651)
+_Whooping Crane, Clay County_
 
 After Lange, we hit a few other spots, until we ended up at Kissinger Basin. After a bit of a hike out to the mudflats, we began scanning through a group of about 30 ibis. And sure enough, with a little effort, we were able to find a **Glossy Ibis** (199)! A lifer for both Keegan and I.
 
-[![Glossy ibis](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/634054733/640)](https://macaulaylibrary.org/asset/634054733)
+[![Glossy ibis](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/634054733/1200)](https://macaulaylibrary.org/asset/634054733)
+_Glossy Ibis, Clay County_
 
 It seems our Whooping Crane discovery earlier at Lange WPA set off a sort of [Patagonia picnic table effect](https://en.wikipedia.org/wiki/Patagonia_picnic_table_effect). The next day when Dave C headed out there to look for the cranes, he found a **Whimbrel** (205)! Of course, I had to go see that one, so I made another visit for Clay county. And the day after _that_, Joel headed out here and found a White-tailed Kite! I spent some time looking for that one too and was unable to relocate it, but it was still really cool to see a small wetland get such great birds.
 

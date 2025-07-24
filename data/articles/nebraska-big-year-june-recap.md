@@ -13,7 +13,7 @@ Life birds: +0 (**511**)\
 
 ---
 
-May was a marathon and June was a slog. Breeding season is in full swing and with it, the heat, and new birds were few and far between.
+May was a marathon and June was a slog. Breeding season is in full swing and with it came the heat. New birds were few and far between, but very high quality.
 
 ### Pawnee Prairies
 

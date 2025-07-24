@@ -6,9 +6,10 @@ tags: birding, big-year
 image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/630537712/640
 ---
 
-Year birds: +13 (**131**),
-State birds: +1 (**329**),
-Life birds: +1 (**499**)
+Year birds: +13 (**131**)\
+State birds: +1 (**329**)\
+Life birds: +1 (**499**)\
+[eBird Trip Report](https://ebird.org/tripreport/330554)
 
 ---
 
@@ -16,7 +17,8 @@ Overall February was a bit of a slower month, but I still ran into some great bi
 
 In early February I headed to Lake Ogallala specifically targeting Gulls. I spent the first night of the trip camping in North Platte, where Boni gave me some tips that led to a few years birds including **Short-eared Owl**. At Lake O, the trip continued to produce, netting me 11 year birds, including 2 very good gull targets: **Glaucous Gull** and **Short-billed Gull**. The biggest target I had that I _missed_ was Great Black-backed Gull, but I'll have another shot at that one this fall.
 
-![Glaucous Gull](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/630537712/640)
+[![Glaucous Gull](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/630537712/1200)](https://macaulaylibrary.org/asset/630537712)
+_Glaucous Gull, Keith County_
 
 Back home in Lancaster County, I tried a few different places for **Long-eared Owl** and finally tracked down my first (and only) lifer of February.
 
