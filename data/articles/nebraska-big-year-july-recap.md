@@ -8,7 +8,7 @@ image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/638157595/640
 
 Year birds: +2 (**330**)\
 State birds: +0 (**347**)\
-Life birds: +0 (**520**, +9 in Florida)\
+Life birds: +0 (**520**, +8 in Florida)\
 [eBird Trip Report](https://ebird.org/tripreport/390734)
 
 ---
@@ -17,7 +17,7 @@ As I expected, July was a difficult month for the big year. Motivation to get ou
 
 ### Florida!
 
-July started off slow, because I took a break from Nebraska birding! I took a short trip to Florida over the 4th of July weekend and had a great time. I wasn't primarily birding, but I was able to find a day to dedicate wholly to birding (along with a little on the side), and came away with 9 life birds. You can see [my trip report on ebird](https://ebird.org/tripreport/391872) for more. Highlights of that trip were Red-cockaded Woodpecker and Bachman's Sparrow, 2 southern US endemics.
+July started off slow, because I took a break from Nebraska birding! I took a short trip to Florida over the 4th of July weekend and had a great time. I wasn't primarily birding, but I was able to find a day to dedicate wholly to birding (along with a little on the side), and came away with 8 life birds. You can see [my trip report on ebird](https://ebird.org/tripreport/391872) for more. Highlights of that trip were Red-cockaded Woodpecker and Bachman's Sparrow, 2 southern US endemics.
 
 [![Red-cockaded Woodpecker](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/638668544/1200)](https://macaulaylibrary.org/asset/638668544)
 _Red-cockaded Woodpecker, Citrus County, Florida_
