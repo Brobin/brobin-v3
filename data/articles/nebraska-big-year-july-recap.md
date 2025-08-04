@@ -56,7 +56,7 @@ Thanks this month to Eugene, Keegan, Boni, Paul, Dan, and everyone else that's c
 
 ---
 
-[eBird Trip Report](https://ebird.org/tripreport/380323)
+[eBird Trip Report](https://ebird.org/tripreport/390734)
 
 329. **Yellow-crowned Night Heron**, Dodge
 330. **Rufous Hummingbird**, Lincoln
