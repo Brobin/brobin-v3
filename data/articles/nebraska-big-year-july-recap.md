@@ -30,7 +30,7 @@ Early in the month, I took a day trip to Columbus to do some Platte County birdi
 
 Other excursions included a trip to Clay county, where unfortuantely 6 of the 8 locations visited were mostly dry. We had the best luck at Smith Lagoon where a high count of 11 Great Blue Herons, and over 100 Lesser Yellowlegs were the highlights.
 
-Besides that, I spent most of my time birding in my home county of Lancaster, checking a few different spots that still had water, most notably Jack Sinn WMA. The best bird of a few trips there was a Western Sandpiper (county #266)! This one was fun to find, since Keegan was able to get down and see it to add it to his Big Year list, as well as many other birds in the next couple days. At one point, as many as 5 Western Sandpipers were found at the location!
+Besides that, I spent most of my time birding in my home county of Lancaster, checking a few different spots that still had water, most notably Jack Sinn WMA. The best bird of a few trips there was a Western Sandpiper (county #266)! This one was fun to find, since Keegan was able to get down and see it to add it to his Big Year list, as well as many other birders in the next couple days. At one point, as many as 5 Western Sandpipers were found at the location!
 
 [![Western Sandpiper](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639000710/1200)](https://macaulaylibrary.org/asset/639000710)
 _Western Sandpiper, Lancaster County_
