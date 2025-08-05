@@ -3,7 +3,7 @@ title: "Nebraska Big Year: July Recap"
 date: "2025-08-04"
 preview: As summer drags on, the new birds were much more difficult to find, but the end of summer is in sight.
 tags: birding, big-year
-image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/638157595/640
+image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639064157/640
 ---
 
 Year birds: +2 (**330**)\
