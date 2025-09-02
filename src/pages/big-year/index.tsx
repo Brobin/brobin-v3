@@ -75,6 +75,12 @@ export default function BigYear({ birds, series }: Props) {
           >
             Jul
           </Button>
+          <Button
+            href="/blog/2025/09/nebraska-big-year-august-recap"
+            component="a"
+          >
+            Aug
+          </Button>
         </ButtonGroup>
         <Button href="/big-year/map" component="a" style={{ marginLeft: 20 }}>
           Map

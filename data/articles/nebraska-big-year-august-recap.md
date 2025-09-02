@@ -13,7 +13,7 @@ Life birds: +3 (**526**, +3 in Colorado)\
 
 ---
 
-August started off with the tail end of a successful trip out west in July! Keegan and I had just driven out through North Platte where we picked up a Rufous Hummingbird. Our other hummignbird target was Calliope, so we headed out to Gering to search.
+August is usually referred to as the "summer doldrums", but my August was full of incredible rarities! It started off on the tail end of a successful trip out west in July. Keegan and I had just driven out through North Platte where we picked up a Rufous Hummingbird. Our other hummingbird target was Calliope, so we headed out to Gering to search.
 
 ### Hummingbirds!
 
