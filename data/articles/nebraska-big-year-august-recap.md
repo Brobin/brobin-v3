@@ -73,7 +73,7 @@ The end of August means the beginning of migration, so I headed out west again t
 
 While out west, we got word that Michael Willison found a Virginia's Warbler at Exit 1. We headed there immediately, and with group of 6 birders, fanned out in the area, but despite our efforts we were unable to refind it. Also, while on the trip, a Pine Warbler was found in Omaha, but it seems that bird has also skipped town, it's just a risk you take when you travel during a year like this.
 
-That leaves only 2 western migrant targets, Townsend's Warbler and Dusky Flycatcher. Try as we might, we simply couldn't nail down either speces on this trip. We may have been slightly early.
+That leaves only 2 western migrant targets, Townsend's Warbler and Dusky Flycatcher. Try as we might, we simply couldn't nail down either species on this trip. We may have been slightly early.
 
 ---
 
