@@ -69,11 +69,11 @@ _White Ibis, Keith County_
 
 ### West Again
 
-The end of August means the beginning of migration, so I headed out west again to try to find some of the western fall migrants with Keegan and Paul Roisen. The trip started off very well, on the first day we were able to track down a skulky **Macgillivray's Warbler** (338) and another life bird for myself **Gray Flycatcher** (339). Unfortuantely, on that first day, the flycatcher only perched for a split second, so Keegan and Paul didn't get to see it. The next day we headed back to Oliver and just like before, it perched up for only a split second, but Keegan and Paul were able to get eyes on it! What a relief. Later in the trip, we found a **Hammond's Flycatcher** (340) at Gotte Park and a **Cassin's Vireo** (341) at the Gering Cemetery.
+The end of August means the beginning of migration, so I headed out west again to try to find some of the western fall migrants with Keegan and Paul Roisen. The trip started off very well, on the first day we were able to track down a skulky **Macgillivray's Warbler** (338) and another life bird for myself **Gray Flycatcher** (339). Unfortuantel, the flycatcher only perched for a split second and did a couple deep tail dips for me, but Keegan and Paul didn't get to see it. Later in the trip, we found a **Hammond's Flycatcher** (340) at Gotte Park and a **Cassin's Vireo** (341) at the Gering Cemetery.
 
 While out west, we got word that Michael Willison found a Virginia's Warbler at Exit 1. We headed there immediately, and with group of 6 birders, fanned out in the area, but despite our efforts we were unable to refind it. Also, while on the trip, a Pine Warbler was found in Omaha, but it seems that bird has also skipped town, it's just a risk you take when you travel during a year like this.
 
-That leaves only 2 western migrant targets, Townsend's Warbler and Dusky Flycatcher. Try as we might, we simply couldn't nail down either speces on this trip. We may have been slightly early.
+That leaves only 2 western migrant targets, Townsend's Warbler and Dusky Flycatcher. Try as we might, we simply couldn't nail down either species on this trip. We may have been slightly early.
 
 ---
 
