@@ -7,6 +7,7 @@ export type Article = {
   date: string;
   link: string;
   preview: string;
+  draft?: boolean;
   content: string;
   tags: string[];
   image: string | null;

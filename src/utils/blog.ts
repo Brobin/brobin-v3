@@ -24,6 +24,7 @@ function getArticle(filename: string): Article {
     slug,
     tags: data.tags.split(", "),
     image: data.image || null,
+    draft: data.draft || false,
     link: getArticleLink(data.date, slug),
   } as Article;
 }
@@ -36,6 +37,7 @@ export function getArticles(tag?: string): Article[] {
   return files
     .map((filename) => ({ ...getArticle(filename) }))
     .filter((article) => tag === undefined || article.tags.includes(tag))
+    .filter((article) => !article.draft)
     .sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
 }
 
@@ -62,7 +64,7 @@ export function getTags(tag?: string): string[] {
 
 export function getBlogSidebar(tag?: string) {
   return {
-    recent: getRecentArticles(tag),
+    recent: getRecentArticles(tag).filter((article) => !article.draft),
     tags: getTags(tag),
   };
 }
