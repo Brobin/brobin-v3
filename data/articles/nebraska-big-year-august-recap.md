@@ -4,7 +4,6 @@ date: "2025-09-02"
 preview: August is usually referred to as the "summer doldrums", but my August was full of incredible rarities!
 tags: birding, big-year
 image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/640436208/640
-draft: true
 ---
 
 Year birds: +11 (**341**)\
@@ -40,12 +39,12 @@ After that, we spent the night in Alliance, had some AMAZING barbeque (Golden Ho
 
 At this point in a big year, there isn't much left, so every new bird is pretty much a rarity. Mid-August was FULL of them.
 
-On the morning of August 11th, and **Arctic Tern** was found at Lake Minitare by Stephen Brenner. I immediately set off on the longest chase of the year so far, driving 12 hours rouhnd trip to pick up this life bird and year bird #333!
+On the morning of August 11th, an **Arctic Tern** was found at Lake Minitare by Stephen Brenner. I immediately set off on the longest chase of the year so far, driving 12 hours round trip to pick up this life bird and year bird #333!
 
 [![Arctic Tern](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/640179117/1200)](https://macaulaylibrary.org/asset/640179117)
 _Arctic Tern, Sioux County_
 
-Not long after, on August 15th, I decided to do a loop of some lakes around Lincoln to look for Laughing Gulls or other post-breeding wanderers. At Oak Lake Park, I hit the jackpot, not with gulls, but with a pair of **Long-tailed Jaegers** (335)! I initially thought they must be dark Ring-billed Gull juveniles, but I quickly took photos and was able to get them identified. Immediately, I got the word out, and a handful of birders were able to come enjoy them before they took off and headed South.
+Not long after, on August 15th, I decided to do a loop of some lakes around Lincoln to look for Laughing Gulls or other post-breeding wanderers. At Oak Lake Park, I hit the jackpot, not with gulls, but with a pair of **Long-tailed Jaegers** (335)! I initially assumed they must be dark Ring-billed Gull juveniles, but took some more photos and they were unmistakably Jaegers! Immediately, I got the word out, and a handful of birders were able to come enjoy them before they took off and headed South.
 
 [![Long-tailed Jaeger](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/640332519/1200)](https://macaulaylibrary.org/asset/640332519)
 _Long-tailed Jaeger, Lancaster County_
@@ -63,7 +62,7 @@ _Swallow-tailed Kite, Lancaster County_
 
 ### Rarities: Reprise
 
-Coming off the high of the stream of rarities in Nebraska, I headed west on a personal trip to do some hiking in Colorado. The trip was wonderful and netted me 3 more life birds ([Colorado trip report](https://ebird.org/tripreport/406020)). Literally as I was summitting a mountain, I got a text from Stephen Mlodinow that he found an adult **White Ibis** at Lake Mac. Luckily, I was able to convince my wonderful fiance to take a quick detour on the way home, and I was able to tick off #337 for the year! The bird was quite distant and took some searching, but this definitely was a bird I was not expecting to see 2 years in a row.
+Coming off the high of the stream of rarities in Nebraska, I headed west on a personal trip to do some hiking in Colorado. The trip was wonderful and netted me 3 more life birds ([Colorado trip report](https://ebird.org/tripreport/406020)). Literally as I was summitting a mountain, I got a text from Steven Mlodinow that he found an adult **White Ibis** at Lake Mac. Luckily, I was able to convince my wonderful fiance to take a quick detour on the way home, and I was able to tick off #337 for the year! The bird was quite distant and took some searching, but this definitely was a bird I was not expecting to see 2 years in a row.
 
 [![White Ibis](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/640913385/1200)](https://macaulaylibrary.org/asset/640913385)
 _White Ibis, Keith County_
@@ -80,7 +79,7 @@ That leaves only 2 western migrant targets, Townsend's Warbler and Dusky Flycatc
 
 **Record Watch**: With the incredible amount of rarities in August, I think I am in a great position to beat the record. 7 to go to set a new record, 9 for the big 350, and I still have a shortlist of 16 or so birds that are regular. As always, I am incredibly thankful for all the birders who have helped me out this month and encouraged me, especially the current king of Nebraska Big Years, Paul Dunbar! I couldn't do it without you all.
 
-Thanks this month to Colin, Stephen, Olivia, Steven, John and Shari, Boni, Paul R, Keegan, Tommy, Eugene, Michael and everyone else cheering me on.
+Thanks this month to Colin, Stephen, Olivia, Steven, John and Shari, Boni, Paul R, Keegan, Tommy, Eugene, Michael and everyone else cheering me on and birding we me.
 
 ---
 
