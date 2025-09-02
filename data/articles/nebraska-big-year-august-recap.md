@@ -79,7 +79,7 @@ That leaves only 2 western migrant targets, Townsend's Warbler and Dusky Flycatc
 
 **Record Watch**: With the incredible amount of rarities in August, I think I am in a great position to beat the record. 7 to go to set a new record, 9 for the big 350, and I still have a shortlist of 16 or so birds that are regular. As always, I am incredibly thankful for all the birders who have helped me out this month and encouraged me, especially the current king of Nebraska Big Years, Paul Dunbar! I couldn't do it without you all.
 
-Thanks this month to Colin, Stephen, Olivia, Steven, John and Shari, Boni, Paul R, Keegan, Tommy, Eugene, Michael and everyone else cheering me on and birding we me.
+Thanks this month to Colin, Stephen, Olivia, Steven, John and Shari, Boni, Paul R, Keegan, Tommy, Eugene, Michael, and especially my lovely fiance for putting up with my antics and weekend absences!
 
 ---
 
