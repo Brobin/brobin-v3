@@ -7,8 +7,8 @@ image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/640436208/640
 ---
 
 Year birds: +11 (**341**)\
-State birds: +4 (**351**)\
-Life birds: +3 (**526**, +3 in Colorado)\
+State birds: +4 (**352**)\
+Life birds: +3 (**527**, +3 in Colorado)\
 [eBird Trip Report](https://ebird.org/tripreport/399564)
 
 ---
