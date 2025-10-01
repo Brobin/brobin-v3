@@ -31,7 +31,7 @@ There's a saying, you miss every shot you don't take. Well, I decided to take a 
 
 ### Sabine's
 
-For the next couple weeks, I also made a few trips out to Branched Oak in search of Sabine's Gulls. On my fourth trip to Branched Oak, I found one loafing around on the beach! I quickly got the word out, and after my bike ride (the original point of the trip), I met up with a few more birders and we relocated it foraging south of Lieber's Point. This wasn't a life bird or anthing, but it was a new bird for my Lancaster county list!
+For the next couple weeks, I also made a few trips out to Branched Oak in search of Sabine's Gulls. On my fourth trip to Branched Oak, I found one loafing around on the beach! I quickly got the word out, and after my bike ride (the original point of the trip), I met up with a few more birders and we relocated it foraging south of Lieber's Point. This wasn't a life or state bird, but it was a new bird for my Lancaster county list (269)!
 
 [![Sabine's Gull](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/641993878/1200)](https://macaulaylibrary.org/asset/641993878)
 _Sabine's Gull, Lancaster County_
@@ -73,7 +73,7 @@ The NOU meeting itself didn't turn up anything new for the year, but it was stil
 
 ### Sparrows
 
-Back at home, it was time to look for Nelson's and LeConte's Sparrows. On the 30th, I set out to Marsh Wren and found a single LeConte's Sparrow (349) among dozens of Lincoln's. Nelson's is the target for the coming week.
+Back at home, it was time to look for Nelson's and LeConte's Sparrows. On the 30th, I set out to Marsh Wren and found a single **LeConte's Sparrow (349)** among dozens of Lincoln's. Nelson's is the target for the coming week.
 
 ### West... again... again...
 
