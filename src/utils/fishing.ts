@@ -2,11 +2,11 @@ import { Fish, Year } from "@brobin/types/fishing";
 import fs from "fs";
 import path from "path";
 
-const FISHING_PATH = path.join(process.cwd(), "data/fishing");
-
-function getJson(path: string) {
+export function getJson(path: string) {
   return JSON.parse(fs.readFileSync(path, "utf-8"));
 }
+
+const FISHING_PATH = path.join(process.cwd(), "data/fishing");
 
 export function getYears() {
   return fs.readdirSync(FISHING_PATH).map((year) => year.replace(".json", ""));

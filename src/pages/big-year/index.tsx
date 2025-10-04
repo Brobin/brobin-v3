@@ -1,6 +1,10 @@
+import DollarsSpent from "@brobin/components/big-year/ charts/DollarsSpent";
+import MilesTraveled from "@brobin/components/big-year/ charts/MilesTraveled";
+import SpeciesByMonth from "@brobin/components/big-year/ charts/SpeciesByMonth";
+import TotalSpecies from "@brobin/components/big-year/ charts/TotalSpecies";
 import Page from "@brobin/components/Page";
-import { Bird } from "@brobin/types/big-year";
-import { getBirdList } from "@brobin/utils/big-year";
+import { Bird, Month } from "@brobin/types/big-year";
+import { getBirdList, getMonthData } from "@brobin/utils/big-year";
 import {
   Box,
   Button,
@@ -20,9 +24,10 @@ dayjs.extend(weekOfYear);
 interface Props {
   birds: Bird[];
   series: { date: string; total: number; new: number }[];
+  months: Month[];
 }
 
-export default function BigYear({ birds, series }: Props) {
+export default function BigYear({ birds, series, months }: Props) {
   return (
     <Page title="Nebraska Big Year 2025">
       <Typography level="h1">Nebraska Big Year 2025</Typography>
@@ -51,6 +56,8 @@ export default function BigYear({ birds, series }: Props) {
           >
             Mar
           </Button>
+        </ButtonGroup>
+        <ButtonGroup variant="outlined">
           <Button
             href="/blog/2025/04/nebraska-big-year-april-recap"
             component="a"
@@ -69,6 +76,8 @@ export default function BigYear({ birds, series }: Props) {
           >
             Jun
           </Button>
+        </ButtonGroup>
+        <ButtonGroup variant="outlined">
           <Button
             href="/blog/2025/08/nebraska-big-year-july-recap"
             component="a"
@@ -96,140 +105,162 @@ export default function BigYear({ birds, series }: Props) {
       <br />
       <Box paddingY={2}>
         <Grid container spacing={2}>
-          <Grid xs={12} sm={12} md={4}>
+          <Grid xs={12} sm={12} md={12}>
             <Card variant="plain">
-              <Typography level="h2" fontSize={75} textAlign="center">
-                <Link
-                  href={`https://ebird.org/top100?region=Nebraska&locInfo.regionCode=US-NE&year=2025&rankedBy=spp`}
-                  target="_blank"
-                  underline="always"
-                  color="success"
-                >
-                  {birds.length}
-                </Link>{" "}
-                <span style={{ color: "#9e9e9e" }}>/ 350</span>
-              </Typography>
-              <hr style={{ width: "100%" }} />
-              <Typography level="h4" textAlign="center" textColor={"#9e9e9e"}>
-                Latest Bird
-              </Typography>
-              <Typography level="h3" fontSize={30} textAlign="center">
-                {birds[0].name}
-              </Typography>
-              <span style={{ textAlign: "center" }}>
-                {dayjs(birds[0].date).format("MMM DD")}
-              </span>
-              <hr style={{ width: "100%" }} />
-              <Typography level="h4" textAlign="center" textColor={"#9e9e9e"}>
-                First Bird
-              </Typography>
-              <Typography level="h3" fontSize={30} textAlign="center">
-                {birds[birds.length - 1].name}
-              </Typography>
-              <span style={{ textAlign: "center" }}>
-                {dayjs(birds[birds.length - 1].date).format("MMM DD")}
-              </span>
+              <Grid container spacing={2}>
+                <Grid xs={12} sm={12} md={4}>
+                  <Typography
+                    level="h4"
+                    textAlign="center"
+                    textColor={"#9e9e9e"}
+                  >
+                    First Bird
+                  </Typography>
+                  <Typography level="h3" fontSize={30} textAlign="center">
+                    {birds[birds.length - 1].name}
+                  </Typography>
+                  <Typography fontSize={16} textAlign="center">
+                    {dayjs(birds[birds.length - 1].date).format("MMM DD")}
+                  </Typography>
+                </Grid>
+
+                <Grid xs={12} sm={12} md={4}>
+                  <Typography level="h2" fontSize={75} textAlign="center">
+                    <Link
+                      href={`https://ebird.org/top100?region=Nebraska&locInfo.regionCode=US-NE&year=2025&rankedBy=spp`}
+                      target="_blank"
+                      underline="always"
+                      color="success"
+                    >
+                      {birds.length}
+                    </Link>{" "}
+                    <span style={{ color: "#9e9e9e" }}>/ 350</span>
+                  </Typography>
+                </Grid>
+
+                <Grid xs={12} sm={12} md={4}>
+                  <Typography
+                    level="h4"
+                    textAlign="center"
+                    textColor={"#9e9e9e"}
+                  >
+                    Latest Bird
+                  </Typography>
+                  <Typography level="h3" fontSize={30} textAlign="center">
+                    {birds[0].name}
+                  </Typography>
+                  <Typography fontSize={16} textAlign="center">
+                    {dayjs(birds[0].date).format("MMM DD")}
+                  </Typography>
+                </Grid>
+              </Grid>
             </Card>
-            <br />
           </Grid>
-          <Grid xs={12} sm={12} md={8}>
+          <Grid xs={12} sm={12} md={6}>
             <Card variant="plain">
               <Typography level="h3" fontSize={30} textAlign="center">
                 Total Species
               </Typography>
-              <LineChart
-                xAxis={[
+              <TotalSpecies series={series} />
+            </Card>
+          </Grid>
+          <Grid xs={12} sm={12} md={6}>
+            <Card variant="plain">
+              <Typography level="h3" fontSize={30} textAlign="center">
+                Species seen each Month
+              </Typography>
+              <SpeciesByMonth months={months} />
+            </Card>
+          </Grid>
+          <Grid xs={12} sm={12} md={6}>
+            <Card variant="plain">
+              <Typography level="h3" fontSize={30} textAlign="center">
+                Miles Traveled
+              </Typography>
+              <MilesTraveled months={months} />
+            </Card>
+          </Grid>
+          <Grid xs={12} sm={12} md={6}>
+            <Card variant="plain">
+              <Typography level="h3" fontSize={30} textAlign="center">
+                Dollars Spent
+              </Typography>
+              <DollarsSpent months={months} />
+            </Card>
+          </Grid>
+          <Grid xs={12} sm={12} md={7}>
+            <Card variant="plain">
+              <Typography level="h3" fontSize={30} textAlign="center">
+                Year list
+              </Typography>
+              <DataGrid
+                rows={birds}
+                initialState={{
+                  pagination: {
+                    paginationModel: {
+                      pageSize: 50,
+                    },
+                  },
+                }}
+                pageSizeOptions={[]}
+                columns={[
+                  { field: "id", headerName: "#", width: 75 },
+                  { field: "name", headerName: "Species", width: 250 },
                   {
-                    data: series.map((s) => dayjs(s.date).toDate()),
-                    label: "Week",
-                    scaleType: "point",
-                    min: dayjs("01 Jan 2024").toDate(),
-                    max: dayjs().toDate(),
-                    valueFormatter: (date) => {
-                      return `${dayjs(date).format("MMM DD")} - ${dayjs(date)
+                    field: "location",
+                    headerName: "Location",
+                    sortable: false,
+                  },
+                  {
+                    field: "date",
+                    headerName: "Date",
+                    valueFormatter: ({ value }) =>
+                      dayjs(value).format("MMM DD"),
+                  },
+                ]}
+                rowHeight={38}
+              />
+            </Card>
+          </Grid>
+          <Grid xs={12} sm={12} md={5}>
+            <Card variant="plain">
+              <Typography level="h3" fontSize={30} textAlign="center">
+                Birds added each week
+              </Typography>
+              <DataGrid
+                rows={series
+                  .map((s, id) => ({ ...s, id }))
+                  .filter((s) => s.new > 0)
+                  .reverse()}
+                initialState={{
+                  pagination: {
+                    paginationModel: {
+                      pageSize: 52,
+                    },
+                  },
+                }}
+                pageSizeOptions={[]}
+                columns={[
+                  {
+                    field: "date",
+                    headerName: "Date",
+                    width: 150,
+                    valueFormatter: ({ value }) => {
+                      return `${dayjs(value).format("MMM DD")} - ${dayjs(value)
                         .day(6)
                         .format("MMM DD")}`;
                     },
                   },
-                ]}
-                yAxis={[{ label: "Species", min: 0 }]}
-                series={[
                   {
-                    data: series.map((s) => s.total),
-                    showMark: () => true,
+                    field: "new",
+                    headerName: "New",
+                    width: 75,
                   },
+                  { field: "total", headerName: "Total", width: 75 },
                 ]}
-                height={400}
+                rowHeight={38}
               />
             </Card>
-          </Grid>
-        </Grid>
-      </Box>
-      <Box paddingY={2}>
-        <Grid container spacing={2}>
-          <Grid xs={12} sm={12} md={8}>
-            <DataGrid
-              rows={birds}
-              initialState={{
-                pagination: {
-                  paginationModel: {
-                    pageSize: 25,
-                  },
-                },
-              }}
-              pageSizeOptions={[]}
-              columns={[
-                { field: "id", headerName: "#", width: 75 },
-                { field: "name", headerName: "Species", width: 250 },
-                {
-                  field: "location",
-                  headerName: "Location",
-                  width: 300,
-                  sortable: false,
-                },
-                {
-                  field: "date",
-                  headerName: "Date",
-                  valueFormatter: ({ value }) => dayjs(value).format("MMM DD"),
-                },
-              ]}
-              rowHeight={38}
-            />
-          </Grid>
-          <Grid xs={12} sm={12} md={4}>
-            <DataGrid
-              rows={series
-                .map((s, id) => ({ ...s, id }))
-                .filter((s) => s.new > 0)
-                .reverse()}
-              initialState={{
-                pagination: {
-                  paginationModel: {
-                    pageSize: 52,
-                  },
-                },
-              }}
-              pageSizeOptions={[]}
-              columns={[
-                {
-                  field: "date",
-                  headerName: "Date",
-                  width: 150,
-                  valueFormatter: ({ value }) => {
-                    return `${dayjs(value).format("MMM DD")} - ${dayjs(value)
-                      .day(6)
-                      .format("MMM DD")}`;
-                  },
-                },
-                {
-                  field: "new",
-                  headerName: "New",
-                  width: 75,
-                },
-                { field: "total", headerName: "Total", width: 75 },
-              ]}
-              rowHeight={38}
-            />
           </Grid>
         </Grid>
       </Box>
@@ -257,8 +288,10 @@ export async function getStaticProps() {
     week = currentDay.week();
   }
 
+  const months = getMonthData();
+
   return {
-    props: { birds, series },
+    props: { birds, series, months },
     revalidate: 1,
   };
 }

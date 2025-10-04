@@ -6,3 +6,14 @@ export type Bird = {
   lat: number;
   lng: number;
 };
+
+export type Month = {
+  month: number;
+  name: string;
+  species: number;
+  yearBirds: number;
+  stateBirds: number;
+  lifeBirds: number;
+  miles: number;
+  cost: number;
+};
