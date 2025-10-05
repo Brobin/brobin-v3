@@ -5,6 +5,7 @@ import TotalSpecies from "@brobin/components/big-year/ charts/TotalSpecies";
 import Page from "@brobin/components/Page";
 import { Bird, Month } from "@brobin/types/big-year";
 import { getBirdList, getMonthData } from "@brobin/utils/big-year";
+import { Check } from "@mui/icons-material";
 import {
   Box,
   Button,
@@ -14,6 +15,7 @@ import {
   Link,
   Typography,
 } from "@mui/joy";
+import { Chip } from "@mui/material";
 import { LineChart } from "@mui/x-charts";
 import { DataGrid } from "@mui/x-data-grid";
 import dayjs from "dayjs";
@@ -188,10 +190,10 @@ export default function BigYear({ birds, series, months }: Props) {
               <DollarsSpent months={months} />
             </Card>
           </Grid>
-          <Grid xs={12} sm={12} md={7}>
+          <Grid xs={12} sm={12} md={8}>
             <Card variant="plain">
               <Typography level="h3" fontSize={30} textAlign="center">
-                Year list
+                Year List
               </Typography>
               <DataGrid
                 rows={birds}
@@ -204,8 +206,29 @@ export default function BigYear({ birds, series, months }: Props) {
                 }}
                 pageSizeOptions={[]}
                 columns={[
-                  { field: "id", headerName: "#", width: 75 },
-                  { field: "name", headerName: "Species", width: 250 },
+                  { field: "id", headerName: "#", width: 40 },
+                  {
+                    field: "name",
+                    headerName: "Species",
+                    width: 250,
+                    valueGetter({ value, row }) {
+                      return { name: value, mediaId: row.mediaId };
+                    },
+                    renderCell({ value }) {
+                      if (value.mediaId) {
+                        return (
+                          <Link
+                            href={`https://macaulaylibrary.org/asset/${value.mediaId}`}
+                            underline="always"
+                            target="_blank"
+                          >
+                            {value.name}
+                          </Link>
+                        );
+                      }
+                      return value.name;
+                    },
+                  },
                   {
                     field: "location",
                     headerName: "Location",
@@ -214,15 +237,54 @@ export default function BigYear({ birds, series, months }: Props) {
                   {
                     field: "date",
                     headerName: "Date",
+                    width: 70,
                     valueFormatter: ({ value }) =>
                       dayjs(value).format("MMM DD"),
+                  },
+                  {
+                    field: "lifeBird",
+                    headerName: "",
+                    width: 85,
+                    renderCell({ value }) {
+                      if (value) {
+                        return (
+                          <Chip
+                            icon={<Check />}
+                            label="Lifer"
+                            size="small"
+                            color="success"
+                            sx={{ marginRight: 1 }}
+                          />
+                        );
+                      }
+                      return "";
+                    },
+                  },
+                  {
+                    field: "stateBird",
+                    headerName: "",
+                    width: 120,
+                    renderCell({ value }) {
+                      if (value) {
+                        return (
+                          <Chip
+                            icon={<Check />}
+                            label="State Bird"
+                            size="small"
+                            color="info"
+                            sx={{ marginRight: 1 }}
+                          />
+                        );
+                      }
+                      return "";
+                    },
                   },
                 ]}
                 rowHeight={38}
               />
             </Card>
           </Grid>
-          <Grid xs={12} sm={12} md={5}>
+          <Grid xs={12} sm={12} md={4}>
             <Card variant="plain">
               <Typography level="h3" fontSize={30} textAlign="center">
                 Birds added each week

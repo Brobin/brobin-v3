@@ -52,6 +52,7 @@ export default function BigYearMap() {
     setMap(map);
 
     const markers = Leaflet.markerClusterGroup({
+      maxClusterRadius: 40,
       iconCreateFunction: function (cluster) {
         const count = getCountByCoordinates(
           cluster.getAllChildMarkers().map((marker) => marker.getLatLng())

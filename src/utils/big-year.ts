@@ -28,6 +28,9 @@ export async function getBirdList(): Promise<Bird[]> {
             location: String(value[3]),
             lat: Number(value[4]),
             lng: Number(value[5]),
+            mediaId: String(value[6]),
+            lifeBird: String(value[7]) === "TRUE",
+            stateBird: String(value[8]) === "TRUE",
           });
         }
       });

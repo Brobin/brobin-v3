@@ -5,6 +5,9 @@ export type Bird = {
   date: string;
   lat: number;
   lng: number;
+  mediaId?: string;
+  lifeBird: boolean;
+  stateBird: boolean;
 };
 
 export type Month = {
