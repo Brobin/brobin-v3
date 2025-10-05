@@ -30,6 +30,7 @@ interface Props {
 }
 
 export default function BigYear({ birds, series, months }: Props) {
+  const lifers = birds.filter((b) => b.lifeBird);
   return (
     <Page title="Nebraska Big Year 2025">
       <Typography level="h1">Nebraska Big Year 2025</Typography>
@@ -116,13 +117,13 @@ export default function BigYear({ birds, series, months }: Props) {
                     textAlign="center"
                     textColor={"#9e9e9e"}
                   >
-                    First Bird
+                    Latest Bird
                   </Typography>
                   <Typography level="h3" fontSize={30} textAlign="center">
-                    {birds[birds.length - 1].name}
+                    {birds[0].name}
                   </Typography>
                   <Typography fontSize={16} textAlign="center">
-                    {dayjs(birds[birds.length - 1].date).format("MMM DD")}
+                    {dayjs(birds[0].date).format("MMM DD")}
                   </Typography>
                 </Grid>
 
@@ -146,13 +147,13 @@ export default function BigYear({ birds, series, months }: Props) {
                     textAlign="center"
                     textColor={"#9e9e9e"}
                   >
-                    Latest Bird
+                    Latest Lifer
                   </Typography>
                   <Typography level="h3" fontSize={30} textAlign="center">
-                    {birds[0].name}
+                    {lifers[0].name}
                   </Typography>
                   <Typography fontSize={16} textAlign="center">
-                    {dayjs(birds[0].date).format("MMM DD")}
+                    {dayjs(lifers[0].date).format("MMM DD")}
                   </Typography>
                 </Grid>
               </Grid>
@@ -243,7 +244,9 @@ export default function BigYear({ birds, series, months }: Props) {
                   },
                   {
                     field: "lifeBird",
-                    headerName: "",
+                    headerName: `${
+                      birds.filter((b) => b.lifeBird).length
+                    } Lifers`,
                     width: 85,
                     renderCell({ value }) {
                       if (value) {
@@ -262,7 +265,9 @@ export default function BigYear({ birds, series, months }: Props) {
                   },
                   {
                     field: "stateBird",
-                    headerName: "",
+                    headerName: `${
+                      birds.filter((b) => b.stateBird).length
+                    } State Birds`,
                     width: 120,
                     renderCell({ value }) {
                       if (value) {
