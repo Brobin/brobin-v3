@@ -1,6 +1,5 @@
-import { Bird, Month } from "@brobin/types/big-year";
+import { Bird } from "@brobin/types/big-year";
 import { parse } from "papaparse";
-import path from "path";
 import fs from "fs";
 
 export function getJson(path: string) {
@@ -9,8 +8,6 @@ export function getJson(path: string) {
 
 const DATA_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQV7GReU_p5r4vYS7jqJzjijqjC5BMKBaP-T1fjDs4OEsniHckux0KQLYGvChl3DBnarfdFy9HWW9Gs/pub?gid=1575599260&single=true&output=csv";
-
-const BIRD_DATA_PATH = path.join(process.cwd(), "data/big-year");
 
 export async function getBirdList(): Promise<Bird[]> {
   const birds: Bird[] = [];
@@ -43,8 +40,4 @@ export async function getBirdList(): Promise<Bird[]> {
     if (b.id > a.id) return 1;
     return 0;
   });
-}
-
-export function getMonthData(): Month[] {
-  return getJson(path.join(BIRD_DATA_PATH, "months.json"));
 }

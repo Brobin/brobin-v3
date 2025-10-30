@@ -4,7 +4,7 @@ import SpeciesByMonth from "@brobin/components/big-year/ charts/SpeciesByMonth";
 import TotalSpecies from "@brobin/components/big-year/ charts/TotalSpecies";
 import Page from "@brobin/components/Page";
 import { Bird, Month } from "@brobin/types/big-year";
-import { getBirdList, getMonthData } from "@brobin/utils/big-year";
+import { getBirdList } from "@brobin/utils/big-year";
 import { Check } from "@mui/icons-material";
 import {
   Box,
@@ -16,10 +16,10 @@ import {
   Typography,
 } from "@mui/joy";
 import { Chip } from "@mui/material";
-import { LineChart } from "@mui/x-charts";
 import { DataGrid } from "@mui/x-data-grid";
 import dayjs from "dayjs";
 import weekOfYear from "dayjs/plugin/weekOfYear";
+import months from "../../../data/big-year/months.json";
 
 dayjs.extend(weekOfYear);
 
@@ -354,8 +354,6 @@ export async function getStaticProps() {
     currentDay = currentDay.week(week + 1).day(0);
     week = currentDay.week();
   }
-
-  const months = getMonthData();
 
   return {
     props: { birds, series, months },
