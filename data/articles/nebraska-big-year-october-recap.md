@@ -1,7 +1,7 @@
 ---
 title: "Nebraska Big Year: October Recap"
 date: "2025-11-02"
-preview: October was another one of the slower months, as expected, I picked up one expected species, and one complete surprise.
+preview: October was another one of the slower months, as expected. I picked up one expected species, and one complete surprise.
 tags: birding, big-year
 image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/644361919/640
 ---
@@ -13,7 +13,7 @@ Life birds: +1 (**532**)\
 
 ---
 
-October was another one of the slower months, as expected, I picked up one expected species, and one complete surprise.
+October was another one of the slower months, as expected. I picked up one expected species, and one complete surprise.
 
 ### Sparrows
 
@@ -32,6 +32,13 @@ Throughout the month, I continued to check marshes, mudflats, and reservoirs for
 
 [![Fox Sparrow](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/643453118/1200)](https://macaulaylibrary.org/asset/643453118)
 _Fox Sparrow, Seward County_
+
+### Visible Migration
+
+October is the month of Franklin's Gulls, I saw over 60,000 throughout the course of the month! But an interesting few days of prolonged northern winds during peak raptor migration released a spectacle directly over Lincoln. On October 5th, a huge kettle of an estimated 1,800 Swainson's Hawks circled over town in the evening. Not only was this a new bird for my yard list, this was the first time I'd ever seen something like this before, and it will take a long time to top! (The photo below is "only" 500 of the flock)
+
+[![Swainson's Hawks](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/642995294/1200)](https://macaulaylibrary.org/asset/642995294)
+_Swainson's Hawks, Lancaster County_
 
 ### One last surprise
 
