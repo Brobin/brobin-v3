@@ -28,7 +28,7 @@ The month continued on with many more sparrow species. And funny enough, just th
 
 After reaching the record last month, this month let me relax a little... but instead I started going after crazy things. Keegan and I attempted to flush Yellow Rail one weekend at Jack Sinn WMA, and we did the same with a group of UNK folks out at Rowe the next weekend. We failed to find any of this incredibly secretive and hard to detect rail, but picked up quite a few county birds, and Keegan got his year "nemesis" American Bittern out at Rowe!
 
-Throughtout the month, I continued to check shorebird and reservoirs for any vagrant shorebirds, gulls or jaegers, but nothing showed up. I spent a bit of time county birding in surrounding counties, ticking off birds like Harris's Sparrow, White-throated Sparrow, and Fox Sparrow in nearly all neighboring counties.
+Throughout the month, I continued to check marshes, mudflats, and reservoirs for any vagrant shorebirds, gulls or jaegers, but nothing showed up. I spent a bit of time county birding in surrounding counties, ticking off birds like Harris's Sparrow, White-throated Sparrow, and Fox Sparrow in nearly all neighboring counties.
 
 [![Fox Sparrow](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/643453118/1200)](https://macaulaylibrary.org/asset/643453118)
 _Fox Sparrow, Seward County_
