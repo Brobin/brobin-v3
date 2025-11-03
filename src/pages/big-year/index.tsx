@@ -221,13 +221,13 @@ export default function BigYear({ birds, series, months }: Props) {
                     headerName: "Species",
                     width: 250,
                     valueGetter({ value, row }) {
-                      return { name: value, mediaId: row.mediaId };
+                      return { name: value, photoId: row.photoId };
                     },
                     renderCell({ value }) {
-                      if (value.mediaId) {
+                      if (value.photoId) {
                         return (
                           <Link
-                            href={`https://macaulaylibrary.org/asset/${value.mediaId}`}
+                            href={`https://macaulaylibrary.org/asset/${value.photoId}`}
                             underline="always"
                             target="_blank"
                           >
