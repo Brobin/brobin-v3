@@ -119,6 +119,7 @@ export default function BirdTable({ birds }: { birds: Bird[] }) {
         },
         {
           field: "stateBird",
+          type: "boolean",
           headerName: "",
           width: 85,
           sortable: false,
