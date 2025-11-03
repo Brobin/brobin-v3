@@ -1,20 +1,13 @@
+import BirdTable from "@brobin/components/big-year/BirdTable";
 import DollarsSpent from "@brobin/components/big-year/charts/DollarsSpent";
 import MilesTraveled from "@brobin/components/big-year/charts/MilesTraveled";
 import SpeciesByMonth from "@brobin/components/big-year/charts/SpeciesByMonth";
 import TotalSpecies from "@brobin/components/big-year/charts/TotalSpecies";
-import BirdTable from "@brobin/components/big-year/BirdTable";
+import RecapButton from "@brobin/components/big-year/RecapButton";
 import Page from "@brobin/components/Page";
 import { Bird, Month } from "@brobin/types/big-year";
 import { getBirdList } from "@brobin/utils/big-year";
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Card,
-  Grid,
-  Link,
-  Typography,
-} from "@mui/joy";
+import { Box, Button, Card, Grid, Link, Typography } from "@mui/joy";
 import { DataGrid } from "@mui/x-data-grid";
 import dayjs from "dayjs";
 import weekOfYear from "dayjs/plugin/weekOfYear";
@@ -33,86 +26,6 @@ export default function BigYear({ birds, series, months }: Props) {
   return (
     <Page title="Nebraska Big Year 2025">
       <Typography level="h1">Nebraska Big Year 2025</Typography>
-      <p>
-        I&apos;m spending 2025 finding as many birds as I can in the state of
-        Nebraska! The record is 347, and my goal is 350!
-      </p>
-      <br />
-      <Grid container spacing={2}>
-        <ButtonGroup variant="outlined">
-          <Button
-            href="/blog/2025/02/nebraska-big-year-january-recap"
-            component="a"
-          >
-            Jan
-          </Button>
-          <Button
-            href="/blog/2025/03/nebraska-big-year-february-recap"
-            component="a"
-          >
-            Feb
-          </Button>
-          <Button
-            href="/blog/2025/04/nebraska-big-year-march-recap"
-            component="a"
-          >
-            Mar
-          </Button>
-        </ButtonGroup>
-        <ButtonGroup variant="outlined">
-          <Button
-            href="/blog/2025/04/nebraska-big-year-april-recap"
-            component="a"
-          >
-            Apr
-          </Button>
-          <Button
-            href="/blog/2025/06/nebraska-big-year-may-recap"
-            component="a"
-          >
-            May
-          </Button>
-          <Button
-            href="/blog/2025/07/nebraska-big-year-june-recap"
-            component="a"
-          >
-            Jun
-          </Button>
-        </ButtonGroup>
-        <ButtonGroup variant="outlined">
-          <Button
-            href="/blog/2025/08/nebraska-big-year-july-recap"
-            component="a"
-          >
-            Jul
-          </Button>
-          <Button
-            href="/blog/2025/09/nebraska-big-year-august-recap"
-            component="a"
-          >
-            Aug
-          </Button>
-          <Button
-            href="/blog/2025/10/nebraska-big-year-september-recap"
-            component="a"
-          >
-            Sep
-          </Button>
-        </ButtonGroup>
-        <ButtonGroup variant="outlined">
-          <Button
-            href="/blog/2025/11/nebraska-big-year-october-recap"
-            component="a"
-          >
-            Oct
-          </Button>
-        </ButtonGroup>
-        <Button href="/big-year/map" component="a" style={{ marginLeft: 20 }}>
-          Map
-        </Button>
-      </Grid>
-
-      <br />
       <Box paddingY={2}>
         <Grid container spacing={2}>
           <Grid xs={12} sm={12} md={12}>
@@ -191,6 +104,56 @@ export default function BigYear({ birds, series, months }: Props) {
             </Card>
           </Grid>
           <Grid xs={12} sm={12} md={4}>
+            <Card variant="plain" sx={{ marginBottom: 2 }}>
+              <Button href="/big-year/map" component="a">
+                Interactive Map
+              </Button>
+              <Typography level="h4">Monthly Recaps</Typography>
+              <Grid container spacing={1}>
+                <RecapButton
+                  name="Jan"
+                  href="/blog/2025/02/nebraska-big-year-january-recap"
+                />
+                <RecapButton
+                  name="Feb"
+                  href="/blog/2025/03/nebraska-big-year-february-recap"
+                />
+                <RecapButton
+                  name="Mar"
+                  href="/blog/2025/04/nebraska-big-year-march-recap"
+                />
+                <RecapButton
+                  name="Apr"
+                  href="/blog/2025/04/nebraska-big-year-april-recap"
+                />
+                <RecapButton
+                  name="May"
+                  href="/blog/2025/06/nebraska-big-year-may-recap"
+                />
+                <RecapButton
+                  name="Jun"
+                  href="/blog/2025/07/nebraska-big-year-june-recap"
+                />
+                <RecapButton
+                  name="Jul"
+                  href="/blog/2025/08/nebraska-big-year-july-recap"
+                />
+                <RecapButton
+                  name="Aug"
+                  href="/blog/2025/09/nebraska-big-year-august-recap"
+                />
+                <RecapButton
+                  name="Sep"
+                  href="/blog/2025/10/nebraska-big-year-september-recap"
+                />
+                <RecapButton
+                  name="Oct"
+                  href="/blog/2025/11/nebraska-big-year-october-recap"
+                />
+                <RecapButton name="Nov" />
+                <RecapButton name="Dec" />
+              </Grid>
+            </Card>
             <Card variant="plain">
               <Typography level="h3" fontSize={30} textAlign="center">
                 Species added each week
