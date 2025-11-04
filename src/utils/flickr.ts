@@ -57,7 +57,7 @@ export async function getAlbumDetail(
   return flickr("flickr.photosets.getPhotos", {
     user_id,
     photoset_id: photoset_id.toString(),
-    extras: "date_taken,url_m,url_l,url_o",
+    extras: "date_taken,url_m",
     per_page: "500",
   }).then((data) => ({
     id: data.photoset.id,
@@ -74,16 +74,6 @@ export async function getAlbumDetail(
           source: photo.url_m,
           height: photo.height_m,
           width: photo.width_m,
-        },
-        large: {
-          source: photo.url_l,
-          height: photo.height_l,
-          width: photo.width_l,
-        },
-        original: {
-          source: photo.url_o,
-          height: photo.height_o,
-          width: photo.width_o,
         },
       }))
       .sort(byDateTaken),
@@ -104,8 +94,7 @@ export async function getPhotoDetail(photo_id: string): Promise<PhotoDetail> {
   );
 
   const medium = sizes.find((size: any) => size.label === "Medium");
-  const large = sizes.find((size: any) => size.label === "Large 1600");
-  const original = sizes.find((size: any) => size.label === "Original");
+  const large = sizes.find((size: any) => size.label === "Large");
 
   const tag = (tag: string) =>
     exifData.exif.find((e: any) => e.tag === tag)?.raw._content || null;
@@ -119,7 +108,7 @@ export async function getPhotoDetail(photo_id: string): Promise<PhotoDetail> {
 
     medium,
     large,
-    original,
+    original: large,
 
     exif: {
       camera: exifData.camera || null,

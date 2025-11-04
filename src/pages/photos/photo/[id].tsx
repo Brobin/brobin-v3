@@ -26,7 +26,7 @@ export default function Photo({ photo, taxonomy }: Props) {
 
   return (
     <Page
-      title={`${photo.title}${taxon && ` (${taxon.name})`} • Photos`}
+      title={`${photo.title}${taxon ? ` (${taxon.name})` : ""} • Photos`}
       description={photo.description}
       image={photo.medium}
     >
