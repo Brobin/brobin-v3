@@ -166,7 +166,7 @@ export default function BigYear({ birds, series, months }: Props) {
                 initialState={{
                   pagination: {
                     paginationModel: {
-                      pageSize: 52,
+                      pageSize: 18,
                     },
                   },
                 }}

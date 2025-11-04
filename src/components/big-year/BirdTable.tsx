@@ -26,18 +26,25 @@ export default function BirdTable({ birds }: { birds: Bird[] }) {
       initialState={{
         pagination: {
           paginationModel: {
-            pageSize: 50,
+            pageSize: 25,
           },
         },
       }}
       pageSizeOptions={[]}
       columns={[
-        { field: "id", headerName: "#", width: 40, disableColumnMenu: true },
+        {
+          field: "id",
+          headerName: "#",
+          width: 40,
+          disableColumnMenu: true,
+          filterable: false,
+        },
         {
           field: "name",
           headerName: "Species",
           width: 240,
           disableColumnMenu: true,
+          filterable: false,
         },
 
         {
@@ -45,25 +52,29 @@ export default function BirdTable({ birds }: { birds: Bird[] }) {
           headerName: "Location",
           sortable: false,
           disableColumnMenu: true,
+          filterable: false,
         },
         {
           field: "date",
           headerName: "Date",
           width: 70,
           disableColumnMenu: true,
+          filterable: false,
           valueFormatter: ({ value }) => dayjs(value).format("MMM DD"),
         },
         {
-          field: "photoId",
+          field: "hasPhoto",
+          type: "boolean",
           headerName: "",
           width: 10,
           sortable: false,
           disableColumnMenu: true,
-          renderCell({ value }) {
-            if (value) {
+          valueGetter: ({ row }) => (row.photoId ? true : false),
+          renderCell({ row }) {
+            if (row.photoId) {
               return (
                 <Link
-                  href={`https://macaulaylibrary.org/asset/${value}`}
+                  href={`https://macaulaylibrary.org/asset/${row.photoId}`}
                   target="_blank"
                   underline="none"
                 >
@@ -71,20 +82,22 @@ export default function BirdTable({ birds }: { birds: Bird[] }) {
                 </Link>
               );
             }
-            return undefined;
+            return "";
           },
         },
         {
-          field: "audioId",
+          field: "hasAudio",
+          type: "boolean",
           headerName: "",
           width: 10,
           sortable: false,
           disableColumnMenu: true,
-          renderCell({ value }) {
-            if (value) {
+          valueGetter: ({ row }) => (row.audioId ? true : false),
+          renderCell({ row }) {
+            if (row.audioId) {
               return (
                 <Link
-                  href={`https://macaulaylibrary.org/asset/${value}`}
+                  href={`https://macaulaylibrary.org/asset/${row.audioId}`}
                   target="_blank"
                   underline="none"
                 >
@@ -92,14 +105,14 @@ export default function BirdTable({ birds }: { birds: Bird[] }) {
                 </Link>
               );
             }
-            return undefined;
+            return "";
           },
         },
         {
           field: "lifeBird",
           type: "boolean",
           headerName: "",
-          width: 76,
+          width: 80,
           sortable: false,
           disableColumnMenu: true,
           renderCell({ value }) {
