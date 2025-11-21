@@ -1,8 +1,11 @@
+import Tippy from "@tippyjs/react";
 import * as d3 from "d3";
 import { FeatureCollection } from "geojson";
-import countyGeoJson from "../../../data/big-year/nebraska.geojson.json";
+import { followCursor } from "tippy.js";
+import "tippy.js/dist/tippy.css";
+
 import countyData from "../../../data/big-year/counties";
-import React from "react";
+import countyGeoJson from "../../../data/big-year/nebraska.geojson.json";
 
 const gradient = [
   "#0b0d0e",
@@ -47,14 +50,22 @@ export const DataMap = ({
         const value = countyData[county.properties!.NAME] ?? 0;
 
         return (
-          <path
+          <Tippy
+            plugins={[followCursor]}
             key={county.properties!.GEO_ID}
-            d={path(county) ?? ""}
-            stroke="lightGrey"
-            strokeWidth={0.5}
-            fill={colorScale(value)}
-            className="county"
-          />
+            content={`${county.properties!.NAME}: ${value}`}
+            delay={[0, 0]}
+            duration={0}
+            followCursor
+          >
+            <path
+              d={path(county) ?? ""}
+              stroke="lightGrey"
+              strokeWidth={0.5}
+              fill={colorScale(value)}
+              className="county"
+            />
+          </Tippy>
         );
       })}
     </svg>
