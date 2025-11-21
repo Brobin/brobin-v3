@@ -25,7 +25,16 @@ interface Props {
 export default function BigYear({ birds, series, months }: Props) {
   const lifers = birds.filter((b) => b.lifeBird);
   return (
-    <Page title="Nebraska Big Year 2025">
+    <Page
+      title="Nebraska Big Year 2025"
+      description="My 2025 attempt to see 350+ species of birds in the state of Nebraska. Stats, maps, blog posts and more!"
+      image={{
+        source:
+          "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632650417/1200",
+        width: 1200,
+        height: 800,
+      }}
+    >
       <Typography level="h1">Nebraska Big Year 2025</Typography>
       <Box paddingY={2}>
         <Grid container spacing={2}>
