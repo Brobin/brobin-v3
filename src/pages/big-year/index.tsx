@@ -80,21 +80,9 @@ export default function BigYear({ birds, series, months }: Props) {
               </Grid>
             </Card>
           </Grid>
-          <Grid xs={12} sm={12} md={6}>
-            <Card variant="plain">
-              <Typography level="h3" fontSize={30} textAlign="center">
-                Total Species
-              </Typography>
-              <TotalSpecies series={series} />
-            </Card>
-          </Grid>
-          <Grid xs={12} sm={12} md={6}>
-            <Card variant="plain">
-              <Typography level="h3" fontSize={30} textAlign="center">
-                Species seen each Month
-              </Typography>
-              <SpeciesByMonth months={months} />
-            </Card>
+
+          <Grid xs={12} sm={12} md={12}>
+            <DataMap />
           </Grid>
           <Grid xs={12} sm={12} md={8}>
             <Card variant="plain">
@@ -155,6 +143,7 @@ export default function BigYear({ birds, series, months }: Props) {
                 <RecapButton name="Dec" />
               </Grid>
             </Card>
+
             <Card variant="plain">
               <Typography level="h3" fontSize={30} textAlign="center">
                 Species added each week
@@ -194,9 +183,21 @@ export default function BigYear({ birds, series, months }: Props) {
               />
             </Card>
           </Grid>
-
-          <Grid xs={12} sm={12} md={12}>
-            <DataMap />
+          <Grid xs={12} sm={12} md={6}>
+            <Card variant="plain">
+              <Typography level="h3" fontSize={30} textAlign="center">
+                Total Species
+              </Typography>
+              <TotalSpecies series={series} />
+            </Card>
+          </Grid>
+          <Grid xs={12} sm={12} md={6}>
+            <Card variant="plain">
+              <Typography level="h3" fontSize={30} textAlign="center">
+                Species seen each Month
+              </Typography>
+              <SpeciesByMonth months={months} />
+            </Card>
           </Grid>
           <Grid xs={12} sm={12} md={6}>
             <Card variant="plain">
