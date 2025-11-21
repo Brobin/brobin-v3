@@ -12,6 +12,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import dayjs from "dayjs";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 import months from "../../../data/big-year/months.json";
+import { DataMap } from "@brobin/components/big-year/DataMap";
 
 dayjs.extend(weekOfYear);
 
@@ -192,6 +193,10 @@ export default function BigYear({ birds, series, months }: Props) {
                 rowHeight={38}
               />
             </Card>
+          </Grid>
+
+          <Grid xs={12} sm={12} md={12}>
+            <DataMap />
           </Grid>
           <Grid xs={12} sm={12} md={6}>
             <Card variant="plain">

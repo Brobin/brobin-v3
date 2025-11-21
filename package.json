@@ -23,8 +23,10 @@
     "@types/react-syntax-highlighter": "^15.5.10",
     "@types/regression": "^2.0.5",
     "@vercel/analytics": "^1.1.1",
+    "d3": "^7.9.0",
     "dayjs": "^1.11.10",
     "flickr-sdk": "^7.0.0-beta.6",
+    "geojson": "^0.5.0",
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.0",
     "leaflet": "^1.9.4",
@@ -43,6 +45,7 @@
     "title-case": "^4.3.2"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
