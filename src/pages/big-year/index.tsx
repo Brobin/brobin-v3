@@ -94,10 +94,9 @@ export default function BigYear({ birds, series, months }: Props) {
           </Grid>
           <Grid xs={12} sm={12} md={4}>
             <Card variant="plain" sx={{ marginBottom: 2 }}>
-              <Button href="/big-year/map" component="a">
-                Interactive Map
-              </Button>
-              <Typography level="h4">Monthly Recaps</Typography>
+              <Typography level="h3" fontSize={30}>
+                Monthly Recaps
+              </Typography>
               <Grid container spacing={1}>
                 <RecapButton
                   name="Jan"
@@ -156,7 +155,7 @@ export default function BigYear({ birds, series, months }: Props) {
                 initialState={{
                   pagination: {
                     paginationModel: {
-                      pageSize: 18,
+                      pageSize: 19,
                     },
                   },
                 }}
