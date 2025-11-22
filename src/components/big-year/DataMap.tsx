@@ -7,19 +7,6 @@ import "tippy.js/dist/tippy.css";
 import countyData from "../../../data/big-year/counties";
 import countyGeoJson from "../../../data/big-year/nebraska.geojson.json";
 
-const gradient = [
-  "#0b0d0e",
-  "#005798",
-  "#006aa5",
-  "#007db5",
-  "#0092c4",
-  "#00a7d2",
-  "#04b0db",
-  "#00bddd",
-  "#40e8e5",
-  "#4cfffc",
-];
-
 type DataMapProps = {
   center?: [number, number];
   width?: number;
@@ -41,8 +28,8 @@ export const DataMap = ({
   const path = d3.geoPath().projection(projection);
 
   const colorScale = d3
-    .scaleLinear(gradient)
-    .domain([0, 4, 9, 15, 20, 25, 40, 50, 60, 100]);
+    .scaleLinear(["#082031", "#005798", "#0092c4", "#4cfffc"])
+    .domain([1, 5, 20, 100]);
 
   return (
     <svg width="100%" viewBox={`0 0 ${width} ${height}`}>
@@ -62,7 +49,7 @@ export const DataMap = ({
               d={path(county) ?? ""}
               stroke="lightGrey"
               strokeWidth={0.5}
-              fill={colorScale(value)}
+              fill={value === 0 ? "#0b0d0e" : colorScale(value)}
               className="county"
             />
           </Tippy>
