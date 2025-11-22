@@ -47,8 +47,8 @@ export const DataMap = ({
           >
             <path
               d={path(county) ?? ""}
-              stroke="lightGrey"
-              strokeWidth={0.5}
+              stroke="grey"
+              strokeWidth={1}
               fill={value === 0 ? "#0b0d0e" : colorScale(value)}
               className="county"
             />
