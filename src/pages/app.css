@@ -20,6 +20,7 @@ img {
 .county {
   opacity: 0.7;
 }
+
 .county:hover,
 .county:focus {
   opacity: 1;
