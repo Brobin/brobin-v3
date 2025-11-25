@@ -21,6 +21,9 @@ enum MapMode {
   YearBirds = "Year",
 }
 
+// const gradient = ["#082031", "#005798", "#0092c4", "#4cfffc"];
+const gradient = ["#edd376", "#ecbf72", "#e98864", "#e54353"];
+
 export const DataMap = ({
   center = [41.4925, -99.9018],
   width = 1120,
@@ -40,8 +43,13 @@ export const DataMap = ({
   );
 
   const domain = React.useMemo(
-    () => (mode === MapMode.AllBirds ? [1, 20, 50, 250] : [1, 5, 20, 100]),
+    () => (mode === MapMode.AllBirds ? [1, 20, 100, 250] : [1, 5, 20, 100]),
     [mode]
+  );
+
+  const colorScale = React.useMemo(
+    () => d3.scaleLinear(gradient).domain(domain),
+    [domain]
   );
 
   const projection = d3
@@ -50,9 +58,6 @@ export const DataMap = ({
     .translate([width / 2 - 25, height / 2])
     .scale(scale);
   const path = d3.geoPath().projection(projection);
-
-  const gradient = ["#082031", "#005798", "#0092c4", "#4cfffc"];
-  const colorScale = d3.scaleLinear(gradient).domain(domain);
 
   return (
     <>
@@ -78,7 +83,7 @@ export const DataMap = ({
             <stop className="legend4" offset="100%" stopColor={gradient[3]} />
           </linearGradient>
         </defs>
-        <text x="5" y="520" fill="grey">
+        <text x="5" y="520" fill="#f0f4f8">
           {domain[0]}
         </text>
         <rect
@@ -87,10 +92,10 @@ export const DataMap = ({
           y="505"
           width="180"
           height="20"
-          stroke="grey"
+          stroke="#f0f4f8"
           fill="url(#legend)"
         />
-        <text x="215" y="520" fill="grey">
+        <text x="215" y="520" fill="#f0f4f8">
           {max}
         </text>
         {(countyGeoJson as FeatureCollection).features.map((county) => {
@@ -107,7 +112,7 @@ export const DataMap = ({
             >
               <path
                 d={path(county) ?? ""}
-                stroke="grey"
+                stroke="#f0f4f8"
                 strokeWidth={1}
                 fill={value === 0 ? "#0b0d0e" : colorScale(value)}
                 className="county"
