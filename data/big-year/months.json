@@ -102,11 +102,11 @@
   {
     "month": 11,
     "name": "November",
-    "species": 109,
-    "yearBirds": 0,
-    "stateBirds": 0,
+    "species": 113,
+    "yearBirds": 1,
+    "stateBirds": 1,
     "lifeBirds": 0,
-    "miles": 1508,
-    "cost": 119.44
+    "miles": 1808,
+    "cost": 154.68
   }
 ]

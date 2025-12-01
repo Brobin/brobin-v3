@@ -13,7 +13,7 @@ export default function Index() {
             Tobin Brown
           </Typography>
           <Typography level="body-lg">
-            Full-Stack developer from Nebraska
+            Developer, Photographer and Birder from Nebraska
           </Typography>
         </Box>
         <Box pb={15}>
