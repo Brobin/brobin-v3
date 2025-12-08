@@ -108,5 +108,15 @@
     "lifeBirds": 0,
     "miles": 1808,
     "cost": 154.68
+  },
+  {
+    "month": 12,
+    "name": "December",
+    "species": 91,
+    "yearBirds": 2,
+    "stateBirds": 2,
+    "lifeBirds": 1,
+    "miles": 1057,
+    "cost": 56.04
   }
 ]
