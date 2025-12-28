@@ -52,6 +52,12 @@ export default function Header() {
               </ListItem>
               <ListDivider />
               <ListItem>
+                <ListItemButton component="a" href="/big-year">
+                  Big Year
+                </ListItemButton>
+              </ListItem>
+              <ListDivider />
+              <ListItem>
                 <ListItemButton component="a" href="/projects">
                   Projects
                 </ListItemButton>
