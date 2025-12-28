@@ -47,7 +47,7 @@ export default function Header() {
             <>
               <ListItem sx={{ marginInlineStart: "auto" }}>
                 <ListItemButton component="a" href="/photos">
-                  Photos
+                  Photography
                 </ListItemButton>
               </ListItem>
               <ListDivider />

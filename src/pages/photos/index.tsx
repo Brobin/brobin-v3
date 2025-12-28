@@ -2,8 +2,8 @@ import Page from "@brobin/components/Page";
 import PhotoContainer from "@brobin/components/photos/PhotoContainer";
 import styles from "@brobin/components/photos/PhotoContainer.module.scss";
 import useBreakpoints from "@brobin/hooks/useBreakpoints";
-import { Album } from "@brobin/types/flickr";
-import { ALBUM_MAP, getAlbums } from "@brobin/utils/flickr";
+import { Album } from "@brobin/types/photos";
+import { getAlbums } from "@brobin/utils/photos";
 import { Divider, Typography } from "@mui/joy";
 import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
 
@@ -16,24 +16,26 @@ export default function Albums({ albums }: Props) {
 
   return (
     <Page
-      title="Photos"
+      title="Photography"
       description="I take photos of birds and wildlife. Sometimes they are good."
-      image={albums[0].primary}
     >
-      <Typography level="h1">Photos</Typography>
+      <Typography level="h1">Photography</Typography>
       <Divider sx={{ marginY: 2 }} />
       <ImageList gap={10} cols={xs ? 1 : sm ? 2 : 3}>
         {albums.map((album) => (
           <ImageListItem
-            key={album.id}
+            key={album.slug}
             component="a"
             href={`/photos/${album.slug}`}
             className={styles.zoom}
           >
-            <PhotoContainer title={album.title} size={album.primary} />
+            <PhotoContainer
+              title={album.title}
+              size={{ source: album.photos[0].path, width: 1200, height: 800 }}
+            />
             <ImageListItemBar
               title={album.title}
-              subtitle={`${album.total} Photos. ${album.description}`}
+              subtitle={`${album.photos.length} Photos`}
             />
           </ImageListItem>
         ))}
@@ -42,10 +44,7 @@ export default function Albums({ albums }: Props) {
   );
 }
 
-export async function getServerSideProps() {
-  const slugs = Object.keys(ALBUM_MAP);
-  const albums = (await getAlbums()).filter((album) =>
-    slugs.includes(album.slug)
-  );
+export async function getStaticProps() {
+  const albums = getAlbums();
   return { props: { albums } };
 }

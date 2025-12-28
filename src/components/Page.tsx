@@ -1,4 +1,4 @@
-import { PhotoSize } from "@brobin/types/flickr";
+import { PhotoSize } from "@brobin/types/photos";
 import { Container } from "@mui/joy";
 import Head from "next/head";
 import Footer from "./Footer";

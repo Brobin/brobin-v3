@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { PhotoSize } from "@brobin/types/flickr";
+import { PhotoSize } from "@brobin/types/photos";
 import { AspectRatio } from "@mui/joy";
 import { Fade } from "@mui/material";
 
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function PhotoContainer({ title, size, fullSize }: Props) {
-  const ratio = fullSize ? `${size.width}/${size.height}` : "10/8";
+  const ratio = fullSize ? `${size.width}/${size.height}` : "3/2";
 
   return (
     <AspectRatio variant="soft" ratio={ratio} sx={{ borderRadius: "5px" }}>

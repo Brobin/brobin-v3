@@ -2,24 +2,24 @@ import Page from "@brobin/components/Page";
 import PhotoContainer from "@brobin/components/photos/PhotoContainer";
 import styles from "@brobin/components/photos/PhotoContainer.module.scss";
 import useBreakpoints from "@brobin/hooks/useBreakpoints";
-import { AlbumDetail } from "@brobin/types/flickr";
-import { getAlbumDetail } from "@brobin/utils/flickr";
+import { Album } from "@brobin/types/photos";
+import { getAlbum } from "@brobin/utils/photos";
 import { Divider, Typography } from "@mui/joy";
 import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
 import dayjs from "dayjs";
 
 interface Props {
-  album: AlbumDetail;
+  album: Album;
 }
 
-export default function Album({ album }: Props) {
+export default function AlbumPage({ album }: Props) {
   const { xs, sm } = useBreakpoints();
 
   return (
     <Page
       title={`${album.title} • Photos`}
       description={`Photos of ${album.title}`}
-      image={album.photos[0].medium}
+      image={{ source: album.photos[0].path }}
     >
       <Typography level="h1">{album.title}</Typography>
       <Divider sx={{ marginY: 2 }} />
@@ -28,13 +28,20 @@ export default function Album({ album }: Props) {
           <ImageListItem
             key={photo.id}
             component="a"
-            href={`/photos/photo/${photo.id}`}
+            href={`/photos/${album.slug}/photo/${photo.id}`}
             className={styles.zoom}
           >
-            <PhotoContainer title={photo.title} size={photo.medium} />
+            <PhotoContainer
+              title={photo.exifTags.Title ?? photo.id}
+              size={photo.size}
+            />
             <ImageListItemBar
-              title={photo.title}
-              subtitle={dayjs(photo.datetaken).format("MMMM DD, YYYY")}
+              title={photo.exifTags.Title ?? photo.id}
+              subtitle={
+                <span suppressHydrationWarning>
+                  {dayjs(photo.date).format("MMMM DD, YYYY")}
+                </span>
+              }
             />
           </ImageListItem>
         ))}
@@ -44,10 +51,10 @@ export default function Album({ album }: Props) {
 }
 
 interface Params {
-  params: { id: string };
+  params: { slug: string };
 }
 
-export async function getServerSideProps({ params: { id } }: Params) {
-  const album = await getAlbumDetail(id);
+export function getServerSideProps({ params: { slug } }: Params) {
+  const album = getAlbum(slug);
   return { props: { album } };
 }

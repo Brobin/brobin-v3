@@ -1,5 +1,5 @@
 import { Fish, Species } from "@brobin/types/fishing";
-import { titleCase } from "@brobin/utils";
+import { titleCase } from "title-case";
 import {
   ChartsTooltip,
   ChartsXAxis,

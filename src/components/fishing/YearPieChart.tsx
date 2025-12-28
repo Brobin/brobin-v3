@@ -1,7 +1,6 @@
 import { Species, Year, totalFish } from "@brobin/types/fishing";
-import { titleCase } from "@brobin/utils";
 import { PieChart } from "@mui/x-charts";
-import React from "react";
+import { titleCase } from "title-case";
 
 interface Props {
   year: Year;

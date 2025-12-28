@@ -1,5 +1,5 @@
 import { Species, Year } from "@brobin/types/fishing";
-import { titleCase } from "@brobin/utils";
+import { titleCase } from "title-case";
 import { LineChart } from "@mui/x-charts";
 import regression, { DataPoint } from "regression";
 

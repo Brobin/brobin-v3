@@ -1,5 +1,5 @@
 import { Taxon } from "@brobin/types/inaturalist";
-import { titleCase } from "@brobin/utils";
+import { titleCase } from "title-case";
 import { Box, Divider, Link, Tooltip, Typography } from "@mui/joy";
 
 interface Props {

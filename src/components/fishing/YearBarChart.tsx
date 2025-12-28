@@ -1,5 +1,5 @@
 import { Species, Year } from "@brobin/types/fishing";
-import { titleCase } from "@brobin/utils";
+import { titleCase } from "title-case";
 import { BarChart } from "@mui/x-charts";
 
 interface Props {

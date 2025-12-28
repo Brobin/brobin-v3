@@ -1,17 +1,16 @@
 import useBreakpoints from "@brobin/hooks/useBreakpoints";
-import { PhotoDetail } from "@brobin/types/flickr";
+import { ExifTags } from "@brobin/types/photos";
 import {
   Camera,
   CameraAlt,
   Iso,
-  Photo,
   ShutterSpeed,
   Visibility,
 } from "@mui/icons-material";
 import { Box, Typography } from "@mui/joy";
 
 interface Props {
-  photo: PhotoDetail;
+  exifTags: ExifTags;
 }
 
 interface MetadataProps {
@@ -36,24 +35,21 @@ function Metadata({ icon, children }: MetadataProps) {
   );
 }
 
-export default function PhotoMetadata({ photo }: Props) {
+export default function PhotoMetadata({ exifTags }: Props) {
   return (
     <>
       <Metadata icon={<CameraAlt />}>
-        {photo.exif.camera}, {photo.exif.lens?.split(" F")[0]}
+        {exifTags.Model}, {exifTags.LensModel}
       </Metadata>
-      <Metadata icon={<ShutterSpeed />}>{photo.exif.exposure}s</Metadata>
+      <Metadata icon={<ShutterSpeed />}>{exifTags.ShutterSpeed}s</Metadata>
       <Metadata icon={<Camera />}>
         <i>f</i>
-        {photo.exif.aperture}
+        {exifTags.Aperture}
       </Metadata>
       <Metadata icon={<Iso />}>
-        <>ISO {photo.exif.iso}</>
+        <>ISO {exifTags.ISO}</>
       </Metadata>
-      <Metadata icon={<Visibility />}>{photo.exif.focalLength}</Metadata>
-      <Metadata icon={<Photo />}>
-        {photo.original.width} x {photo.original.height} px
-      </Metadata>
+      <Metadata icon={<Visibility />}>{exifTags.FocalLength}</Metadata>
     </>
   );
 }

@@ -1,8 +1,7 @@
-import { PhotoGeoData } from "@brobin/types/flickr";
 import { Box } from "@mui/joy";
 import Leaflet, { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
 
 const icon = Leaflet.icon({
   iconUrl: "/images/marker-icon.png",
@@ -14,11 +13,12 @@ const icon = Leaflet.icon({
 });
 
 interface Props {
-  data: PhotoGeoData;
+  latitude: Number;
+  longitude: Number;
 }
 
-export default function PhotoMap({ data }: Props) {
-  const position = [data.latitude, data.longitude] as LatLngExpression;
+export default function PhotoMap({ latitude, longitude }: Props) {
+  const position = [latitude, longitude] as unknown as LatLngExpression;
 
   return (
     <Box
@@ -30,7 +30,7 @@ export default function PhotoMap({ data }: Props) {
     >
       <MapContainer
         center={position}
-        zoom={12}
+        zoom={5}
         zoomControl={false}
         attributionControl={false}
         style={{
@@ -42,11 +42,11 @@ export default function PhotoMap({ data }: Props) {
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <Marker position={position} icon={icon}>
-          <Popup>
+          {/* <Popup>
             {data.county}, {data.region}, {data.country}
             <br />
             {data.latitude}, {data.longitude}
-          </Popup>
+          </Popup> */}
         </Marker>
       </MapContainer>
     </Box>
