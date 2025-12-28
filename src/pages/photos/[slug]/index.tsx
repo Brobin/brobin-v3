@@ -3,7 +3,7 @@ import PhotoContainer from "@brobin/components/photos/PhotoContainer";
 import styles from "@brobin/components/photos/PhotoContainer.module.scss";
 import useBreakpoints from "@brobin/hooks/useBreakpoints";
 import { Album } from "@brobin/types/photos";
-import { getAlbum } from "@brobin/utils/photos";
+import { getAlbum, getAlbums } from "@brobin/utils/photos";
 import { Divider, Typography } from "@mui/joy";
 import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
 import dayjs from "dayjs";
@@ -54,7 +54,14 @@ interface Params {
   params: { slug: string };
 }
 
-export function getServerSideProps({ params: { slug } }: Params) {
+export function getStaticPaths() {
+  return {
+    paths: getAlbums().map((album) => `/photos/${album.slug}`),
+    fallback: false,
+  };
+}
+
+export function getStaticProps({ params: { slug } }: Params) {
   const album = getAlbum(slug);
   return { props: { album } };
 }
