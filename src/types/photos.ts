@@ -4,9 +4,9 @@ export type PhotoSize = {
   width?: number;
 };
 
-export type ExifTags = {
+export type Metadata = {
   Title: string | null;
-  DateTaken?: string;
+  DateTaken: string | null;
   Make: string | null;
   Model: string | null;
   SerialNumber: string | null;
@@ -27,7 +27,7 @@ export type Photo = {
   id: string;
   path: string;
   date: string;
-  exifTags: ExifTags;
+  metadata: Metadata;
   size: PhotoSize;
 };
 

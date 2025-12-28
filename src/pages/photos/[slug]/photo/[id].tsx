@@ -7,7 +7,7 @@ import Taxonomy from "@brobin/components/Taxonomy";
 import { Taxon } from "@brobin/types/inaturalist";
 import { Photo } from "@brobin/types/photos";
 import { searchTaxonomy } from "@brobin/utils/inaturalist";
-import { getAlbums, getPhoto } from "@brobin/utils/photos";
+import { getPhoto } from "@brobin/utils/photos";
 import { Divider, Grid, Typography } from "@mui/joy";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
@@ -25,9 +25,9 @@ export default function PhotoPage({ photo, taxonomy }: Props) {
   const taxon = taxonomy.length ? taxonomy[taxonomy?.length - 1] : null;
 
   return (
-    <Page title={`${photo.exifTags.Title} • Photos`} image={photo.size}>
+    <Page title={`${photo.metadata.Title} • Photos`} image={photo.size}>
       <PhotoContainer
-        title={photo.exifTags.Title ?? ""}
+        title={photo.metadata.Title ?? ""}
         size={photo.size}
         fullSize
       />
@@ -35,13 +35,15 @@ export default function PhotoPage({ photo, taxonomy }: Props) {
       <Grid container paddingTop={2} paddingBottom={6} spacing={2}>
         <Grid xs={12} md={8}>
           <Typography level="h3">
-            {photo.exifTags.Title}
+            {photo.metadata.Title}
             {taxon ? <i> ({taxon.name})</i> : ""}
           </Typography>
 
           <Typography level="body-sm" suppressHydrationWarning>
             <span suppressHydrationWarning>
-              {dayjs(photo.exifTags.DateTaken).format("MMMM DD, YYYY h:MM A")}
+              {photo.date
+                ? dayjs(photo.metadata.DateTaken).format("MMMM DD, YYYY h:MM A")
+                : ""}
             </span>
           </Typography>
 
@@ -51,15 +53,15 @@ export default function PhotoPage({ photo, taxonomy }: Props) {
         </Grid>
 
         <Grid xs={12} md={4} sx={{ textAlign: { md: "right" } }}>
-          <PhotoMetadata exifTags={photo.exifTags} />
+          <PhotoMetadata metadata={photo.metadata} />
           <MobileDivider />
         </Grid>
 
-        {photo.exifTags.GPSLatitude && photo.exifTags.GPSLongitude && (
+        {photo.metadata.GPSLatitude && photo.metadata.GPSLongitude && (
           <Grid xs={12}>
             <PhotoMap
-              latitude={photo.exifTags.GPSLatitude}
-              longitude={photo.exifTags.GPSLongitude}
+              latitude={photo.metadata.GPSLatitude}
+              longitude={photo.metadata.GPSLongitude}
             />
           </Grid>
         )}
@@ -75,8 +77,8 @@ interface Params {
 export async function getServerSideProps({ params: { slug, id } }: Params) {
   const photo = getPhoto(slug, `${id}.JPG`);
   const taxonomy =
-    slug.includes("wildlife") && photo.exifTags.Title
-      ? await searchTaxonomy(photo.exifTags.Title)
+    slug.includes("wildlife") && photo.metadata.Title
+      ? await searchTaxonomy(photo.metadata.Title)
       : [];
   return { props: { photo, taxonomy } };
 }

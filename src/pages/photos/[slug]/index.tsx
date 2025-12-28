@@ -32,14 +32,14 @@ export default function AlbumPage({ album }: Props) {
             className={styles.zoom}
           >
             <PhotoContainer
-              title={photo.exifTags.Title ?? photo.id}
+              title={photo.metadata.Title ?? photo.id}
               size={photo.size}
             />
             <ImageListItemBar
-              title={photo.exifTags.Title ?? photo.id}
+              title={photo.metadata.Title ?? photo.id}
               subtitle={
                 <span suppressHydrationWarning>
-                  {dayjs(photo.date).format("MMMM DD, YYYY")}
+                  {photo.date ? dayjs(photo.date).format("MMMM DD, YYYY") : ""}
                 </span>
               }
             />

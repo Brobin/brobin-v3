@@ -1,4 +1,4 @@
-import { Album, ExifTags, Photo } from "@brobin/types/photos";
+import { Album, Metadata, Photo } from "@brobin/types/photos";
 import ExifReader from "exifreader";
 import fs from "fs";
 import path from "path";
@@ -19,7 +19,7 @@ function byPhotoDate(a: Album, b: Album) {
   return 0;
 }
 
-function parseExifTags(filepath: string): ExifTags {
+function parseMetadata(filepath: string): Metadata {
   const file = fs.readFileSync(filepath);
   const tags = ExifReader.load(file);
 
@@ -33,7 +33,7 @@ function parseExifTags(filepath: string): ExifTags {
       tags.title?.description ||
       (tags.UserComment as ExifReader.XmpTag)?.description ||
       null,
-    DateTaken: tags.DateCreated?.description,
+    DateTaken: tags.DateCreated?.description || null,
     Make: tags.Make?.description || null,
     Model: tags.Model?.description || null,
     SerialNumber: tags.SerialNumber?.description || null,
@@ -56,35 +56,32 @@ function parseExifTags(filepath: string): ExifTags {
 }
 
 export function getPhoto(album: string, filename: string): Photo {
-  const exifTags = parseExifTags(path.join(PHOTO_PATH, album, filename));
+  const metadata = parseMetadata(path.join(PHOTO_PATH, album, filename));
 
   return {
     id: filename.split(".")[0],
     path: path.join(WEB_PATH, album, filename),
-    date: exifTags.DateTaken!,
-    exifTags,
+    date: metadata.DateTaken!,
+    metadata,
     size: {
       source: path.join(WEB_PATH, album, filename),
-      width: exifTags.Width || 1200,
-      height: exifTags.Height || 800,
+      width: metadata.Width || 1200,
+      height: metadata.Height || 800,
     },
   };
 }
 
 export function getAlbum(slug: string): Album {
-  const photos = fs
-    .readdirSync(path.join(PHOTO_PATH, slug))
-    .map((filename) => getPhoto(slug, filename));
   return {
     slug,
     title: titleCase(slug.replace("-", " ")),
-    photos: photos.sort(byDate),
+    photos: fs
+      .readdirSync(path.join(PHOTO_PATH, slug))
+      .map((filename) => getPhoto(slug, filename))
+      .sort(byDate),
   };
 }
 
 export function getAlbums(): Album[] {
-  const albums = fs.readdirSync(PHOTO_PATH).map((dir) => {
-    return getAlbum(dir);
-  });
-  return albums.sort(byPhotoDate);
+  return fs.readdirSync(PHOTO_PATH).map(getAlbum).sort(byPhotoDate);
 }

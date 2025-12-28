@@ -1,5 +1,5 @@
 import useBreakpoints from "@brobin/hooks/useBreakpoints";
-import { ExifTags } from "@brobin/types/photos";
+import { Metadata } from "@brobin/types/photos";
 import {
   Camera,
   CameraAlt,
@@ -10,7 +10,7 @@ import {
 import { Box, Typography } from "@mui/joy";
 
 interface Props {
-  exifTags: ExifTags;
+  metadata: Metadata;
 }
 
 interface MetadataProps {
@@ -18,7 +18,7 @@ interface MetadataProps {
   children: any;
 }
 
-function Metadata({ icon, children }: MetadataProps) {
+function MetadataDisplay({ icon, children }: MetadataProps) {
   const { xs, sm } = useBreakpoints();
   return (
     <Box
@@ -35,21 +35,36 @@ function Metadata({ icon, children }: MetadataProps) {
   );
 }
 
-export default function PhotoMetadata({ exifTags }: Props) {
+export default function PhotoMetadata({ metadata }: Props) {
   return (
     <>
-      <Metadata icon={<CameraAlt />}>
-        {exifTags.Model}, {exifTags.LensModel}
-      </Metadata>
-      <Metadata icon={<ShutterSpeed />}>{exifTags.ShutterSpeed}s</Metadata>
-      <Metadata icon={<Camera />}>
-        <i>f</i>
-        {exifTags.Aperture}
-      </Metadata>
-      <Metadata icon={<Iso />}>
-        <>ISO {exifTags.ISO}</>
-      </Metadata>
-      <Metadata icon={<Visibility />}>{exifTags.FocalLength}</Metadata>
+      {metadata.Model && (
+        <MetadataDisplay icon={<CameraAlt />}>
+          {metadata.Model}, {metadata.LensModel}
+        </MetadataDisplay>
+      )}
+      {metadata.ShutterSpeed && (
+        <MetadataDisplay icon={<ShutterSpeed />}>
+          {metadata.ShutterSpeed}s
+        </MetadataDisplay>
+      )}
+      {metadata.Aperture && (
+        <MetadataDisplay icon={<Camera />}>
+          <i>f</i>
+          {metadata.Aperture}
+        </MetadataDisplay>
+      )}
+
+      {metadata.ISO && (
+        <MetadataDisplay icon={<Iso />}>
+          <>ISO {metadata.ISO}</>
+        </MetadataDisplay>
+      )}
+      {metadata.FocalLength && (
+        <MetadataDisplay icon={<Visibility />}>
+          {metadata.FocalLength}
+        </MetadataDisplay>
+      )}
     </>
   );
 }
