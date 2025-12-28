@@ -112,11 +112,11 @@
   {
     "month": 12,
     "name": "December",
-    "species": 110,
+    "species": 116,
     "yearBirds": 3,
     "stateBirds": 3,
     "lifeBirds": 2,
-    "miles": 2842,
-    "cost": 262.71
+    "miles": 2682,
+    "cost": 283.71
   }
 ]
