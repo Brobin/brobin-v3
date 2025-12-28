@@ -19,16 +19,20 @@ function byPhotoDate(a: Album, b: Album) {
   return 0;
 }
 
-function parseExifTags(tags: ExifReader.Tags): ExifTags {
+function parseExifTags(filepath: string): ExifTags {
+  const file = fs.readFileSync(filepath);
+  const tags = ExifReader.load(file);
+
   const latDirection = (tags.GPSLatitudeRef?.value || []) as string[];
   const latModifier = latDirection.includes("N") ? 1 : -1;
   const lngDirection = (tags.GPSLatitudeRef?.value || []) as string[];
   const lngModifier = lngDirection.includes("E") ? 1 : -1;
 
-  console.log(tags);
-
   return {
-    Title: (tags.UserComment as ExifReader.XmpTag)?.description || null,
+    Title:
+      tags.title?.description ||
+      (tags.UserComment as ExifReader.XmpTag)?.description ||
+      null,
     DateTaken: tags.DateCreated?.description,
     Make: tags.Make?.description || null,
     Model: tags.Model?.description || null,
@@ -52,10 +56,7 @@ function parseExifTags(tags: ExifReader.Tags): ExifTags {
 }
 
 export function getPhoto(album: string, filename: string): Photo {
-  const file = fs.readFileSync(path.join(PHOTO_PATH, album, filename));
-  const exifTags = parseExifTags(ExifReader.load(file));
-
-  console.log(exifTags);
+  const exifTags = parseExifTags(path.join(PHOTO_PATH, album, filename));
 
   return {
     id: filename.split(".")[0],
