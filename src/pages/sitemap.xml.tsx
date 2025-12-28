@@ -1,7 +1,7 @@
 import { getArticles } from "@brobin/utils/blog";
 import { getRecipeSlugs } from "@brobin/utils/cookbook";
 import { getYears } from "@brobin/utils/fishing";
-import { getAlbums } from "@brobin/utils/flickr";
+import { getAlbums } from "@brobin/utils/photos";
 import { NextApiResponse } from "next";
 
 const BASE_URL = "https://brobin.me";
@@ -31,7 +31,7 @@ export async function getServerSideProps({ res }: { res: NextApiResponse }) {
 
   const recipes = await getRecipeSlugs().map((slug) => `/cookbook/${slug}`);
 
-  const albums = (await getAlbums()).map((album) => `/photos/${album.slug}`);
+  const albums = getAlbums().map((album) => `/photos/${album.slug}`);
 
   const sitemap = generateSitemap([
     "",
