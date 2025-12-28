@@ -72,16 +72,7 @@ interface Params {
   params: { slug: string; id: string };
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: getAlbums().flatMap((album) =>
-      album.photos.map((photo) => `/photos/${album.slug}/photo/${photo.id}`)
-    ),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params: { slug, id } }: Params) {
+export async function getServerSideProps({ params: { slug, id } }: Params) {
   const photo = getPhoto(slug, `${id}.JPG`);
   const taxonomy =
     slug.includes("wildlife") && photo.exifTags.Title
