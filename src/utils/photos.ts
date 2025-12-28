@@ -14,8 +14,10 @@ function byDate(a: { date: string }, b: { date: string }) {
 }
 
 function byPhotoDate(a: Album, b: Album) {
-  if (a.photos[0].date > b.photos[0].date) return -1;
-  if (a.photos[0].date < b.photos[0].date) return 1;
+  const adate = a.photos[0].date;
+  const bdate = b.photos[0].date;
+  if (bdate === null || adate > bdate) return -1;
+  if (adate === null || adate < bdate) return 1;
   return 0;
 }
 
