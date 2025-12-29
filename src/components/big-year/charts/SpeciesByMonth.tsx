@@ -1,11 +1,6 @@
 import { Month } from "@brobin/types/big-year";
-import { Summarize } from "@mui/icons-material";
-import { Paper } from "@mui/material";
 import {
-  BarChart,
   BarPlot,
-  ChartContainer,
-  ChartsAxisHighlight,
   ChartsTooltip,
   ChartsXAxis,
   ChartsYAxis,
