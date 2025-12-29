@@ -112,7 +112,7 @@ export default function BirdTable({ birds }: { birds: Bird[] }) {
           field: "lifeBird",
           type: "boolean",
           headerName: "",
-          width: 80,
+          width: 85,
           sortable: false,
           disableColumnMenu: true,
           renderCell({ value }) {
@@ -134,7 +134,7 @@ export default function BirdTable({ birds }: { birds: Bird[] }) {
           field: "stateBird",
           type: "boolean",
           headerName: "",
-          width: 85,
+          width: 90,
           sortable: false,
           disableColumnMenu: true,
           renderCell({ value }) {

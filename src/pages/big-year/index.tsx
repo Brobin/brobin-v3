@@ -3,16 +3,17 @@ import DollarsSpent from "@brobin/components/big-year/charts/DollarsSpent";
 import MilesTraveled from "@brobin/components/big-year/charts/MilesTraveled";
 import SpeciesByMonth from "@brobin/components/big-year/charts/SpeciesByMonth";
 import TotalSpecies from "@brobin/components/big-year/charts/TotalSpecies";
+import { DataMap } from "@brobin/components/big-year/DataMap";
 import RecapButton from "@brobin/components/big-year/RecapButton";
+import MobileDivider from "@brobin/components/MobileDivider";
 import Page from "@brobin/components/Page";
 import { Bird, Month } from "@brobin/types/big-year";
 import { getBirdList } from "@brobin/utils/big-year";
-import { Box, Button, Card, Grid, Link, Typography } from "@mui/joy";
+import { Box, Card, Grid, Link, Typography } from "@mui/joy";
 import { DataGrid } from "@mui/x-data-grid";
 import dayjs from "dayjs";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 import months from "../../../data/big-year/months.json";
-import { DataMap } from "@brobin/components/big-year/DataMap";
 
 dayjs.extend(weekOfYear);
 
@@ -23,7 +24,9 @@ interface Props {
 }
 
 export default function BigYear({ birds, series, months }: Props) {
-  const lifers = birds.filter((b) => b.lifeBird);
+  const lifeBirds = birds.filter((b) => b.lifeBird);
+  const stateBirds = birds.filter((b) => b.stateBird);
+
   return (
     <Page
       title="Nebraska Big Year 2025"
@@ -41,23 +44,28 @@ export default function BigYear({ birds, series, months }: Props) {
           <Grid xs={12} sm={12} md={12}>
             <Card variant="plain">
               <Grid container spacing={2}>
-                <Grid xs={12} sm={12} md={4}>
+                <Grid xs={12} sm={12} md={4} order={{ xs: 2, sm: 2, md: 1 }}>
                   <Typography
                     level="h4"
                     textAlign="center"
                     textColor={"#9e9e9e"}
                   >
-                    Latest Bird
+                    Life Birds
                   </Typography>
-                  <Typography level="h3" fontSize={30} textAlign="center">
-                    {birds[0].name}
+                  <Typography level="h3" fontSize={60} textAlign="center">
+                    {lifeBirds.length}
                   </Typography>
-                  <Typography fontSize={16} textAlign="center">
-                    {dayjs(birds[0].date).format("MMM DD")}
-                  </Typography>
+                  <MobileDivider />
                 </Grid>
 
-                <Grid xs={12} sm={12} md={4}>
+                <Grid xs={12} sm={12} md={4} order={{ xs: 1, sm: 1, md: 2 }}>
+                  <Typography
+                    level="h4"
+                    textAlign="center"
+                    textColor={"#9e9e9e"}
+                  >
+                    Year Birds
+                  </Typography>
                   <Typography level="h2" fontSize={75} textAlign="center">
                     <Link
                       href={`https://ebird.org/top100?region=Nebraska&locInfo.regionCode=US-NE&year=2025&rankedBy=spp`}
@@ -69,21 +77,19 @@ export default function BigYear({ birds, series, months }: Props) {
                     </Link>{" "}
                     <span style={{ color: "#9e9e9e" }}>/ 350</span>
                   </Typography>
+                  <MobileDivider />
                 </Grid>
 
-                <Grid xs={12} sm={12} md={4}>
+                <Grid xs={12} sm={12} md={4} order={{ xs: 3 }}>
                   <Typography
                     level="h4"
                     textAlign="center"
                     textColor={"#9e9e9e"}
                   >
-                    Latest Lifer
+                    State Birds
                   </Typography>
-                  <Typography level="h3" fontSize={30} textAlign="center">
-                    {lifers[0].name}
-                  </Typography>
-                  <Typography fontSize={16} textAlign="center">
-                    {dayjs(lifers[0].date).format("MMM DD")}
+                  <Typography level="h3" fontSize={60} textAlign="center">
+                    {stateBirds.length}
                   </Typography>
                 </Grid>
               </Grid>
@@ -232,8 +238,8 @@ export default function BigYear({ birds, series, months }: Props) {
   );
 }
 
-export async function getStaticProps() {
-  const birds = await getBirdList();
+export function getStaticProps() {
+  const birds = getBirdList();
 
   const series: { date: string; total: number; new: number }[] = [];
 
@@ -246,7 +252,7 @@ export async function getStaticProps() {
 
     series.push({
       date: currentDay.format("DD MMM YYYY"),
-      total: birds.filter((b) => dayjs(b.date) < firstDayOfWeek).length,
+      total: birds.filter((b) => dayjs(b.date) < lastDayOfWeek).length,
       new: birds.filter(
         (b) => dayjs(b.date) >= firstDayOfWeek && dayjs(b.date) <= lastDayOfWeek
       ).length,

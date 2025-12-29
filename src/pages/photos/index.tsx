@@ -18,6 +18,7 @@ export default function Albums({ albums }: Props) {
     <Page
       title="Photography"
       description="I take photos of birds and wildlife. Sometimes they are good."
+      image={{ source: albums[0].photos[0].path }}
     >
       <Typography level="h1">Photography</Typography>
       <Divider sx={{ marginY: 2 }} />

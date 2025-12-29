@@ -5,8 +5,8 @@ export type Bird = {
   date: string;
   lat: number;
   lng: number;
-  photoId?: string;
-  audioId?: string;
+  photoId: number | null;
+  audioId: number | null;
   lifeBird: boolean;
   stateBird: boolean;
 };

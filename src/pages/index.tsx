@@ -12,17 +12,20 @@ export default function Index() {
           <Typography level="h1" fontSize={50}>
             Tobin Brown
           </Typography>
-          <Typography level="body-lg">
-            Developer, Photographer and Birder from Nebraska
-          </Typography>
         </Box>
         <Box pb={15}>
           <Card variant="plain">
             <Typography level="h2">About Me</Typography>
             <Typography level="body-lg">
-              I am a full-stack web developer working for Applied Systems. My
+              I am a full-stack web developer based in Lincoln, Nebraska. My
               hobbies include Wildlife photography, Birding, Gravel/Mountain
               biking, Board Games, and Cooking.
+            </Typography>
+            <Typography level="body-lg">
+              In 2023 I got into birding, followed shortly by bird and wildlife
+              photography, and it has since consumed most of my free time. In
+              2025 I set out to do a Nebraska Big Year, and set a new state
+              record.
             </Typography>
           </Card>
         </Box>
