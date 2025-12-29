@@ -31,12 +31,14 @@ export default function TotalSpecies({ series }: Props) {
             data: series.map((s) => dayjs(s.date).toDate()),
             label: "Week",
             scaleType: "band",
-            min: dayjs("01 Jan 2024").toDate(),
-            max: dayjs().toDate(),
+            min: dayjs("01 Jan 2025").toDate(),
+            max: dayjs("31 Dec 2025").toDate(),
             valueFormatter: (date) => {
-              return `${dayjs(date).format("MMM DD")} - ${dayjs(date)
-                .day(6)
-                .format("MMM DD")}`;
+              let lastDay = dayjs(date).day(6);
+              if (lastDay.year() === 2026) lastDay = dayjs("31 Dec 2025");
+              return `${dayjs(date).format("MMM DD")} - ${lastDay.format(
+                "MMM DD"
+              )}`;
             },
             id: "x-axis",
           },

@@ -240,16 +240,18 @@ export async function getStaticProps() {
   let currentDay = dayjs().set("month", 0).set("date", 1);
   let today = dayjs();
 
-  let week = currentDay.week();
+  while (currentDay < dayjs("2026-01-01") && currentDay <= today) {
+    const firstDayOfWeek = dayjs(currentDay).day(0);
+    const lastDayOfWeek = dayjs(currentDay).day(6);
 
-  while (currentDay <= dayjs("2026-01-01") && currentDay <= today) {
     series.push({
       date: currentDay.format("DD MMM YYYY"),
-      total: birds.filter((b) => dayjs(b.date).week() <= week).length,
-      new: birds.filter((b) => dayjs(b.date).week() === week).length,
+      total: birds.filter((b) => dayjs(b.date) < firstDayOfWeek).length,
+      new: birds.filter(
+        (b) => dayjs(b.date) >= firstDayOfWeek && dayjs(b.date) <= lastDayOfWeek
+      ).length,
     });
-    currentDay = currentDay.week(week + 1).day(0);
-    week = currentDay.week();
+    currentDay = currentDay.week(currentDay.week() + 1).day(0);
   }
 
   return {
