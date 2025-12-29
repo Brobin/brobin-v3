@@ -6,7 +6,7 @@ import PhotoMetadata from "@brobin/components/photos/PhotoMetadata";
 // import Taxonomy from "@brobin/components/Taxonomy";
 // import { Taxon } from "@brobin/types/inaturalist";
 import { Photo } from "@brobin/types/photos";
-import { getPhoto } from "@brobin/utils/photos";
+import { getAlbums, getPhoto } from "@brobin/utils/photos";
 import { Divider, Grid, Typography } from "@mui/joy";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
@@ -50,16 +50,14 @@ export default function PhotoPage({ photo }: Props) {
         <Grid xs={12} md={4} sx={{ textAlign: { md: "right" } }}>
           <PhotoMetadata metadata={photo.metadata} />
           <MobileDivider />
-        </Grid>
-
-        {photo.metadata.GPSLatitude && photo.metadata.GPSLongitude && (
-          <Grid xs={12}>
+          <br />
+          {photo.metadata.GPSLatitude && photo.metadata.GPSLongitude && (
             <PhotoMap
               latitude={photo.metadata.GPSLatitude}
               longitude={photo.metadata.GPSLongitude}
             />
-          </Grid>
-        )}
+          )}
+        </Grid>
       </Grid>
     </Page>
   );
@@ -69,7 +67,16 @@ interface Params {
   params: { slug: string; id: string };
 }
 
-export async function getServerSideProps({ params: { slug, id } }: Params) {
+export async function getStaticPaths() {
+  return {
+    paths: getAlbums().flatMap((album) =>
+      album.photos.map((photo) => `/photos/${album.slug}/photo/${photo.id}`)
+    ),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params: { slug, id } }: Params) {
   const photo = getPhoto(slug, `${id}.JPG`);
   // const taxonomy =
   //   slug.includes("wildlife") && photo.metadata.Title
