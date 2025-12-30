@@ -232,7 +232,7 @@ export default function BigYear({ birds, series, months }: Props) {
               <Typography level="body-sm">
                 Fig 2. Total species observed each month, broken down by year
                 birds, state birds, life birds, and other. Feb was the only
-                month with less than 100 species.
+                month with fewer than 100 species.
               </Typography>
             </Card>
           </Grid>
@@ -245,7 +245,7 @@ export default function BigYear({ birds, series, months }: Props) {
               <Typography level="body-sm">
                 Fig 3. Miles traveled per month. Many birding trips took me out
                 west, which resulted in 1200+ mile weekends from Lincoln. The
-                goal was to keep &quote;MPB&quote; under 75...
+                goal was to keep MPB under 75...
               </Typography>
             </Card>
           </Grid>
@@ -257,8 +257,8 @@ export default function BigYear({ birds, series, months }: Props) {
               <DollarsSpent months={months} />
               <Typography level="body-sm">
                 Fig 4. Costs represented in the graph include hotels, camping
-                fees, gasoine, and car maintenance. The goal was to keep
-                &quote;CPB&quote; under $15.
+                fees, gasoine, and car maintenance. The goal was to keep CPB
+                under $15.
               </Typography>
             </Card>
           </Grid>
