@@ -104,6 +104,12 @@ export default function BigYear({ birds, series, months }: Props) {
               <Typography level="h3" fontSize={30} textAlign="center">
                 Year List
               </Typography>
+              <Typography level="body-sm">
+                The year took me all over the state! I ticked year birds in 34
+                different counties, photographed 243 of them, and got recordings
+                of 135. See the heatmap above to see which counties had the best
+                birds.
+              </Typography>
               <BirdTable birds={birds} />
             </Card>
           </Grid>
@@ -111,6 +117,10 @@ export default function BigYear({ birds, series, months }: Props) {
             <Card variant="plain" sx={{ marginBottom: 2 }}>
               <Typography level="h3" fontSize={30}>
                 Monthly Recaps
+              </Typography>
+              <Typography level="body-sm">
+                Monthly blog posts containing stories, highlights, and photos
+                from the month of birding.
               </Typography>
               <Grid container spacing={1}>
                 <RecapButton
@@ -203,33 +213,53 @@ export default function BigYear({ birds, series, months }: Props) {
           <Grid xs={12} sm={12} md={6}>
             <Card variant="plain">
               <Typography level="h3" fontSize={30} textAlign="center">
-                Total Species
+                Species Accumulation
               </Typography>
               <TotalSpecies series={series} />
+              <Typography level="body-sm">
+                Fig 1. Total species acuumulation over the course of year by
+                week. Notice the nice spike the first week of the year, and the
+                bump in Apr-May as migration picked up.
+              </Typography>
             </Card>
           </Grid>
           <Grid xs={12} sm={12} md={6}>
             <Card variant="plain">
               <Typography level="h3" fontSize={30} textAlign="center">
-                Species seen each Month
+                Species by Month
               </Typography>
               <SpeciesByMonth months={months} />
+              <Typography level="body-sm">
+                Fig 2. Total species observed each month, broken down by year
+                birds, state birds, life birds, and other. Feb was the only
+                month with less than 100 species.
+              </Typography>
             </Card>
           </Grid>
           <Grid xs={12} sm={12} md={6}>
             <Card variant="plain">
               <Typography level="h3" fontSize={30} textAlign="center">
-                Miles Traveled
+                Mileage
               </Typography>
               <MilesTraveled months={months} />
+              <Typography level="body-sm">
+                Fig 3. Miles traveled per month. Many birding trips took me out
+                west, which resulted in 1200+ mile weekends from Lincoln. The
+                goal was to keep &quote;MPB&quote; under 75...
+              </Typography>
             </Card>
           </Grid>
           <Grid xs={12} sm={12} md={6}>
             <Card variant="plain">
               <Typography level="h3" fontSize={30} textAlign="center">
-                Dollars Spent
+                Cost
               </Typography>
               <DollarsSpent months={months} />
+              <Typography level="body-sm">
+                Fig 4. Costs represented in the graph include hotels, camping
+                fees, gasoine, and car maintenance. The goal was to keep
+                &quote;CPB&quote; under $15.
+              </Typography>
             </Card>
           </Grid>
         </Grid>

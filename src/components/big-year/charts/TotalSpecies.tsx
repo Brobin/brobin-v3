@@ -47,13 +47,14 @@ export default function TotalSpecies({ series }: Props) {
             stack: "A",
             label: "Year Total",
             type: "line",
+            yAxisKey: "right",
           },
           {
             data: series.map((s) => s.new),
             stack: "A",
             label: "Species Added",
             type: "bar",
-            yAxisKey: "right",
+            yAxisKey: "left",
           },
         ]}
       >
@@ -62,9 +63,9 @@ export default function TotalSpecies({ series }: Props) {
         <BarPlot />
         <LinePlot />
         <MarkPlot />
-        <ChartsYAxis label="Total Species" axisId="left" />
-        <ChartsYAxis label="New Species" axisId="right" position="right" />
-        <ChartsXAxis label="Month" axisId="x-axis" />
+        <ChartsYAxis label="New Species" axisId="left" />
+        <ChartsYAxis label="Total Species" axisId="right" position="right" />
+        <ChartsXAxis label="Date" axisId="x-axis" />
       </ResponsiveChartContainer>
     </div>
   );
