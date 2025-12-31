@@ -53,7 +53,7 @@ export default function BigYear({ birds, series, months }: Props) {
                     Life Birds
                   </Typography>
                   <Typography level="h3" fontSize={60} textAlign="center">
-                    {lifeBirds.length}
+                    +{lifeBirds.length}
                   </Typography>
                   <MobileDivider />
                 </Grid>
@@ -89,7 +89,7 @@ export default function BigYear({ birds, series, months }: Props) {
                     State Birds
                   </Typography>
                   <Typography level="h3" fontSize={60} textAlign="center">
-                    {stateBirds.length}
+                    +{stateBirds.length}
                   </Typography>
                 </Grid>
               </Grid>
