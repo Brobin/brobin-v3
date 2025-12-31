@@ -7,7 +7,7 @@
     "stateBirds": 3,
     "lifeBirds": 3,
     "miles": 2539,
-    "cost": 682.18
+    "cost": 680.92
   },
   {
     "month": 2,
@@ -17,7 +17,7 @@
     "stateBirds": 1,
     "lifeBirds": 1,
     "miles": 2061,
-    "cost": 301.1
+    "cost": 299.99
   },
   {
     "month": 3,
@@ -27,7 +27,7 @@
     "stateBirds": 3,
     "lifeBirds": 2,
     "miles": 1989,
-    "cost": 139.39
+    "cost": 138.83
   },
   {
     "month": 4,
@@ -37,7 +37,7 @@
     "stateBirds": 2,
     "lifeBirds": 2,
     "miles": 4613,
-    "cost": 502.78
+    "cost": 500.91
   },
   {
     "month": 5,
@@ -47,7 +47,7 @@
     "stateBirds": 10,
     "lifeBirds": 3,
     "miles": 4937,
-    "cost": 1098.62
+    "cost": 1096.2
   },
   {
     "month": 6,
@@ -57,7 +57,7 @@
     "stateBirds": 3,
     "lifeBirds": 0,
     "miles": 3502,
-    "cost": 461.73
+    "cost": 460.92
   },
   {
     "month": 7,
@@ -67,7 +67,7 @@
     "stateBirds": 0,
     "lifeBirds": 0,
     "miles": 1148,
-    "cost": 170.41
+    "cost": 170.04
   },
   {
     "month": 8,
@@ -77,7 +77,7 @@
     "stateBirds": 5,
     "lifeBirds": 4,
     "miles": 3564,
-    "cost": 607.79
+    "cost": 606.67
   },
   {
     "month": 9,
@@ -87,7 +87,7 @@
     "stateBirds": 3,
     "lifeBirds": 3,
     "miles": 5236,
-    "cost": 770.28
+    "cost": 767.68
   },
   {
     "month": 10,
@@ -97,7 +97,7 @@
     "stateBirds": 1,
     "lifeBirds": 1,
     "miles": 1393,
-    "cost": 126.32
+    "cost": 125.76
   },
   {
     "month": 11,
@@ -107,16 +107,16 @@
     "stateBirds": 1,
     "lifeBirds": 0,
     "miles": 1808,
-    "cost": 153.99
+    "cost": 153.3
   },
   {
     "month": 12,
     "name": "December",
-    "species": 116,
+    "species": 119,
     "yearBirds": 3,
     "stateBirds": 3,
     "lifeBirds": 2,
-    "miles": 2682,
-    "cost": 283.71
+    "miles": 2902,
+    "cost": 309.04
   }
 ]

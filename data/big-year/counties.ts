@@ -114,7 +114,7 @@ export const countyTotals: Record<string, number> = {
   Sarpy: 144,
   Saunders: 100,
   "Scotts Bluff": 188,
-  Seward: 79,
+  Seward: 84,
   Sheridan: 70,
   Sherman: 3,
   Sioux: 145,

@@ -217,9 +217,10 @@ export default function BigYear({ birds, series, months }: Props) {
               </Typography>
               <TotalSpecies series={series} />
               <Typography level="body-sm">
-                Fig 1. Total species acuumulation over the course of year by
-                week. Notice the nice spike the first week of the year, and the
-                bump in Apr-May as migration picked up.
+                <b>Fig 1.</b> Total species acuumulation over the course of year
+                by week. Notice the nice spike the first week of the year, and
+                the bump in Apr-May as migration picked up. A minor uptick in
+                Sep represents fall migration in the west
               </Typography>
             </Card>
           </Grid>
@@ -230,9 +231,10 @@ export default function BigYear({ birds, series, months }: Props) {
               </Typography>
               <SpeciesByMonth months={months} />
               <Typography level="body-sm">
-                Fig 2. Total species observed each month, broken down by year
-                birds, state birds, life birds, and other. Feb was the only
-                month with fewer than 100 species.
+                <b>Fig 2.</b> Total species observed each month, broken down by
+                species new for my year, life and state list, as well as other
+                species (seen in a previous month). Feb was the only month with
+                fewer than 100 species.
               </Typography>
             </Card>
           </Grid>
@@ -243,9 +245,9 @@ export default function BigYear({ birds, series, months }: Props) {
               </Typography>
               <MilesTraveled months={months} />
               <Typography level="body-sm">
-                Fig 3. Miles traveled per month. Many birding trips took me out
-                west, which resulted in 1200+ mile weekends from Lincoln. The
-                goal was to keep MPB under 75...
+                <b>Fig 3.</b> Miles traveled per month. Many birding trips took
+                me out west, which resulted in 1200+ mile weekends from Lincoln.
+                The goal was to keep MPB under 75...oops
               </Typography>
             </Card>
           </Grid>
@@ -256,9 +258,9 @@ export default function BigYear({ birds, series, months }: Props) {
               </Typography>
               <DollarsSpent months={months} />
               <Typography level="body-sm">
-                Fig 4. Costs represented in the graph include hotels, camping
-                fees, gasoine, and car maintenance. The goal was to keep CPB
-                under $15.
+                <b>Fig 4.</b> Costs represented in the graph include hotels,
+                camping fees, and gas, based on avg mileage (24.62) and gas
+                prices ($2.87). The goal was to keep CPB under $15.
               </Typography>
             </Card>
           </Grid>
