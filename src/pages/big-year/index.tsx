@@ -275,10 +275,9 @@ export function getStaticProps() {
 
   const series: { date: string; total: number; new: number }[] = [];
 
-  let currentDay = dayjs().set("month", 0).set("date", 1);
-  let today = dayjs();
+  let currentDay = dayjs("2025-01-01").set("month", 0).set("date", 1);
 
-  while (currentDay < dayjs("2026-01-01") && currentDay <= today) {
+  while (currentDay < dayjs("2026-01-01")) {
     const firstDayOfWeek = dayjs(currentDay).day(0);
     const lastDayOfWeek = dayjs(currentDay).day(6);
 
