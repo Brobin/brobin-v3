@@ -49,7 +49,7 @@ Note: There is still some doubt about the purity of the Mexican Duck. Both Steve
 
 ### One Last Trip West
 
-The next weekend, before the CBC in Scottsbluff, I went on a 3 day trip with Eugene and Keegan in the Pine Ridge. Our main targets were wintger finches, especially Redpoll, which historically has been slightly easier to find in the northwest corner of the state, and even had reports in November.
+The next weekend, before the CBC in Scottsbluff, I went on a 3 day trip with Eugene and Keegan in the Pine Ridge. Our main targets were winter finches, especially Redpoll, which historically has been slightly easier to find in the northwest corner of the state, and even had reports in November.
 
 This plan was great, but the weather began to turn on us. Our first day in Chadron was relatively fruitless. High humidity led to foggy conditions and the cold snap led to even more frost. We found some decent birds in the Chadron area, but nothing new for the year.
 
