@@ -167,7 +167,10 @@ export default function BigYear({ birds, series, months }: Props) {
                   name="Nov"
                   href="/blog/2025/12/nebraska-big-year-november-recap"
                 />
-                <RecapButton name="Dec" />
+                <RecapButton
+                  name="Dec"
+                  href="/blog/2026/01/nebraska-big-year-december-recap"
+                />
               </Grid>
             </Card>
 

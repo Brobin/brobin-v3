@@ -76,6 +76,8 @@ As the year rolls around to 2026, I want to give a huge thank you to everyone th
 
 There will be a couple more posts in the future as I continue to reflect on the year (top 10 birds, best food, other stories not in the recaps etc.), so keep posted for those. Along those same lines, I will be giving a presentation about my experience at Rowe Sanctuary on March 14th 2026, and at Crane Trust on March 28th 2026, so keep an eye out for those if you are interested.
 
+Check out my main [Big Year](/big-year) page for maps, my full bird list, and some data visualizations!
+
 ---
 
 [eBird Trip Report](https://ebird.org/tripreport/437711)
