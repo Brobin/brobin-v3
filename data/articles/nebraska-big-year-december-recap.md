@@ -62,13 +62,13 @@ _Evening Grosbeak, Sioux County_
 
 ### CBCs
 
-This year I participated in 2 CBCs. The first was Scotts Bluff. We were a little hesitant to go for the Mexican Duck the week before thinking it might be around for the CBC, but I'm sure glad we didn't. The Mexican Duck was not found on the CBC day, and hasn't been seen since. Despite that, we still had a great CBC. Keegan, Eugene, and I covered the southwest quadrant of the CBC. At the WTP in the morning, Eugene found a CBC first Long-tailed Duck. Later in the day, we ran across a flock of goldfinches, and while looking for Redpoll, we found another count first: Lesser Goldfinch! Finally, in Carter Canyon, we nabbed a third count first with a Winter Wren (there was a previous CBC record but it is Winter/Pacific since it was before the split).
+This year I participated in 2 CBCs. The first was Scotts Bluff. We were a little hesitant to go for the Mexican Duck the week before thinking it might be around for the CBC, but I'm sure glad we didn't wait. The Mexican Duck was not found on the CBC day, and hasn't been seen since. Despite that, we still had a great CBC. Keegan, Eugene, and I covered the southwest quadrant of the CBC. At the WTP in the morning, Eugene found a CBC first Long-tailed Duck. Later in the day, we ran across a flock of goldfinches, and while looking for Redpoll, we found another count first: Lesser Goldfinch! Finally, in Carter Canyon, we nabbed a third count first with a Winter Wren (there was a previous CBC record but it is Winter/Pacific since it was before the split).
 
 A couple weeks later, I participated in the Lincoln CBC. I had a pretty good morning with Em in Wilderness Park where we found over 25 Brown Creepers (high count), 2 Winter Wrens, and 3 Kingfishers, all good birds for the count. I went out after dusk to check for Owls and found 3 Barred Owls.
 
 ### Nemesis
 
-Have I told you I'm looking for Redpoll? Yeah, my year nemesis. I spent nearly all my free birding time in the month scourihng American Goldfinch flocks looking for my nemesis. There was a really good spot at Branched Oak that regulary had 200-300 birds, but try as I might, I couldn't turn any of them into a Redpoll. Near the end of the month, it was reported a couple times at a private feeder in Seward. I contacted the homeowner and was able to get permission to go look, but despite 6 hours on 3 separate days, I was unsuccessful. That's a bird that will have to wait for another year.
+Have I told you I'm looking for Redpoll? Yeah, my year nemesis. I spent nearly all my free birding time in the month scouring American Goldfinch flocks looking for my nemesis. There was a really good spot at Branched Oak that regulary had 200-300 birds, but try as I might, I couldn't turn any of them into a Redpoll. Near the end of the month, it was reported a couple times at a private feeder in Seward. I contacted the homeowner and was able to get permission to go look, but despite 6 hours on 3 separate days, I was unsuccessful. That's a bird that will have to wait for another year.
 
 ---
 
