@@ -7,7 +7,7 @@ image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/647076623/640
 ---
 
 Year Birds: +3 (**356**)\
-State Buirds: +3 (**360**)\
+State Birds: +3 (**360**)\
 Life Birds: +2 (**536**)\
 [eBird Trip Report](https://ebird.org/tripreport/437711)
 
