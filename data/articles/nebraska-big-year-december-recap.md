@@ -13,7 +13,7 @@ Life Birds: +2 (**536**)\
 
 ---
 
-The final push! I did my best to pick up a few more birds as the end of the year approached. Redpoll was the highest bird on my radar. After a few reports in early November, I was pretty confident that later in the winter, I'd be able to run across one. I spent most of my spare birding time in December trolling gravel roads, checking sunflower fields, and scouring through every Godlfinch flock with an open ear listening for anything different.
+The final push! I did my best to pick up a few more birds as the end of the year approached. Redpoll was the highest bird on my radar. After a few reports in early November, I was pretty confident that later in the winter, I'd be able to run across one. I spent most of my spare birding time in December trolling gravel roads, checking sunflower fields, and scouring through every Goldfinch flock with an open ear listening for anything different.
 
 ### Mexican Duck: Reprise
 
