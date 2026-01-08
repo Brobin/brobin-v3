@@ -4248,18 +4248,6 @@
     "stateBird": true
   },
   {
-    "id": 355,
-    "date": "12/6/2025",
-    "name": "Mexican Duck",
-    "location": "Scotts Bluff",
-    "lat": 41.83383249,
-    "lng": -103.5827943,
-    "photoId": 646660143,
-    "audioId": null,
-    "lifeBird": true,
-    "stateBird": true
-  },
-  {
     "id": 356,
     "date": "12/13/2025",
     "name": "Evening Grosbeak",

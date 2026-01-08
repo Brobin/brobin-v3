@@ -45,7 +45,9 @@ We spent the rest of the day birding in the Scottsbluff area, hoping for some ea
 [![Mexican Duck](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/646660143/1200)](https://macaulaylibrary.org/asset/646660143)
 _Mexican Duck, Scotts Bluff County_
 
-Note: There is still some doubt about the purity of the Mexican Duck. Both Steven Mlodinow and Chris Wood think that it is within acceptable ranges for northern Mexican Ducks. The main issue is the curled tail feather, which I've found in my research is not always indicative of Mallard ancestry. Either way, I think _if_ this bird is a hybrid, the Mallard ancestry is back at least a couple generations, 95% of the field marks show Mexican Duck. That being said, I will follow the NOU Records Committee. If they decide it isn't good enough, I will remove it from my list.
+**Note**: There is still some doubt about the purity of the Mexican Duck. Both Steven Mlodinow and Chris Wood think that it is within acceptable ranges for northern Mexican Ducks. The main issue is the curled tail feather, which I've found in my research is not always indicative of Mallard ancestry. Using a field mark categorizer, I got a score of 6 for a juvenile bird, and 7 for an adult bird. For confidence in a pure MEDU, you need a score of 5 or lower. I will follow the NOU records committee on this one.
+
+**Update 1/8/26**: After sending photos fo the bird to experts, it was determined that our bird was acutally an adult bird, in which case, the curly tail feather is not expected, and indicates hybrid ancestry. This ruling will be relfected by the NOU Records Committee, so I have removed the bird from my list.
 
 ### One Last Trip West
 
@@ -83,5 +85,4 @@ Check out my main [Big Year](/big-year) page for maps, my full bird list, and so
 [eBird Trip Report](https://ebird.org/tripreport/437711)
 
 354. **Crested Caracara**, Garden
-355. **Mexican Duck**, Scotts Bluff
-356. **Evening Grosbeak**, Sioux
+355. **Evening Grosbeak**, Sioux
