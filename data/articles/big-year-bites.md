@@ -3,7 +3,7 @@ title: "Big Year Bites"
 date: "2026-01-31"
 preview: All the best places I ate during my Nebraska Big Year
 tags: birding, big-year
-image: https://cdn.download.ams.birds.cornell.edu/api/v2/asset/647076623/640
+image: /images/blog/big-year-bites/golden_hour.jpg
 ---
 
 Over the course of the year, I traveled over 35k miles and spent over 30 days and nights away from home. While on the road, I usually packed some lunches and snacks, but I also visited many restaurants all over the state. Here's my top 5 places to eat, some honorable mentions, and maybe some places to avoid. _I am not sponsored by any of these restaurants (but if you're reading this and want to give me free food, I'm all for it)_
