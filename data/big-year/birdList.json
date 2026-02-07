@@ -3800,8 +3800,8 @@
     "lng": -103.818468,
     "photoId": 636437264,
     "audioId": null,
-    "lifeBird": false,
-    "stateBird": false
+    "lifeBird": true,
+    "stateBird": true
   },
   {
     "id": 318,
@@ -3812,8 +3812,8 @@
     "lng": -103.818468,
     "photoId": 641530306,
     "audioId": null,
-    "lifeBird": true,
-    "stateBird": true
+    "lifeBird": false,
+    "stateBird": false
   },
   {
     "id": 319,
@@ -3896,7 +3896,7 @@
     "lng": -96.19619346,
     "photoId": null,
     "audioId": 637149052,
-    "lifeBird": true,
+    "lifeBird": false,
     "stateBird": true
   },
   {
