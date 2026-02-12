@@ -1,6 +1,7 @@
 import Markdown from "react-markdown";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import remarkGfm from 'remark-gfm';
 
 interface Props {
   content: string;
@@ -9,6 +10,7 @@ interface Props {
 export default function ArticleMarkdown({ content }: Props) {
   return (
     <Markdown
+      remarkPlugins={[remarkGfm]}
       components={{
         code(props) {
           const { children, className, ...rest } = props;

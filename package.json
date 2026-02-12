@@ -54,6 +54,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.2",
     "prettier-eslint": "^16.1.2",
+    "remark-gfm": "^4.0.1",
     "typescript": "^5"
   }
 }
