@@ -5,6 +5,7 @@ export type Article = {
   title: string;
   slug: string;
   date: string;
+  edited?: string;
   link: string;
   preview: string;
   draft?: boolean;

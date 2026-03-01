@@ -31,9 +31,15 @@ export default function ArticlePage({ article, ...props }: ArticleProps) {
         <Grid xs={12} md={8}>
           <Card variant="plain">
             <Typography level="h1">{article.title}</Typography>
-            <Typography level="title-sm" paddingBottom={2}>
+            <Typography level="title-sm" paddingBottom={0}>
               {dayjs(article.date).format("MMMM DD, YYYY")}
             </Typography>
+            {article.edited && (
+
+            <Typography level="title-sm" paddingBottom={0}>
+              <i>Updated: {dayjs(article.edited).format("MMMM DD, YYYY")}</i>
+            </Typography>
+            )}
             <Divider />
             <ArticleMarkdown content={article.content} />
           </Card>
