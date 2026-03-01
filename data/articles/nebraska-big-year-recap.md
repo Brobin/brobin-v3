@@ -35,6 +35,23 @@ As far as the rest of my birding went when I was home, I tried to put myself in 
 
 Birders often have a "nemesis" bird, which is a bird that you look for many, many times and can never seem to find. That bird for me this year was Redpoll. In late September, it seemed like Redpoll were going to make a good push into Nebraska. There were a few reports into October. I spent nearly all of my free time in the last few months of the year scouring goldfinch flocks in hopes of finding one with a red cap, but could never seem to find one. It was one of the main targets on my mid-December trip to the panhandle. I even spent 3 mornings in Seward, standing in the cold waiting at a feeder, to no avail. As of writing, I still don't have a Redpoll, but Keegan finally got his at Fontenelle Forest! With spring just around the corner, I fear this bird will have to wait until next winter.
 
+For more information on my effort each month, check out the following blog posts and trip reports!
+
+| Month | Total | Links                                                        |                                                     |
+| ----- | ----- | ------------------------------------------------------------ | --------------------------------------------------- |
+| Jan   | 118   | [Blog Post](/blog/2025/02/nebraska-big-year-january-recap)   | [eBird Report](https://ebird.org/tripreport/325880) |
+| Feb   | 131   | [Blog Post](/blog/2025/03/nebraska-big-year-february-recap)  | [eBird Report](https://ebird.org/tripreport/330554) |
+| Mar   | 165   | [Blog Post](/blog/2025/04/nebraska-big-year-march-recap)     | [eBird Report](https://ebird.org/tripreport/337360) |
+| Apr   | 247   | [Blog Post](/blog/2025/04/nebraska-big-year-april-recap)     | [eBird Report](https://ebird.org/tripreport/340906) |
+| May   | 322   | [Blog Post](/blog/2025/06/nebraska-big-year-may-recap)       | [eBird Report](https://ebird.org/tripreport/359607) |
+| Jun   | 328   | [Blog Post](/blog/2025/07/nebraska-big-year-june-recap)      | [eBird Report](https://ebird.org/tripreport/380323) |
+| Jul   | 330   | [Blog Post](/blog/2025/08/nebraska-big-year-july-recap)      | [eBird Report](https://ebird.org/tripreport/390734) |
+| Aug   | 341   | [Blog Post](/blog/2025/09/nebraska-big-year-august-recap)    | [eBird Report](https://ebird.org/tripreport/399564) |
+| Sep   | 350   | [Blog Post](/blog/2025/10/nebraska-big-year-september-recap) | [eBird Report](https://ebird.org/tripreport/325880) |
+| Oct   | 352   | [Blog Post](/blog/2025/11/nebraska-big-year-october-recap)   | [eBird Report](https://ebird.org/tripreport/407849) |
+| Nov   | 353   | [Blog Post](/blog/2025/12/nebraska-big-year-november-recap)  | [eBird Report](https://ebird.org/tripreport/428457) |
+| Dec   | 356   | [Blog Post](/blog/2026/01/nebraska-big-year-december-recap)  | [eBird Report](https://ebird.org/tripreport/437711) |
+
 ## Top 10 Birds of 2025
 
 1. [**Crested Caracara**](https://ebird.org/checklist/S287522904): (#354, Dec 6) This one is probably no surprise. Keegan, Eugene, and I found the state's 2nd record of Crested Caracara at the late date of Dec 6th in Garden County. The bird showed well for nearly 2 weeks so many others were able to add it to their state list!
@@ -150,4 +167,3 @@ Edit History
 
 - **2026-02-11**: bulk of the content
 - **2026-03-01**: added non-avian animals, tips, more acknowledgements
-- **2020-03-01**: typos

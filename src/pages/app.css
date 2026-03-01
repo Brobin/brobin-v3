@@ -27,3 +27,7 @@ img {
   stroke-width: 2;
   outline: none;
 }
+
+th {
+  text-align: left;
+}
