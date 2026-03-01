@@ -11,8 +11,6 @@ image: /images/blog/big-year-recap/header.png
 
 How can I fit an entire year on one page? 525,600 minutes, 35,691 miles, 1.5 million birds, 1,020 checklists, 25+ cumulative DAYS of birding time, and it all boils down to one number: 355. I'm going to try to make this brief, but I can tell already that will be difficult. For month-by-month recaps, check out my [other blog posts](/blog/big-year). For graphs and a full list of species I saw in 2025, check out my dedicated [Big Year](/big-year) page. This post will cover my planning, execution, short stories, and reflections on my experience in 2025 and some tips for attempting your own big year (if for some reason you also think that's a good idea)!
 
-Note: I don't think this will
-
 ## The Plan
 
 So, what possessed me to even do this? The idea of a Big Year attempt took root in me in late 2024. In my first full year of birding in the state, I managed to rack up over 300 species, and I couldn't help but think if I had gone a little harder out of the gate, I could have achieved an even bigger number. I thought that with a bit of planning and luck, I could reach the incredible record of 347 birds set by Paul Dunbar before the prevalence of eBird. 350 has always been a great milestone in Nebraska birding...in a lifetime, so why not try to take that on in one year? Based on data from eBird for the past 5 years, an average of 371 species are found in the state each year, so to reach my goal, I needed to keep up with 94.3% of the species seen. Easy, right? Time for some research.
