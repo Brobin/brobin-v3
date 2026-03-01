@@ -35,7 +35,7 @@ As far as the rest of my birding went when I was home, I tried to put myself in 
 
 Birders often have a "nemesis" bird, which is a bird that you look for many, many times and can never seem to find. That bird for me this year was Redpoll. In late September, it seemed like Redpoll were going to make a good push into Nebraska. There were a few reports into October. I spent nearly all of my free time in the last few months of the year scouring goldfinch flocks in hopes of finding one with a red cap, but could never seem to find one. It was one of the main targets on my mid-December trip to the panhandle. I even spent 3 mornings in Seward, standing in the cold waiting at a feeder, to no avail. As of writing, I still don't have a Redpoll, but Keegan finally got his at Fontenelle Forest! With spring just around the corner, I fear this bird will have to wait until next winter.
 
-For more information on my effort each month, check out the following blog posts and trip reports!
+For more information on my effort each month, check out the following blog posts and trip reports! Also check out my [Google Photos Album](https://photos.app.goo.gl/8dvGq4Ui2bEbZHQC6) for more photos from the year.
 
 | Month | Total | Links                                                        |                                                     |
 | ----- | ----- | ------------------------------------------------------------ | --------------------------------------------------- |
