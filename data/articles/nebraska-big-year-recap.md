@@ -84,12 +84,10 @@ I kept meticulous logs throughout the year, and was able to pull a lot of data f
 
 ## Favorite Moments
 
-(Besides the top 10 birds)
-
 1. [**Gull-a-palooza**](/blog/2025/04/nebraska-big-year-march-recap): One very memorable moment from early in the year was when I ran across a large flock of gulls at Marsh Wren Wetlands of all places. Apparently the location was being used as a staging or loafing site while they went to forage at the dump. Over the next 4 days, we called it "Gullapalooza". In total, the flock consisted of 7 different species, including rare Iceland, California, and Glaucous gulls. I really enjoy looking through gulls over multiple days. Among the other rare gulls, one of the coolest birds to me (and most difficult to identify) was a hybrid American Herring x Lesser Black-backed Gull, only the 2nd record for the state.
 2. **Warbler Trade**: In early May, I was birding at Tierra Park. I was just leaving to chase a Bay-breasted Warbler and Mourning Warbler that Judson found at Wilderness park (both would-be lifers), when I heard an unfamiliar warbler song. It ended up being a Canada Warbler! I took a recording, and continued to Wilderness Park, where I picked up both lifers, and Judson was able to go to Tierra and get great photos of the Canada Warbler.
 3. [**January 1**](/blog/2025/04/nebraska-big-year-march-recap): The first day of the year couldn't have been a more perfect start to the big year. I picked up Saw-whet owls before dawn, dozens of waterfowl (including all Scoters, and a lifer Eurasian Wigeon), and the continuing Couch's Kingbird in North Platte. I finished the day with 78 species and 8/8 rare targets.
-4. **White-eyed Vireo**: Sometimes you catch people talking in your bird recordings, and I caught Keegan and I discovering the White-eyed Vireo. Tobin: "It's a White-eyed Vireo!", Keegan: "Holy \*\*\*\*, you're right".
+4. **[White-eyed Vireo](https://ebird.org/checklist/S264492044)**: Sometimes you catch people talking in your bird recordings, and I caught Keegan and I discovering the White-eyed Vireo. Tobin: "It's a White-eyed Vireo!", Keegan: "Holy \*\*\*\*, you're right".
 5. [**Breeding Bird Survey**](https://ebird.org/tripreport/384758): I ran my first breeding bird survey in Crescent Lake NWR, and it was great. I was overwhelmed by the birdsong at the first few stops, but eventually got into a good rhythm. The highlight of the day was a [Long-tailed Weasel](https://macaulaylibrary.org/asset/637629575)!
 
 ## Top 5 Photos of 2025
@@ -100,7 +98,7 @@ Here are my top 5 photos of the year!
 _Long-tailed Jaeger, Lancaster County_
 
 [![Common Crane](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/632650417/1200)](https://macaulaylibrary.org/asset/632650417)
-_Common Crane, Keith County_
+_Common Crane, Garden County_
 
 [![Evening Grosbeak](https://cdn.download.ams.birds.cornell.edu/api/v2/asset/647140190/1200)](https://macaulaylibrary.org/asset/647140190)
 _Evening Grosbeak, Sioux County_
