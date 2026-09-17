@@ -75,6 +75,25 @@ export async function getStaticProps() {
   const list = new Set(await getList("US-NE"));
   const counties = await getCountyLists("US-NE");
   const taxonomy = await getTaxonomy();
-  const birds = taxonomy.filter((taxon) => list.has(taxon.speciesCode));
+
+  const exotic = new Set([
+    "Whooper Swan",
+    "Ruddy Shelduck",
+    "Muscovy Duck",
+    "Mandarin Duck",
+    "Helmeted Guineafowl",
+    "Indian Peafowl",
+    "Chukar",
+    "African Collared-Dove",
+    "Cockatiel",
+    "Budgerigar",
+    "Rosy-faced Lovebird",
+    "Monk Parakeet",
+  ]);
+
+  const birds = taxonomy.filter(
+    (taxon) => list.has(taxon.speciesCode) && !exotic.has(taxon.comName),
+  );
+
   return { props: { birds, counties } };
 }
