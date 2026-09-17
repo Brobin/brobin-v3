@@ -56,5 +56,9 @@
     "prettier-eslint": "^16.1.2",
     "remark-gfm": "^4.0.1",
     "typescript": "^5"
+  },
+  "allowScripts": {
+    "exifreader@4.33.1": true,
+    "sharp@0.32.6": true
   }
 }
