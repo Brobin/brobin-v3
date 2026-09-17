@@ -48,7 +48,9 @@ export const DataMap = ({
               stroke="#f0f4f8"
               strokeWidth={1}
               fill={
-                counties.has(county.properties!.NAME) ? "#40718f" : "#0b0d0e"
+                counties.has(county.properties!.NAME)
+                  ? "rgb(41, 98, 57)"
+                  : "#0b0d0e"
               }
               className="county"
             />

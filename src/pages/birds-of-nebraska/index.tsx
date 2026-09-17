@@ -57,7 +57,12 @@ export default function BirdsOfNebraska({ birds, counties }: Props) {
                 <b>{countySet.size}</b> / 93 counties (
                 {Math.round((countySet.size / 93) * 100)}%)
               </p>
-              <Typography level="body-xs">
+              <Typography
+                level="body-xs"
+                component={"a"}
+                href={`https://ebird.org/species/${selectedSpecies.speciesCode}/US-NE`}
+                target="_blank"
+              >
                 <i>Data from eBird</i>
               </Typography>
             </Card>
@@ -77,6 +82,9 @@ export async function getStaticProps() {
   const taxonomy = await getTaxonomy();
 
   const exotic = new Set([
+    "Bar-headed Goose",
+    "Swan Goose",
+    "Graylag Goose",
     "Whooper Swan",
     "Ruddy Shelduck",
     "Muscovy Duck",
