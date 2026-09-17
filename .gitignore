@@ -13,6 +13,9 @@
 /.next/
 /out/
 
+# ebird api cache
+/data/ebird/
+
 # production
 /build
 

@@ -39,6 +39,12 @@ export default function Projects() {
           description="I'm trying to see as many birds as I can in one year in the state of Nebraska. Check out my progress!"
         />
         <Project
+          title="Birds of Nebraska"
+          link="/birds-of-nebraska"
+          buttonText="View"
+          description="Some visualizations of the birds of Nebraska by county."
+        />
+        <Project
           title="Photography"
           link="/photos"
           buttonText="View Photos"
