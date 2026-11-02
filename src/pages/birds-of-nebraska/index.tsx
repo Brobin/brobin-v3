@@ -1,5 +1,6 @@
 import { Card, Grid, Option, Select, Typography } from "@mui/joy";
 
+import BirdTable from "@brobin/components/ebird/BirdTable";
 import { DataMap } from "@brobin/components/ebird/DataMap";
 import Page from "@brobin/components/Page";
 import { RegionWithSpecies, Taxonomy } from "@brobin/types/ebird";
@@ -28,6 +29,31 @@ export default function BirdsOfNebraska({ birds, counties }: Props) {
   const selectedSpecies = React.useMemo(() => {
     return birds.find((b) => b.speciesCode === species);
   }, [birds, species]);
+
+  const countyCounts = React.useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const county of counties) {
+      for (const code of county.species) {
+        counts.set(code, (counts.get(code) ?? 0) + 1);
+      }
+    }
+    return counts;
+  }, [counties]);
+
+  const rows = React.useMemo(
+    () =>
+      [...birds]
+        .sort((a, b) => a.taxonOrder - b.taxonOrder)
+        .map((bird) => ({
+          speciesCode: bird.speciesCode,
+          comName: bird.comName,
+          sciName: bird.sciName,
+          order: bird.order,
+          taxonOrder: bird.taxonOrder,
+          countyCount: countyCounts.get(bird.speciesCode) ?? 0,
+        })),
+    [birds, countyCounts],
+  );
 
   return (
     <Page title="Birds of Nebraska" description="Birds of Nebraska">
@@ -70,6 +96,9 @@ export default function BirdsOfNebraska({ birds, counties }: Props) {
         </Grid>
         <Grid xs={12} md={9}>
           <DataMap counties={countySet} />
+        </Grid>
+        <Grid xs={12}>
+          <BirdTable birds={rows} onRowClick={setSpecies} />
         </Grid>
       </Grid>
     </Page>
