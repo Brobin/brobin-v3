@@ -42,7 +42,15 @@ export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
   );
 
   return (
-    <Page title="Birds of Nebraska" description="Birds of Nebraska by county">
+    <Page
+      title={
+        selectedCounty
+          ? `${selectedCounty.name} County Checklist`
+          : `Nebraska County Checklists`
+      }
+      siteTitle={"Birds of Nebraska"}
+      description="Nebraska County Checklists"
+    >
       <Grid container spacing={2}>
         <Grid xs={12}>
           <Typography level="h2">Birds of Nebraska by County</Typography>
@@ -79,7 +87,11 @@ export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
         {selectedCounty && (
           <Grid xs={12} md={9}>
             <Card variant="plain">
-              <SpeciesChecklist birds={allBirds} seen={seen} />
+              <SpeciesChecklist
+                birds={allBirds}
+                seen={seen}
+                title={`${selectedCounty.name} County Checklist`}
+              />
             </Card>
           </Grid>
         )}

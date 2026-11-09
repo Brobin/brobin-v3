@@ -1,6 +1,15 @@
-import { Box, Button, IconButton, Input, Link, Typography } from "@mui/joy";
+import {
+  Box,
+  Button,
+  GlobalStyles,
+  IconButton,
+  Input,
+  Link,
+  Typography,
+} from "@mui/joy";
 import CheckCircle from "@mui/icons-material/CheckCircle";
 import Close from "@mui/icons-material/Close";
+import Print from "@mui/icons-material/Print";
 import RadioButtonUnchecked from "@mui/icons-material/RadioButtonUnchecked";
 import NextLink from "next/link";
 import React from "react";
@@ -11,9 +20,12 @@ import { speciesUrl } from "@brobin/utils/routes";
 export default function SpeciesChecklist({
   birds,
   seen,
+  title,
 }: {
   birds: Taxonomy[];
   seen: Set<string>;
+  /** Heading shown only on the printed page. */
+  title?: string;
 }) {
   const [query, setQuery] = React.useState("");
   const [seenOnly, setSeenOnly] = React.useState(false);
@@ -57,8 +69,49 @@ export default function SpeciesChecklist({
   }, [filtered]);
 
   return (
-    <>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+    <Box className="print-area">
+      <GlobalStyles
+        styles={{
+          "@page": { size: "landscape", margin: "0.4in" },
+          "@media print": {
+            // drop everything except the checklist and the elements wrapping it
+            "body *:not(.print-area, .print-area *, :has(.print-area))": {
+              display: "none !important",
+            },
+            // strip layout from the wrappers so they add no space of their own
+            ":has(.print-area)": {
+              display: "block !important",
+              position: "static !important",
+              width: "100% !important",
+              maxWidth: "none !important",
+              height: "auto !important",
+              minHeight: "0 !important",
+              margin: "0 !important",
+              padding: "0 !important",
+              border: "0 !important",
+              boxShadow: "none !important",
+              background: "none !important",
+              overflow: "visible !important",
+            },
+            ".no-print": { display: "none !important" },
+          },
+        }}
+      />
+      {title && (
+        <Typography
+          level="h2"
+          sx={{
+            display: "none",
+            "@media print": { display: "block", fontSize: "18px" },
+          }}
+        >
+          {title}
+        </Typography>
+      )}
+      <Box
+        className="no-print"
+        sx={{ display: "flex", alignItems: "center", gap: 1 }}
+      >
         <Input
           size="sm"
           placeholder="Search species"
@@ -101,77 +154,162 @@ export default function SpeciesChecklist({
         >
           Toggle Targets
         </Button>
+        <Button
+          size="sm"
+          variant="soft"
+          startDecorator={<Print />}
+          onClick={() => window.print()}
+        >
+          Print
+        </Button>
       </Box>
-      {families.map((family) => (
-        <React.Fragment key={family.code}>
-          <Typography level="h4" sx={{ marginTop: 3, marginBottom: 1 }}>
-            {family.name}{" "}
-            <Typography level="body-md" fontWeight="normal">
-              &ndash; <i>{family.sciName}</i>
-            </Typography>
-          </Typography>
+      {/* printed as columns that fill each page top to bottom, left to right */}
+      <Box
+        sx={{
+          "@media print": {
+            columnCount: 5,
+            columnGap: "12px",
+            columnFill: "auto",
+          },
+        }}
+      >
+        {families.map((family) => (
           <Box
+            key={family.code}
             sx={{
-              display: "grid",
-              gridTemplateColumns: {
-                xs: "1fr",
-                sm: "repeat(2, 1fr)",
-                md: "repeat(3, 1fr)",
+              // skip the heading too when none of the family was seen
+              "@media print": {
+                display: family.birds.some((b) => seen.has(b.speciesCode))
+                  ? "block"
+                  : "none",
               },
-              rowGap: 2,
-              columnGap: 3,
             }}
           >
-            {family.birds.map((bird) => (
-              <Link
-                key={bird.speciesCode}
-                component={NextLink}
-                href={speciesUrl(bird.speciesCode)}
-                underline="none"
-                sx={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: 1,
-                }}
+            <Typography
+              level="h4"
+              sx={{
+                marginTop: 3,
+                marginBottom: 1,
+                "@media print": {
+                  fontSize: "12px",
+                  lineHeight: 1.2,
+                  marginTop: 1,
+                  marginBottom: 0.25,
+                  breakAfter: "avoid",
+                },
+              }}
+            >
+              {family.name}{" "}
+              <Typography
+                level="body-md"
+                fontWeight="normal"
+                sx={{ "@media print": { fontSize: "10px" } }}
               >
-                {seen.has(bird.speciesCode) ? (
-                  <CheckCircle
-                    color="success"
-                    titleAccess="Seen"
-                    sx={{ marginTop: 0.5 }}
-                  />
-                ) : (
-                  <RadioButtonUnchecked
-                    color="disabled"
-                    titleAccess="Not seen"
-                    sx={{ marginTop: 0.5 }}
-                  />
-                )}
-                <Box>
-                  <Typography
-                    level="title-md"
-                    component="span"
-                    display="block"
-                    title={
-                      bird.extinct
-                        ? `Extinct${bird.extinctYear ? ` (${bird.extinctYear})` : ""}`
-                        : undefined
-                    }
+                &ndash; <i>{family.sciName}</i>
+              </Typography>
+            </Typography>
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: {
+                  xs: "1fr",
+                  sm: "repeat(2, 1fr)",
+                  md: "repeat(3, 1fr)",
+                },
+                rowGap: 2,
+                columnGap: 3,
+                // the page-level columns do the laying out when printing
+                "@media print": { display: "block" },
+              }}
+            >
+              {family.birds.map((bird) => (
+                <Link
+                  key={bird.speciesCode}
+                  component={NextLink}
+                  href={speciesUrl(bird.speciesCode)}
+                  underline="none"
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: 1,
+                    "@media print": {
+                      // only species seen in the county are printed
+                      display: seen.has(bird.speciesCode) ? "flex" : "none",
+                      color: "#000",
+                      gap: 0.5,
+                      marginBottom: 0.25,
+                      breakInside: "avoid",
+                    },
+                  }}
+                >
+                  {seen.has(bird.speciesCode) ? (
+                    <CheckCircle
+                      color="success"
+                      titleAccess="Seen"
+                      sx={{
+                        marginTop: 0.5,
+                        "@media print": { display: "none" },
+                      }}
+                    />
+                  ) : (
+                    <RadioButtonUnchecked
+                      color="disabled"
+                      titleAccess="Not seen"
+                      sx={{
+                        marginTop: 0.5,
+                        "@media print": { display: "none" },
+                      }}
+                    />
+                  )}
+                  {/* printed in place of the icons, to be filled in by hand */}
+                  <Box
                     sx={{
-                      textDecoration: bird.extinct ? "line-through" : undefined,
+                      display: "none",
+                      "@media print": {
+                        display: "block",
+                        flexShrink: 0,
+                        width: "14px",
+                        height: "10px",
+                        borderBottom: "1px solid #000",
+                      },
                     }}
-                  >
-                    {bird.comName}
-                  </Typography>
-                  <Typography level="body-sm" component="span" display="block">
-                    <i>{bird.sciName}</i>
-                  </Typography>
-                </Box>
-              </Link>
-            ))}
+                  />
+                  <Box>
+                    <Typography
+                      level="title-md"
+                      component="span"
+                      display="block"
+                      title={
+                        bird.extinct
+                          ? `Extinct${
+                              bird.extinctYear ? ` (${bird.extinctYear})` : ""
+                            }`
+                          : undefined
+                      }
+                      sx={{
+                        textDecoration: bird.extinct
+                          ? "line-through"
+                          : undefined,
+                        "@media print": { fontSize: "10px", lineHeight: 1.2 },
+                      }}
+                    >
+                      {bird.comName}
+                    </Typography>
+                    <Typography
+                      level="body-sm"
+                      component="span"
+                      display="block"
+                      sx={{ "@media print": { display: "none" } }}
+                    >
+                      <i>{bird.sciName}</i>
+                    </Typography>
+                  </Box>
+                </Link>
+              ))}
+            </Box>
           </Box>
-        </React.Fragment>
-      ))}
-    </>
+        ))}
+      </Box>
+    </Box>
   );
 }

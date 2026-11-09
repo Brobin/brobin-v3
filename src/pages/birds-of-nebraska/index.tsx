@@ -89,7 +89,10 @@ export default function BirdsOfNebraska({ birds, counties }: Props) {
   }, [birds, counties]);
 
   return (
-    <Page title="Birds of Nebraska" description="Birds of Nebraska">
+    <Page
+      title="Birds of Nebraska"
+      description="Checklists and visualizations by county and by species for all birds seen in the state of Nebraska. All data pulled from eBird."
+    >
       <Grid container spacing={2}>
         <Grid xs={12}>
           <Typography level="h2">Birds of Nebraska</Typography>

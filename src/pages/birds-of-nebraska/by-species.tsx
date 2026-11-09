@@ -27,9 +27,7 @@ export default function BirdsOfNebraskaBySpecies({ birds, counties }: Props) {
   const countySet = React.useMemo(() => {
     if (species) {
       return new Set(
-        counties
-          .filter((c) => c.species.includes(species))
-          .map((c) => c.name),
+        counties.filter((c) => c.species.includes(species)).map((c) => c.name),
       );
     }
     return new Set<string>();
@@ -40,7 +38,19 @@ export default function BirdsOfNebraskaBySpecies({ birds, counties }: Props) {
   }, [birds, species]);
 
   return (
-    <Page title="Birds of Nebraska" description="Birds of Nebraska">
+    <Page
+      title={
+        selectedSpecies
+          ? `${selectedSpecies.comName} by county in Nebraska`
+          : "Birds of Nebraska"
+      }
+      siteTitle={"Birds of Nebraska"}
+      description={
+        selectedSpecies
+          ? `Map of the occurence of in Nebraska by ${selectedSpecies.comName} by county.`
+          : "Map of species occurence of in Nebraska by county."
+      }
+    >
       <Grid container spacing={2}>
         <Grid xs={12} md={12}>
           <Typography level="h2">Birds of Nebraska by Species</Typography>
@@ -77,7 +87,7 @@ export default function BirdsOfNebraskaBySpecies({ birds, counties }: Props) {
           )}
         </Grid>
         <Grid xs={12} md={9}>
-<DataMap counties={countySet} onCountyClick={navigateToCounty} />
+          <DataMap counties={countySet} onCountyClick={navigateToCounty} />
         </Grid>
         <DataDisclaimer />
       </Grid>

@@ -6,13 +6,20 @@ import Header from "./Header";
 
 interface Props {
   title: string;
+  siteTitle?: string;
   description?: string;
   image?: Partial<PhotoSize>;
   children: JSX.Element | JSX.Element[];
 }
 
-export default function Page({ title, description, image, children }: Props) {
-  const pageTitle = `${title} • Tobin`;
+export default function Page({
+  title,
+  siteTitle,
+  description,
+  image,
+  children,
+}: Props) {
+  const pageTitle = `${title} • ${siteTitle || "Tobin"}`;
   const metaDescription = description || title;
 
   return (
