@@ -46,14 +46,20 @@ export default function Header() {
           ) : (
             <>
               <ListItem sx={{ marginInlineStart: "auto" }}>
-                <ListItemButton component="a" href="/photos">
-                  Photography
+                <ListItemButton component="a" href="/birds-of-nebraska">
+                  Birds of Nebraska
                 </ListItemButton>
               </ListItem>
               <ListDivider />
               <ListItem>
                 <ListItemButton component="a" href="/big-year">
                   Big Year
+                </ListItemButton>
+              </ListItem>
+              <ListDivider />
+              <ListItem>
+                <ListItemButton component="a" href="/photos">
+                  Photography
                 </ListItemButton>
               </ListItem>
               <ListDivider />
