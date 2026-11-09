@@ -57,7 +57,7 @@ export async function getCountyLists(
 export async function getList(region: string) {
   return cached(`list-${region}`, () =>
     get<string[]>(`https://api.ebird.org/v2/product/spplist/${region}`).then(
-      (species) => species.filter((sp) => sp[0] !== "x" && sp[1] !== "0"),
+      (species) => species.filter((sp) => sp[0] !== "x"), // "x" indicate hybrids
     ),
   );
 }
