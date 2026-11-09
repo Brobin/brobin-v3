@@ -62,6 +62,33 @@ export async function getList(region: string) {
   );
 }
 
+const EXOTIC = new Set([
+  "Bar-headed Goose",
+  "Swan Goose",
+  "Graylag Goose",
+  "Whooper Swan",
+  "Ruddy Shelduck",
+  "Muscovy Duck",
+  "Mandarin Duck",
+  "Helmeted Guineafowl",
+  "Indian Peafowl",
+  "Chukar",
+  "African Collared-Dove",
+  "Cockatiel",
+  "Budgerigar",
+  "Rosy-faced Lovebird",
+  "Monk Parakeet",
+]);
+
+/** Non-exotic species that have been observed in the given region. */
+export async function getBirds(region: string) {
+  const list = new Set(await getList(region));
+  const taxonomy = await getTaxonomy();
+  return taxonomy.filter(
+    (taxon) => list.has(taxon.speciesCode) && !EXOTIC.has(taxon.comName),
+  );
+}
+
 export async function getTaxonomy() {
   return get<Taxonomy[]>(
     `https://api.ebird.org/v2/ref/taxonomy/ebird?cat=species&fmt=json`,

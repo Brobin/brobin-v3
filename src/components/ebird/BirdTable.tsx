@@ -12,7 +12,6 @@ export type BirdRow = {
   sciName: string;
   order: string;
   taxonOrder: number;
-  countyCount: number;
 };
 
 const columns: GridColDef<BirdRow>[] = [
@@ -26,7 +25,6 @@ const columns: GridColDef<BirdRow>[] = [
       param2.api.getRow(param2.id).taxonOrder,
   },
   { field: "order", headerName: "Order", flex: 1 },
-  { field: "countyCount", headerName: "Counties", type: "number", width: 100 },
 ];
 
 function CustomToolbar() {
