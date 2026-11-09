@@ -63,6 +63,7 @@ export async function getList(region: string) {
 }
 
 const EXOTIC = new Set([
+  "Egyptian Goose",
   "Bar-headed Goose",
   "Swan Goose",
   "Graylag Goose",
