@@ -1,4 +1,4 @@
-import { Box, IconButton, Input, Link, Typography } from "@mui/joy";
+import { Box, Button, IconButton, Input, Link, Typography } from "@mui/joy";
 import CheckCircle from "@mui/icons-material/CheckCircle";
 import Close from "@mui/icons-material/Close";
 import RadioButtonUnchecked from "@mui/icons-material/RadioButtonUnchecked";
@@ -16,17 +16,21 @@ export default function SpeciesChecklist({
   seen: Set<string>;
 }) {
   const [query, setQuery] = React.useState("");
+  const [seenOnly, setSeenOnly] = React.useState(false);
+  const [targetsOnly, setTargetsOnly] = React.useState(false);
 
   const filtered = React.useMemo(() => {
     const q = query.trim().toLowerCase();
-    return q
-      ? birds.filter((bird) =>
+    return birds.filter(
+      (bird) =>
+        (!seenOnly || seen.has(bird.speciesCode)) &&
+        (!targetsOnly || !seen.has(bird.speciesCode)) &&
+        (!q ||
           `${bird.comName} ${bird.sciName} ${bird.familySciName}`
             .toLowerCase()
-            .includes(q),
-        )
-      : birds;
-  }, [birds, query]);
+            .includes(q)),
+    );
+  }, [birds, query, seenOnly, targetsOnly, seen]);
 
   // birds arrive in taxon order, so each family is a contiguous run
   const families = React.useMemo(() => {
@@ -54,25 +58,50 @@ export default function SpeciesChecklist({
 
   return (
     <>
-      <Input
-        size="sm"
-        placeholder="Search species"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        endDecorator={
-          query && (
-            <IconButton
-              size="sm"
-              variant="plain"
-              aria-label="Clear search"
-              onClick={() => setQuery("")}
-            >
-              <Close />
-            </IconButton>
-          )
-        }
-        sx={{ maxWidth: 300 }}
-      />
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <Input
+          size="sm"
+          placeholder="Search species"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          endDecorator={
+            query && (
+              <IconButton
+                size="sm"
+                variant="plain"
+                aria-label="Clear search"
+                onClick={() => setQuery("")}
+              >
+                <Close />
+              </IconButton>
+            )
+          }
+          sx={{ maxWidth: 300, flexGrow: 1 }}
+        />
+        <Button
+          size="sm"
+          variant={seenOnly ? "solid" : "outlined"}
+          aria-pressed={seenOnly}
+          onClick={() => {
+            setSeenOnly((prev) => !prev);
+            setTargetsOnly(false);
+          }}
+          sx={{ marginLeft: "auto" }}
+        >
+          Toggle Seen
+        </Button>
+        <Button
+          size="sm"
+          variant={targetsOnly ? "solid" : "outlined"}
+          aria-pressed={targetsOnly}
+          onClick={() => {
+            setTargetsOnly((prev) => !prev);
+            setSeenOnly(false);
+          }}
+        >
+          Toggle Targets
+        </Button>
+      </Box>
       {families.map((family) => (
         <React.Fragment key={family.code}>
           <Typography level="h4" sx={{ marginTop: 3, marginBottom: 1 }}>

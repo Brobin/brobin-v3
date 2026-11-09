@@ -138,6 +138,7 @@ export default function BirdsOfNebraska({ birds, counties }: Props) {
               }}
               pageSizeOptions={[25, 50, 100]}
               rowHeight={38}
+              sx={{ border: 0, "& .MuiDataGrid-row": { cursor: "pointer" } }}
             />
           </Card>
         </Grid>
@@ -178,6 +179,7 @@ export default function BirdsOfNebraska({ birds, counties }: Props) {
               }}
               pageSizeOptions={[25, 50, 100]}
               rowHeight={38}
+              sx={{ border: 0, "& .MuiDataGrid-row": { cursor: "pointer" } }}
             />
           </Card>
         </Grid>
