@@ -1,14 +1,12 @@
-import { Card, Grid, Option, Select, Typography } from "@mui/joy";
-import { useRouter } from "next/router";
+import { Autocomplete, Card, Grid, Typography } from "@mui/joy";
 import React from "react";
 
-import BirdTable from "@brobin/components/ebird/BirdTable";
 import DataDisclaimer from "@brobin/components/ebird/DataDisclaimer";
+import SpeciesChecklist from "@brobin/components/ebird/SpeciesChecklist";
 import Page from "@brobin/components/Page";
 import { useQueryParam } from "@brobin/hooks/useQueryParam";
 import { RegionWithSpecies, Taxonomy } from "@brobin/types/ebird";
 import { getBirds, getCountyLists } from "@brobin/utils/ebird";
-import { speciesUrl } from "@brobin/utils/routes";
 
 interface Props {
   birds: Taxonomy[];
@@ -16,7 +14,6 @@ interface Props {
 }
 
 export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
-  const router = useRouter();
   const [code, setCode] = useQueryParam("county");
 
   const sortedCounties = React.useMemo(
@@ -29,12 +26,20 @@ export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
     [counties, code],
   );
 
-  const rows = React.useMemo(() => {
-    const speciesSet = new Set(selectedCounty?.species);
-    return [...birds]
-      .sort((a, b) => a.taxonOrder - b.taxonOrder)
-      .filter((bird) => speciesSet.has(bird.speciesCode));
-  }, [birds, selectedCounty]);
+  const allBirds = React.useMemo(
+    () => [...birds].sort((a, b) => a.taxonOrder - b.taxonOrder),
+    [birds],
+  );
+
+  const seen = React.useMemo(
+    () => new Set(selectedCounty?.species),
+    [selectedCounty],
+  );
+
+  const seenCount = React.useMemo(
+    () => allBirds.filter((bird) => seen.has(bird.speciesCode)).length,
+    [allBirds, seen],
+  );
 
   return (
     <Page title="Birds of Nebraska" description="Birds of Nebraska by county">
@@ -43,25 +48,22 @@ export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
           <Typography level="h2">Birds of Nebraska by County</Typography>
         </Grid>
         <Grid xs={12} md={3}>
-          <Select
-            placeholder="Select a county"
-            value={code}
-            onChange={(e, value) => setCode(value)}
-          >
-            {sortedCounties.map((county) => (
-              <Option key={county.code} value={county.code}>
-                {county.name}
-              </Option>
-            ))}
-          </Select>
+          <Autocomplete
+            placeholder="Search for a county"
+            options={sortedCounties}
+            value={selectedCounty ?? null}
+            getOptionLabel={(county) => county.name}
+            isOptionEqualToValue={(a, b) => a.code === b.code}
+            onChange={(_, county) => setCode(county?.code ?? null)}
+          />
           <br />
 
           {selectedCounty && (
             <Card>
               <Typography level="h3">{selectedCounty.name} County</Typography>
               <p>
-                <b>{rows.length}</b> / {birds.length} species (
-                {Math.round((rows.length / birds.length) * 100)}%)
+                <b>{seenCount}</b> / {birds.length} species (
+                {Math.round((seenCount / birds.length) * 100)}%)
               </p>
               <Typography
                 level="body-xs"
@@ -76,12 +78,9 @@ export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
         </Grid>
         {selectedCounty && (
           <Grid xs={12} md={9}>
-            <BirdTable
-              birds={rows}
-              onRowClick={(speciesCode) =>
-                router.push(speciesUrl(speciesCode))
-              }
-            />
+            <Card variant="plain">
+              <SpeciesChecklist birds={allBirds} seen={seen} />
+            </Card>
           </Grid>
         )}
         <DataDisclaimer />

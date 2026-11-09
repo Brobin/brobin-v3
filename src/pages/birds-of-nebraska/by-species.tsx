@@ -1,4 +1,5 @@
-import { Card, Grid, Option, Select, Typography } from "@mui/joy";
+import { Autocomplete, Card, Grid, Typography } from "@mui/joy";
+import { createFilterOptions } from "@mui/joy/Autocomplete";
 
 import DataDisclaimer from "@brobin/components/ebird/DataDisclaimer";
 import { DataMap } from "@brobin/components/ebird/DataMap";
@@ -13,6 +14,11 @@ interface Props {
   birds: Taxonomy[];
   counties: RegionWithSpecies[];
 }
+
+// match on common or scientific name
+const filterOptions = createFilterOptions<Taxonomy>({
+  stringify: (bird) => `${bird.comName} ${bird.sciName}`,
+});
 
 export default function BirdsOfNebraskaBySpecies({ birds, counties }: Props) {
   const [species, setSpecies] = useQueryParam("species");
@@ -40,17 +46,15 @@ export default function BirdsOfNebraskaBySpecies({ birds, counties }: Props) {
           <Typography level="h2">Birds of Nebraska by Species</Typography>
         </Grid>
         <Grid xs={12} md={3}>
-          <Select
-            placeholder="Select a species"
-            value={species}
-            onChange={(e, value) => setSpecies(value)}
-          >
-            {birds.map((bird) => (
-              <Option key={bird.speciesCode} value={bird.speciesCode}>
-                {bird.comName}
-              </Option>
-            ))}
-          </Select>
+          <Autocomplete
+            placeholder="Search for a species"
+            options={birds}
+            value={selectedSpecies ?? null}
+            getOptionLabel={(bird) => bird.comName}
+            isOptionEqualToValue={(a, b) => a.speciesCode === b.speciesCode}
+            filterOptions={filterOptions}
+            onChange={(_, bird) => setSpecies(bird?.speciesCode ?? null)}
+          />
           <br />
 
           {selectedSpecies && (

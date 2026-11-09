@@ -25,7 +25,7 @@ export const DataMap = ({
   counties = new Set(),
   counts,
   onCountyClick,
-  center =[41.4925, -99.9018],
+  center = [41.4925, -99.9018],
   width = 1120,
   height = 560,
   scale = 7340,
@@ -84,7 +84,7 @@ export const DataMap = ({
               ? "#0b0d0e"
               : colorScale(value)
             : counties.has(name)
-              ? "rgb(41, 98, 57)"
+              ? "#e54353"
               : "#0b0d0e";
 
           return (
