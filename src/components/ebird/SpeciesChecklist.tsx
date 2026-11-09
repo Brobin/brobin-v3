@@ -21,7 +21,7 @@ export default function SpeciesChecklist({
     const q = query.trim().toLowerCase();
     return q
       ? birds.filter((bird) =>
-          `${bird.comName} ${bird.sciName} ${bird.familyComName} ${bird.familySciName}`
+          `${bird.comName} ${bird.sciName} ${bird.familySciName}`
             .toLowerCase()
             .includes(q),
         )
