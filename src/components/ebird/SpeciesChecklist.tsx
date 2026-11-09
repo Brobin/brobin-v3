@@ -148,7 +148,19 @@ export default function SpeciesChecklist({
                   />
                 )}
                 <Box>
-                  <Typography level="title-md" component="span" display="block">
+                  <Typography
+                    level="title-md"
+                    component="span"
+                    display="block"
+                    title={
+                      bird.extinct
+                        ? `Extinct${bird.extinctYear ? ` (${bird.extinctYear})` : ""}`
+                        : undefined
+                    }
+                    sx={{
+                      textDecoration: bird.extinct ? "line-through" : undefined,
+                    }}
+                  >
                     {bird.comName}
                   </Typography>
                   <Typography level="body-sm" component="span" display="block">

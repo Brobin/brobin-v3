@@ -14,4 +14,6 @@ export type Taxonomy = {
   familyCode: string;
   familyComName: string;
   familySciName: string;
+  extinct?: boolean;
+  extinctYear?: string;
 };

@@ -136,7 +136,7 @@ export default function BirdsOfNebraska({ birds, counties }: Props) {
               initialState={{
                 pagination: { paginationModel: { pageSize: 25 } },
               }}
-              pageSizeOptions={[25, 50, 100]}
+              pageSizeOptions={[]}
               rowHeight={38}
               sx={{ border: 0, "& .MuiDataGrid-row": { cursor: "pointer" } }}
             />
@@ -177,7 +177,7 @@ export default function BirdsOfNebraska({ birds, counties }: Props) {
               initialState={{
                 pagination: { paginationModel: { pageSize: 25 } },
               }}
-              pageSizeOptions={[25, 50, 100]}
+              pageSizeOptions={[]}
               rowHeight={38}
               sx={{ border: 0, "& .MuiDataGrid-row": { cursor: "pointer" } }}
             />
