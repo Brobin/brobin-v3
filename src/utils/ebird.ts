@@ -79,6 +79,7 @@ const EXOTIC = new Set([
   "Budgerigar",
   "Rosy-faced Lovebird",
   "Monk Parakeet",
+  "Red Junglefowl",
 ]);
 
 /** Non-exotic species that have been observed in the given region. */
