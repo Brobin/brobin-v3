@@ -63,23 +63,24 @@ export async function getList(region: string) {
 }
 
 const EXOTIC = new Set([
-  "Egyptian Goose",
   "Bar-headed Goose",
-  "Swan Goose",
   "Graylag Goose",
+  "Swan Goose",
   "Whooper Swan",
+  "Egyptian Goose",
   "Ruddy Shelduck",
   "Muscovy Duck",
   "Mandarin Duck",
   "Helmeted Guineafowl",
   "Indian Peafowl",
+  "Red Junglefowl",
   "Chukar",
   "African Collared-Dove",
   "Cockatiel",
   "Budgerigar",
   "Rosy-faced Lovebird",
   "Monk Parakeet",
-  "Red Junglefowl",
+  "Northern Red Bishop",
 ]);
 
 /** Non-exotic species that have been observed in the given region. */
