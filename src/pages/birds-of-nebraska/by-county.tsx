@@ -5,11 +5,11 @@ import DataDisclaimer from "@brobin/components/ebird/DataDisclaimer";
 import SpeciesChecklist from "@brobin/components/ebird/SpeciesChecklist";
 import Page from "@brobin/components/Page";
 import { useQueryParam } from "@brobin/hooks/useQueryParam";
-import { RegionWithSpecies, Taxonomy } from "@brobin/types/ebird";
+import { RegionWithSpecies, TaxonomyWithCount } from "@brobin/types/ebird";
 import { getBirds, getCountyLists } from "@brobin/utils/ebird";
 
 interface Props {
-  birds: Taxonomy[];
+  birds: TaxonomyWithCount[];
   counties: RegionWithSpecies[];
 }
 
@@ -40,6 +40,18 @@ export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
     () => allBirds.filter((bird) => seen.has(bird.speciesCode)).length,
     [allBirds, seen],
   );
+
+  const likelyNext = React.useMemo(() => {
+    if (!selectedCounty) return [];
+    // unseen species, so countyCount never includes the selected county
+    return allBirds
+      .filter((bird) => !seen.has(bird.speciesCode))
+      .map((bird) => ({ bird, count: bird.countyCount }))
+      .sort(
+        (a, b) => b.count - a.count || a.bird.taxonOrder - b.bird.taxonOrder,
+      )
+      .slice(0, 10);
+  }, [selectedCounty, allBirds, seen]);
 
   return (
     <Page
@@ -75,11 +87,42 @@ export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
 
           {selectedCounty && (
             <Card variant="plain">
-              <Typography level="h3">{selectedCounty.name} County</Typography>
-              <p>
-                <b>{seenCount}</b> / {birds.length} species (
-                {Math.round((seenCount / birds.length) * 100)}%)
-              </p>
+              <Typography level="h3">
+                <b>{seenCount}</b> species{" "}
+                <Typography component="span" textColor="text.tertiary">
+                  ({Math.round((seenCount / birds.length) * 100)}%)
+                </Typography>
+              </Typography>
+              <br />
+              {likelyNext.length > 0 && (
+                <>
+                  <Typography level="title-md">
+                    Community target species
+                  </Typography>
+                  <Typography level="body-xs">
+                    Not yet reported in <b>{selectedCounty.name}</b>, but
+                    reported in many other counties in the state.
+                  </Typography>
+                  <ol style={{ margin: 0, paddingLeft: "1.25rem" }}>
+                    {likelyNext.map(({ bird, count }) => (
+                      <li key={bird.speciesCode}>
+                        {count === counties.length - 1 ? (
+                          <b>{bird.comName}*</b>
+                        ) : (
+                          bird.comName
+                        )}{" "}
+                        <Typography level="body-xs" component="span">
+                          ({count} / {counties.length} counties)
+                        </Typography>
+                      </li>
+                    ))}
+                  </ol>
+                  <Typography level="body-xs">
+                    <b>*</b> last county species is needed in!
+                  </Typography>
+                  <br />
+                </>
+              )}
               <Typography
                 level="body-xs"
                 component={"a"}
@@ -110,7 +153,7 @@ export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
 
 export async function getStaticProps() {
   const counties = await getCountyLists("US-NE");
-  const birds = await getBirds("US-NE");
+  const birds = await getBirds("US-NE", counties);
 
   return { props: { birds, counties } };
 }

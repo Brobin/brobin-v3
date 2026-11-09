@@ -14,12 +14,12 @@ import DataDisclaimer from "@brobin/components/ebird/DataDisclaimer";
 import { DataMap } from "@brobin/components/ebird/DataMap";
 import Page from "@brobin/components/Page";
 import { useCountyNavigation } from "@brobin/hooks/useCountyNavigation";
-import { RegionWithSpecies, Taxonomy } from "@brobin/types/ebird";
+import { RegionWithSpecies, TaxonomyWithCount } from "@brobin/types/ebird";
 import { getBirds, getCountyLists } from "@brobin/utils/ebird";
 import { countyUrl, speciesUrl } from "@brobin/utils/routes";
 
 interface Props {
-  birds: Taxonomy[];
+  birds: TaxonomyWithCount[];
   counties: RegionWithSpecies[];
 }
 
@@ -71,22 +71,18 @@ export default function BirdsOfNebraska({ birds, counties }: Props) {
     [countyRows],
   );
 
-  const speciesRows = React.useMemo(() => {
-    const counts = new Map<string, number>();
-    for (const county of counties) {
-      for (const code of county.species) {
-        counts.set(code, (counts.get(code) ?? 0) + 1);
-      }
-    }
-    return [...birds]
-      .sort((a, b) => a.taxonOrder - b.taxonOrder)
-      .map((bird) => ({
-        id: bird.speciesCode,
-        name: bird.comName,
-        sciName: bird.sciName,
-        count: counts.get(bird.speciesCode) ?? 0,
-      }));
-  }, [birds, counties]);
+  const speciesRows = React.useMemo(
+    () =>
+      [...birds]
+        .sort((a, b) => a.taxonOrder - b.taxonOrder)
+        .map((bird) => ({
+          id: bird.speciesCode,
+          name: bird.comName,
+          sciName: bird.sciName,
+          count: bird.countyCount,
+        })),
+    [birds],
+  );
 
   return (
     <Page
@@ -194,7 +190,7 @@ export default function BirdsOfNebraska({ birds, counties }: Props) {
 
 export async function getStaticProps() {
   const counties = await getCountyLists("US-NE");
-  const birds = await getBirds("US-NE");
+  const birds = await getBirds("US-NE", counties);
 
   return { props: { birds, counties } };
 }

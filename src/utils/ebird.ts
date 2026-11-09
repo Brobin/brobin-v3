@@ -1,7 +1,12 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
-import { Region, RegionWithSpecies, Taxonomy } from "@brobin/types/ebird";
+import {
+  Region,
+  RegionWithSpecies,
+  Taxonomy,
+  TaxonomyWithCount,
+} from "@brobin/types/ebird";
 import { exclude } from "../../data/ebird/exclude";
 
 function sleep(ms: number): Promise<void> {
@@ -86,12 +91,27 @@ const EXOTIC = new Set([
 ]);
 
 /** Non-exotic species that have been observed in the given region. */
-export async function getBirds(region: string) {
+export async function getBirds(
+  region: string,
+  counties: RegionWithSpecies[] = [],
+): Promise<TaxonomyWithCount[]> {
   const list = new Set(await getList(region));
   const taxonomy = await getTaxonomy();
-  return taxonomy.filter(
-    (taxon) => list.has(taxon.speciesCode) && !EXOTIC.has(taxon.comName),
-  );
+
+  // how many of the given counties have reported each species
+  const countyCounts = new Map<string, number>();
+  for (const county of counties) {
+    for (const sp of county.species) {
+      countyCounts.set(sp, (countyCounts.get(sp) ?? 0) + 1);
+    }
+  }
+
+  return taxonomy
+    .filter((taxon) => list.has(taxon.speciesCode) && !EXOTIC.has(taxon.comName))
+    .map((taxon) => ({
+      ...taxon,
+      countyCount: countyCounts.get(taxon.speciesCode) ?? 0,
+    }));
 }
 
 export async function getTaxonomy() {
