@@ -53,7 +53,14 @@ export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
     >
       <Grid container spacing={2}>
         <Grid xs={12}>
-          <Typography level="h2">Birds of Nebraska by County</Typography>
+          <Typography level="h2">
+            {selectedCounty
+              ? `${selectedCounty.name} County Checklist`
+              : `Nebraska County Checklists`}
+          </Typography>
+          <Typography level="body-sm">
+            Choose a county to see all the species that have been reported.
+          </Typography>
         </Grid>
         <Grid xs={12} md={3}>
           <Autocomplete
@@ -67,7 +74,7 @@ export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
           <br />
 
           {selectedCounty && (
-            <Card>
+            <Card variant="plain">
               <Typography level="h3">{selectedCounty.name} County</Typography>
               <p>
                 <b>{seenCount}</b> / {birds.length} species (

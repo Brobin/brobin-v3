@@ -53,7 +53,14 @@ export default function BirdsOfNebraskaBySpecies({ birds, counties }: Props) {
     >
       <Grid container spacing={2}>
         <Grid xs={12} md={12}>
-          <Typography level="h2">Birds of Nebraska by Species</Typography>
+          <Typography level="h2">
+            {selectedSpecies
+              ? `${selectedSpecies.comName} by county in Nebraska`
+              : "Birds of Nebraska by Species"}
+          </Typography>
+          <Typography level="body-sm">
+            Choose a species to see which counties it has been reported in.
+          </Typography>
         </Grid>
         <Grid xs={12} md={3}>
           <Autocomplete
