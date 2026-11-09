@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "rm -f data/ebird/*.json && next build",
+    "build": "next build",
+    "rebuild": "rm -f data/ebird/*.json && next build",
     "start": "next start",
     "lint": "next lint"
   },
