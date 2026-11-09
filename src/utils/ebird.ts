@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import { Region, RegionWithSpecies, Taxonomy } from "@brobin/types/ebird";
+import { exclude } from "../../data/ebird/exclude";
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -55,11 +56,12 @@ export async function getCountyLists(
 }
 
 export async function getList(region: string) {
-  return cached(`list-${region}`, () =>
+  const species = await cached(`list-${region}`, () =>
     get<string[]>(`https://api.ebird.org/v2/product/spplist/${region}`).then(
       (species) => species.filter((sp) => sp[0] !== "x"), // "x" indicate hybrids
     ),
   );
+  return species.filter((sp) => !exclude[sp]?.has(region));
 }
 
 const EXOTIC = new Set([
