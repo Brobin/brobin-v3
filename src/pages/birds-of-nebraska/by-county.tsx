@@ -1,4 +1,4 @@
-import { Autocomplete, Card, Grid, Typography } from "@mui/joy";
+import { Autocomplete, Button, Card, Grid, Typography } from "@mui/joy";
 import React from "react";
 
 import DataDisclaimer from "@brobin/components/ebird/DataDisclaimer";
@@ -93,6 +93,16 @@ export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
                   ({Math.round((seenCount / birds.length) * 100)}%)
                 </Typography>
               </Typography>
+              <Button
+                component="a"
+                variant="outlined"
+                size="sm"
+                href={`https://ebird.org/region/${selectedCounty.code}/bird-list?rank=lrec`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View in eBird
+              </Button>
               <br />
               {likelyNext.length > 0 && (
                 <>

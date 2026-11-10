@@ -35,10 +35,19 @@ export const DataMap = ({
     [counts],
   );
 
-  const colorScale = React.useMemo(
-    () => d3.scaleLinear(gradient).domain([1, max * 0.25, max * 0.5, max]),
-    [max],
-  );
+  const min = React.useMemo(() => {
+    const positive = Object.values(counts ?? {}).filter((v) => v > 0);
+    return positive.length ? Math.min(...positive) : 1;
+  }, [counts]);
+
+  const low = min / 2;
+
+  const colorScale = React.useMemo(() => {
+    const span = Math.max(max - low, 1);
+    return d3
+      .scaleLinear(gradient)
+      .domain([low, low + span * 0.25, low + span * 0.5, low + span]);
+  }, [low, max]);
 
   const projection = d3
     .geoMercator()
@@ -50,32 +59,6 @@ export const DataMap = ({
   return (
     <>
       <svg width="100%" viewBox={`0 0 ${width} ${height}`}>
-        {counts && (
-          <>
-            <defs>
-              <linearGradient id="legend">
-                <stop offset="0%" stopColor={gradient[0]} />
-                <stop offset="25%" stopColor={gradient[1]} />
-                <stop offset="50%" stopColor={gradient[2]} />
-                <stop offset="100%" stopColor={gradient[3]} />
-              </linearGradient>
-            </defs>
-            <text x="5" y="520" fill="#f0f4f8">
-              1
-            </text>
-            <rect
-              x="25"
-              y="505"
-              width="180"
-              height="20"
-              stroke="#f0f4f8"
-              fill="url(#legend)"
-            />
-            <text x="215" y="520" fill="#f0f4f8">
-              {max}
-            </text>
-          </>
-        )}
         {(countyGeoJson as FeatureCollection).features.map((county) => {
           const name = county.properties!.NAME;
           const value = counts?.[name] ?? 0;
@@ -84,7 +67,7 @@ export const DataMap = ({
               ? "#0b0d0e"
               : colorScale(value)
             : counties.has(name)
-              ? "#e54353"
+              ? "rgb(102, 187, 106)"
               : "#0b0d0e";
 
           return (
