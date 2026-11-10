@@ -10,4 +10,6 @@ export const exclude: Record<string, Set<string>> = {
     "US-NE-137",
     "US-NE-157",
   ]),
+  hrshaw: new Set(["US-NE-109"]),
+  grypar: new Set(["US-NE-055"]),
 };
