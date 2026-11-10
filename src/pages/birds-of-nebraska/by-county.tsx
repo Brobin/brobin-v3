@@ -134,17 +134,21 @@ export default function BirdsOfNebraskaByCounty({ birds, counties }: Props) {
             </Card>
           )}
         </Grid>
-        {selectedCounty && (
-          <Grid xs={12} md={9}>
-            <Card variant="plain">
-              <SpeciesChecklist
-                birds={allBirds}
-                seen={seen}
-                title={`${selectedCounty.name} County Checklist`}
-              />
-            </Card>
-          </Grid>
-        )}
+        <Grid xs={12} md={9}>
+          <Card variant="plain">
+            <SpeciesChecklist
+              birds={allBirds}
+              seen={seen}
+              disableActions={!selectedCounty}
+              printAll={!selectedCounty}
+              title={
+                selectedCounty
+                  ? `${selectedCounty.name} County Checklist`
+                  : `Nebraska Checklist`
+              }
+            />
+          </Card>
+        </Grid>
         <DataDisclaimer />
       </Grid>
     </Page>

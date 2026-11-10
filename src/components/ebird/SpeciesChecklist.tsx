@@ -21,9 +21,15 @@ export default function SpeciesChecklist({
   birds,
   seen,
   title,
+  disableActions = false,
+  printAll = false,
 }: {
+  /** Print every species instead of only the seen ones. */
+  printAll?: boolean;
   birds: Taxonomy[];
   seen: Set<string>;
+  /** Disables the seen/target toggles and print buttons. */
+  disableActions?: boolean;
   /** Heading shown only on the printed page. */
   title?: string;
 }) {
@@ -135,6 +141,7 @@ export default function SpeciesChecklist({
           size="sm"
           variant={seenOnly ? "solid" : "outlined"}
           aria-pressed={seenOnly}
+          disabled={disableActions}
           onClick={() => {
             setSeenOnly((prev) => !prev);
             setTargetsOnly(false);
@@ -147,6 +154,7 @@ export default function SpeciesChecklist({
           size="sm"
           variant={targetsOnly ? "solid" : "outlined"}
           aria-pressed={targetsOnly}
+          disabled={disableActions}
           onClick={() => {
             setTargetsOnly((prev) => !prev);
             setSeenOnly(false);
@@ -179,7 +187,8 @@ export default function SpeciesChecklist({
             sx={{
               // skip the heading too when none of the family was seen
               "@media print": {
-                display: family.birds.some((b) => seen.has(b.speciesCode))
+                display:
+                  printAll || family.birds.some((b) => seen.has(b.speciesCode))
                   ? "block"
                   : "none",
               },
@@ -234,7 +243,10 @@ export default function SpeciesChecklist({
                     gap: 1,
                     "@media print": {
                       // only species seen in the county are printed
-                      display: seen.has(bird.speciesCode) ? "flex" : "none",
+                      display:
+                        printAll || seen.has(bird.speciesCode)
+                          ? "flex"
+                          : "none",
                       color: "#000",
                       gap: 0.5,
                       marginBottom: 0.25,
