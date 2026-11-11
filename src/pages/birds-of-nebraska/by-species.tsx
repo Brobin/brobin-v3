@@ -37,13 +37,17 @@ export default function BirdsOfNebraskaBySpecies({ birds, counties }: Props) {
     return birds.find((b) => b.speciesCode === species);
   }, [birds, species]);
 
+  const title = React.useMemo(
+    () =>
+      selectedSpecies
+        ? `${selectedSpecies.comName} sightings in Nebraska`
+        : "Birds of Nebraska",
+    [selectedSpecies],
+  );
+
   return (
     <Page
-      title={
-        selectedSpecies
-          ? `${selectedSpecies.comName} by county in Nebraska`
-          : "Birds of Nebraska"
-      }
+      title={title}
       siteTitle={"Birds of Nebraska"}
       description={
         selectedSpecies
@@ -53,11 +57,7 @@ export default function BirdsOfNebraskaBySpecies({ birds, counties }: Props) {
     >
       <Grid container spacing={2}>
         <Grid xs={12} md={12}>
-          <Typography level="h2">
-            {selectedSpecies
-              ? `${selectedSpecies.comName} by county in Nebraska`
-              : "Birds of Nebraska by Species"}
-          </Typography>
+          <Typography level="h2">{title}</Typography>
           <Typography level="body-sm">
             Choose a species to see which counties it has been reported in.
           </Typography>
