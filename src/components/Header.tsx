@@ -13,6 +13,14 @@ import {
 } from "@mui/joy";
 import React from "react";
 
+const links = [
+  { href: "/birds-of-nebraska", label: "Birds of Nebraska" },
+  { href: "/big-year", label: "Big Year" },
+  { href: "/photos", label: "Photography" },
+  { href: "/projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
+];
+
 export default function Header() {
   const { xs } = useBreakpoints();
   const [open, setOpen] = React.useState(false);
@@ -45,35 +53,21 @@ export default function Header() {
             </ListItem>
           ) : (
             <>
-              <ListItem sx={{ marginInlineStart: "auto" }}>
-                <ListItemButton component="a" href="/birds-of-nebraska">
-                  Birds of Nebraska
-                </ListItemButton>
-              </ListItem>
-              <ListDivider />
-              <ListItem>
-                <ListItemButton component="a" href="/big-year">
-                  Big Year
-                </ListItemButton>
-              </ListItem>
-              <ListDivider />
-              <ListItem>
-                <ListItemButton component="a" href="/photos">
-                  Photography
-                </ListItemButton>
-              </ListItem>
-              <ListDivider />
-              <ListItem>
-                <ListItemButton component="a" href="/projects">
-                  Projects
-                </ListItemButton>
-              </ListItem>
-              <ListDivider />
-              <ListItem sx={{ paddingRight: 0 }}>
-                <ListItemButton component="a" href="/blog">
-                  Blog
-                </ListItemButton>
-              </ListItem>
+              {links.map((link, i) => (
+                <React.Fragment key={link.href}>
+                  {i > 0 && <ListDivider />}
+                  <ListItem
+                    sx={{
+                      ...(i === 0 && { marginInlineStart: "auto" }),
+                      ...(i === links.length - 1 && { paddingRight: 0 }),
+                    }}
+                  >
+                    <ListItemButton component="a" href={link.href}>
+                      {link.label}
+                    </ListItemButton>
+                  </ListItem>
+                </React.Fragment>
+              ))}
             </>
           )}
         </List>
@@ -91,26 +85,13 @@ export default function Header() {
               </ListItemButton>
             </ListItem>
             <ListDivider />
-            <ListItem>
-              <ListItemButton component="a" href="/">
-                Home
-              </ListItemButton>
-            </ListItem>
-            <ListItem>
-              <ListItemButton component="a" href="/photos">
-                Photos
-              </ListItemButton>
-            </ListItem>
-            <ListItem>
-              <ListItemButton component="a" href="/projects">
-                Projects
-              </ListItemButton>
-            </ListItem>
-            <ListItem sx={{ paddingRight: 0 }}>
-              <ListItemButton component="a" href="/blog">
-                Blog
-              </ListItemButton>
-            </ListItem>
+            {links.map((link) => (
+              <ListItem key={link.href}>
+                <ListItemButton component="a" href={link.href}>
+                  {link.label}
+                </ListItemButton>
+              </ListItem>
+            ))}
           </List>
         </Drawer>
       </Container>

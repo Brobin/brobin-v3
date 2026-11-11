@@ -116,7 +116,12 @@ export default function SpeciesChecklist({
       )}
       <Box
         className="no-print"
-        sx={{ display: "flex", alignItems: "center", gap: 1 }}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          flexWrap: { xs: "wrap", sm: "nowrap" },
+          gap: 1,
+        }}
       >
         <Input
           size="sm"
@@ -135,7 +140,11 @@ export default function SpeciesChecklist({
               </IconButton>
             )
           }
-          sx={{ maxWidth: 300, flexGrow: 1 }}
+          sx={{
+            flexGrow: 1,
+            flexBasis: { xs: "100%", sm: "auto" },
+            maxWidth: { xs: "none", sm: 300 },
+          }}
         />
         <Button
           size="sm"
@@ -146,7 +155,7 @@ export default function SpeciesChecklist({
             setSeenOnly((prev) => !prev);
             setTargetsOnly(false);
           }}
-          sx={{ marginLeft: "auto" }}
+          sx={{ marginLeft: { xs: 0, sm: "auto" } }}
         >
           Toggle Seen
         </Button>
