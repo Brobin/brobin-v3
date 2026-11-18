@@ -4,6 +4,11 @@
   "name": "brobin.me",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bullseye",
 "remoteUser": "root",
+"runArgs": [
+	"--security-opt", "seccomp=unconfined",
+	"--security-opt", "apparmor=unconfined",
+	"--cap-add=SYS_ADMIN"
+],
 "customizations": {
 	"vscode": {
 		"extensions": [

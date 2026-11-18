@@ -36,6 +36,14 @@ const regionColors: Record<Region, string> = {
   East: "#4fc3a1", // dark green
 };
 
+// Text shown for each region in the key.
+const regionNames: Record<Region, string> = {
+  West: "West / Panhandle",
+  North: "North",
+  South: "South",
+  East: "East",
+};
+
 const panhandle = new Set([
   "Banner",
   "Box Butte",
@@ -285,7 +293,7 @@ export default function CountyMap() {
             <rect
               x={mapBounds[0][0]}
               y={mapBounds[1][1] - legendRowHeight * 3 - 26 - 20}
-              width={125}
+              width={238}
               height={legendRowHeight * 3 + 26 + 20}
               rx={4}
               fill="#fff"
@@ -306,8 +314,14 @@ export default function CountyMap() {
                   fill={regionColors[region]}
                   stroke={INK}
                 />
-                <text x={36} y={20} fill={INK} fontSize={22} fontWeight={700}>
-                  {region}
+                <text
+                  x={36}
+                  y={20}
+                  fill={INK}
+                  fontSize={22}
+                  fontWeight={700}
+                >
+                  {regionNames[region]}
                 </text>
               </g>
             ))}
